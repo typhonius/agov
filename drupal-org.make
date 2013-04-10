@@ -3,6 +3,65 @@ core = 7.x
 
 api = 2
 
+; The Panopoly Foundation
+
+; panopoly core
+
+projects[panelizer][version] = 3.1
+projects[panelizer][subdir] = contrib
+
+projects[panels_breadcrumbs][version] = 2.0
+projects[panels_breadcrumbs][subdir] = contrib
+
+projects[fieldable_panels_panes][version] = 1.4
+projects[fieldable_panels_panes][subdir] = contrib
+
+projects[pm_existing_pages][version] = 1.4
+projects[pm_existing_pages][subdir] = contrib
+
+projects[fape][version] = 1.x-dev
+projects[fape][subdir] = contrib
+
+projects[field_group][version] = 1.1
+projects[field_group][subdir] = contrib
+
+projects[entityreference][version] = 1.0
+projects[entityreference][subdir] = contrib
+
+
+;projects[panopoly_core][version] = 1.0-rc3
+;projects[panopoly_core][subdir] = panopoly
+
+;projects[panopoly_images][version] = 1.0-rc3
+;projects[panopoly_images][subdir] = panopoly
+
+;projects[panopoly_theme][version] = 1.0-rc3
+;projects[panopoly_theme][subdir] = panopoly
+
+;projects[panopoly_magic][version] = 1.0-rc3
+;projects[panopoly_magic][subdir] = panopoly
+
+;projects[panopoly_widgets][version] = 1.0-rc3
+;projects[panopoly_widgets][subdir] = panopoly
+
+;projects[panopoly_admin][version] = 1.0-rc3
+;projects[panopoly_admin][subdir] = panopoly
+
+;projects[panopoly_users][version] = 1.0-rc3
+;projects[panopoly_users][subdir] = panopoly
+
+; The Panopoly Toolset
+
+;projects[panopoly_pages][version] = 1.0-rc3
+;projects[panopoly_pages][subdir] = panopoly
+
+;projects[panopoly_wysiwyg][version] = 1.0-rc3
+;projects[panopoly_wysiwyg][subdir] = panopoly
+
+;projects[panopoly_search][version] = 1.0-rc3
+;projects[panopoly_search][subdir] = panopoly
+
+
 ; Contrib modules
 
 projects[bean][version] = "1.1"
@@ -172,10 +231,7 @@ projects[securepages][version] = "1.0-beta1"
 projects[securepages][subdir] = "contrib"
 
 ; Login Security only has a dev release, so is pinned to a commit.
-projects[login_security][download][type] = "git"
-projects[login_security][download][revision] = b78cbc902a5b517d36c0bb1d71ad0d36e53d58e5
-projects[login_security][download][branch] = 7.x-1.x
-projects[login_security][type] = "module"
+projects[login_security][version] = "1.2"
 projects[login_security][subdir] = "contrib"
 
 ; Themes

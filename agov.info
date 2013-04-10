@@ -40,6 +40,15 @@ dependencies[] = list
 dependencies[] = rdf
 dependencies[] = update
 
+; Panopoly
+
+dependencies[] = panelizer
+dependencies[] = panels_breadcrumbs
+dependencies[] = fieldable_panels_panes
+dependencies[] = pm_existing_pages
+dependencies[] = fape
+dependencies[] = field_group
+dependencies[] = entityreference
 
 ; Contrib
 
