@@ -7,7 +7,6 @@ sass_dir = "sass"
 images_dir = "images"
 javascripts_dir = "js"
 fonts_dir = "fonts"
-extensions_dir  = "sass-extensions"
 
 # Leave this as expanded for now.
 output_style = :expanded
@@ -29,4 +28,7 @@ color_output = false
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 preferred_syntax = :scss
+
+
+require "breakpoint"
 
