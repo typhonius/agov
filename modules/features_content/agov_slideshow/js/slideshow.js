@@ -11,7 +11,8 @@
 			/**
 			* Global variables
 			*/
-			var num_items = $('#region-feature-articles .views-row').length;
+			var region = '.agov-slideshow';
+			var num_items = $(region + ' .views-row').length;
 			var speed = 6000;
 			var interval;
 			
@@ -30,13 +31,13 @@
   			
   			pager += '<li><a href="#pause" class="pause playing" data-paused="false" title="Pause slideshow">Pause</a></li></ul>';
   			
-  			$('#block-views-slideshow-block').prepend(pager);
+  			$(region).prepend(pager);
 			}
 			/**
 			* Updates the active state on the pager
 			*/
 			function updatePager() {
-				var itemIndex = $('#region-feature-articles .views-row:visible').index() + 1;
+				var itemIndex = $(region + ' .views-row:visible').index() + 1;
 
 				$('#featured-article-pager li').removeClass('current');
 				$('#featured-article-pager li a[href="#views-row-' + itemIndex + '"]').parent().addClass('current');	
@@ -47,12 +48,12 @@
 			* Animates between featured articles
 			*/
 			function nextSlide() {
-				var _currentSlide = $('#region-feature-articles .views-row:visible');
+				var _currentSlide = $(region + ' .views-row:visible');
 				var _nextSlide;
 		
 				// if the last row is visible, then switch back to the first row
-				if ($('#region-feature-articles .views-row:last-child').is(':visible')) {
-					_nextSlide = $('#region-feature-articles .views-row:first-child');
+				if ($(region + ' .views-row:last-child').is(':visible')) {
+					_nextSlide = $(region + ' .views-row:first-child');
 				}
 				else {
 					// otherwise just use the next .views-row in the stack
@@ -71,7 +72,7 @@
 			$('#featured-article-pager a.pause').click(function() {
 				if ($(this).attr('data-paused') == 'false') {
 					// is paused
-					$('#region-feature-articles .views-row').stop(true, true);
+					$(region + ' .views-row').stop(true, true);
 					$(this).attr('data-paused', true);
 					$(this).removeClass('playing').addClass('paused');
 					$('#featured-article-pager li').removeClass('current');
@@ -108,10 +109,10 @@
 					$('#featured-article-pager a.pause').removeClass('paused').addClass('playing');
 					
 					// hide all
-					$('#region-feature-articles .views-row').fadeOut();
+					$(region + ' .views-row').fadeOut();
 					
 					// show the selected row
-					$('#region-feature-articles .' + row).fadeIn(function() {
+					$(region + ' .' + row).fadeIn(function() {
 						updatePager();
 						interval = setInterval(nextSlide, speed);
 					});
