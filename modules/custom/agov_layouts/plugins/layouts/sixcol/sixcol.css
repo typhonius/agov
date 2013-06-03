@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Provides css for the article panel layout
+ * @copyright Copyright(c) 2012 Previous Next Pty Ltd
+ * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
+ * @author Tim Eisenhuth tim dot eisenhuth at previousnext dot com dot au
+ *
+ */
+
+.col {
+    float: left;
+    width: 16%;
+} 
