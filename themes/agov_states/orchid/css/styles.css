@@ -1,0 +1,400 @@
+/*
+ * @file
+ * Compass styles for Queensland.
+ */
+/**
+ * Styles
+ */
+/*
+ * @file
+ * Default style settings.
+ */
+/*
+ * @file
+ * Compass mixins for agov state themes
+ */
+body {
+  background-color: #fefefe;
+  background-image: none;
+  background-position: top center !important;
+  background-repeat: no-repeat;
+}
+
+.page {
+  background: none bottom no-repeat;
+}
+
+#section-footer {
+  margin-bottom: 50px;
+}
+
+/* Override default styles providing missing images */
+#zone-header-wrapper {
+  background-image: url("../images/header.png");
+  background-color: #62696f;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+#zone-header-wrapper a {
+  color: #fbfbfb;
+}
+#zone-header-wrapper #region-header-logo {
+  padding-top: 20px;
+}
+
+#region-sidebar .block ul li,
+#region-sidebar .entity-bean ul li {
+  background-image: none;
+}
+
+#zone-content {
+  padding: 0.8em 0;
+}
+#zone-content .content a {
+  font-weight: normal;
+}
+
+#zone-footer-menu {
+  background: #3a4249;
+}
+#zone-footer-menu a {
+  color: #e6e6e6;
+}
+
+/* link styles */
+.page a {
+  color: #0065cb;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.page a:hover {
+  color: #003265;
+  text-decoration: none;
+}
+.page a:visited {
+  color: #2965a2;
+  text-decoration: underline;
+}
+.page a:active {
+  color: #003265;
+  text-decoration: none;
+}
+
+/* Menu styles */
+#zone-menu-wrapper {
+  background: #394149;
+}
+
+div #region-header-main-menu ul.menu li a {
+  color: white;
+  text-shadow: 1px 1px 1px #75737a;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 1.1em;
+  padding: 1em 1em 12px 1em;
+  background: transparent;
+}
+div #region-header-main-menu ul.menu li a.active {
+  color: #394149;
+  background-color: white;
+  text-shadow: none;
+}
+div #region-header-main-menu ul.menu li a:hover {
+  color: white;
+  background-color: #edf5e1;
+}
+div #region-header-main-menu ul.menu li ul li a {
+  color: #0065cb;
+  font-weight: underline;
+  display: block;
+  padding: 0.6em 1em;
+  font-size: 0.9em;
+  border-bottom: 1px solid white;
+}
+div #region-header-main-menu ul.menu li ul li a:hover {
+  background: white;
+  color: #f3f3f3;
+}
+div #region-header-main-menu ul.menu li.active-trail a {
+  color: #394149;
+  background-color: white;
+  text-shadow: none;
+}
+
+/* Set all titles to blue */
+h1, h2, h3, h4,
+#block-views-slideshow-block .views-field-title .field-content a,
+#region-footer-feature .block .content h2 a {
+  color: #272727;
+  text-shadow: 1px 1px 2px white;
+  font-family: "OpenSansSemibold", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+/* Some blocks need padding adjustments - backport candidate */
+.field.field-name-field-bean-body p:first-child {
+  margin-top: 0;
+}
+
+.field.field-name-field-bean-body p:last-child {
+  margin-bottom: 0;
+}
+
+.view .views-field-body p:last-child,
+.node-teaser .field-name-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Block styles */
+#region-sidebar .block,
+.block-slideshow-block,
+#region-header-main-menu .menu li ul {
+  background-color: #edf5e1;
+}
+
+#region-sidebar .block h2.block-title,
+#region-sidebar .entity-bean h2.block-title {
+  color: #272727;
+  text-shadow: 1px 1px 2px white;
+  font-family: "OpenSansSemibold", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  background: transparent;
+  text-shadow: none;
+  color: #272727;
+}
+#region-sidebar .block .content,
+#region-sidebar .entity-bean .content {
+  padding: 0 1em 1em 1em;
+}
+#region-sidebar .block.block-menu-block .content,
+#region-sidebar .entity-bean.block-menu-block .content {
+  padding: 0;
+}
+#region-sidebar .block.block-menu-block .content li,
+#region-sidebar .entity-bean.block-menu-block .content li {
+  border-bottom: 1px solid #ddd;
+  background-color: #edf5e1;
+  background-image: url("../images/block-li-bg.png");
+  background-position: 20px 12px;
+  background-repeat: no-repeat;
+  list-style: none;
+  list-style-image: none;
+  padding-left: 4px;
+  margin-left: 0;
+}
+#region-sidebar .block.block-menu-block .content li:first-child,
+#region-sidebar .entity-bean.block-menu-block .content li:first-child {
+  border-top: 1px solid #ddd;
+}
+#region-sidebar .block.block-menu-block .content li:hover,
+#region-sidebar .entity-bean.block-menu-block .content li:hover {
+  color: #f3f3f3;
+  background: white;
+}
+#region-sidebar .block.block-menu-block .content li.active-trail,
+#region-sidebar .entity-bean.block-menu-block .content li.active-trail {
+  background-color: #f6faf0;
+}
+#region-sidebar .block.block-menu-block .content li.active-trail a,
+#region-sidebar .entity-bean.block-menu-block .content li.active-trail a {
+  text-decoration: none;
+}
+#region-sidebar .block.block-menu-block .content li a,
+#region-sidebar .entity-bean.block-menu-block .content li a {
+  padding: 7px 0;
+}
+#region-sidebar .block ul li,
+#region-sidebar .entity-bean ul li {
+  background-image: url("../images/block-li-bg.png");
+}
+
+/* Blocks in the content region get borders on top */
+.block-system-main .gov-front-layout > div {
+  border-top: 2px solid #5e5f5f;
+}
+
+.views-row {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Clean styles on promos */
+#region-footer-feature {
+  padding-bottom: 0;
+  background: #f6f6f6;
+}
+#region-footer-feature .region-inner {
+  border-top: none;
+}
+#region-footer-feature .views-row {
+  border-top: 0 none;
+  border-bottom-style: none;
+}
+
+/* Footer menu region */
+#region-footer-menu a {
+  color: #e6e6e6;
+}
+
+/* Footer copyright */
+#zone-footer-copyright {
+  color: #3a4249;
+  border-bottom: 1px solid #dddddd;
+}
+#zone-footer-copyright a {
+  font-weight: normal;
+}
+
+/* Form styles */
+form input.form-submit {
+  background: #0065cb;
+  color: white !important;
+  padding: 0 13px;
+}
+form input.form-submit:hover {
+  background: #004c98;
+}
+
+/* Fix height on search form */
+div #region-header-search form input.form-text {
+  height: 27px;
+  border: none;
+}
+
+/* Nicer forms - backport candidate */
+input.form-text,
+.form-textarea-wrapper textarea {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-top-color: #aaaaaa;
+  font-size: 1.6em;
+  padding: 3px 5px;
+  outline: none;
+}
+
+input.form-text:focus,
+.form-textarea-wrapper textarea:focus {
+  border-color: #aaa;
+  -webkit-box-shadow: 0px 0px 5px #aaaaaa;
+  -moz-box-shadow: 0px 0px 5px #aaaaaa;
+  -o-box-shadow: 0 0 5px #aaaaaa;
+  box-shadow: 0 0 5px #aaaaaa;
+}
+
+/* Breadcrumb */
+#breadcrumb {
+  border-bottom: 2px solid #5e5f5f;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.8em;
+}
+#breadcrumb a {
+  font-weight: normal;
+}
+
+.tabbed-nav ul.primary li a {
+  background: transparent;
+  border: none;
+}
+.tabbed-nav ul.tabs li {
+  border-top: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  background: #f1f1f3;
+}
+.tabbed-nav ul.tabs li a {
+  background-image: none;
+  text-decoration: none;
+  font-size: 1.1em;
+  color: #272727;
+  text-shadow: 1px 1px 2px white;
+  font-family: "OpenSansSemibold", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+.tabbed-nav ul.tabs li:first-child {
+  border-left: 1px solid #d9d9d9;
+}
+.tabbed-nav ul.tabs li.active, .tabbed-nav ul.tabs li:hover {
+  border-top: 2px solid #5e5f5f;
+  padding-top: 2px;
+  height: 37px;
+  background: white;
+}
+.tabbed-nav ul.tabs li.active {
+  border-bottom: none;
+}
+
+/* Tables - backport candidate */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  color: #666;
+}
+
+th {
+  border-bottom: 1px solid #d9d9d9;
+  background: #f1f1f3;
+  padding: 0.5em 0.7em;
+  text-align: left;
+  /* LTR */
+  font-size: 1.1em;
+  color: #272727;
+  text-shadow: 1px 1px 2px white;
+  font-family: "OpenSansSemibold", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+td {
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 0.5em 0.7em;
+}
+td:last-child {
+  border-right: none;
+}
+
+tbody {
+  border-top: 2px solid #5e5f5f;
+}
+
+tr.even,
+tr.odd {
+  background-color: #fbfbfb;
+  border-bottom: 1px solid 1px solid #d9d9d9;
+  padding: 0.1em 0.6em;
+}
+
+.block-agov-text-resize-text-resize #resize-buttons ul li a {
+  border: 1px solid #ededed;
+  overflow: hidden;
+  width: 23px;
+  padding-top: 24px;
+}
+.block-agov-text-resize-text-resize #resize-buttons ul li.font-small a {
+  background-image: url("../images/resize-sprite.png");
+  background-repeat: none;
+  background-position: 7px 6px;
+  background-color: #242d38;
+}
+.block-agov-text-resize-text-resize #resize-buttons ul li.font-small a:hover {
+  background-color: #4c5f76;
+}
+.block-agov-text-resize-text-resize #resize-buttons ul li.font-large a {
+  background-image: url("../images/resize-sprite.png");
+  background-repeat: none;
+  background-position: -21px 6px;
+  background-color: #242d38;
+}
+.block-agov-text-resize-text-resize #resize-buttons ul li.font-large a:hover {
+  background-color: #4c5f76;
+}
+.block-agov-text-resize-text-resize #resize-buttons ul li.reset a {
+  background-image: url("../images/resize-sprite.png");
+  background-repeat: none;
+  background-position: -50px 6px;
+  background-color: #242d38;
+}
+.block-agov-text-resize-text-resize #resize-buttons ul li.reset a:hover {
+  background-color: #4c5f76;
+}

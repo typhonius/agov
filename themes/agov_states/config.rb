@@ -37,7 +37,8 @@ require 'fileutils'
 
 states = {
   'nsw' => 'waratah',
-  'act' => 'bluebell'
+  'act' => 'bluebell',
+  'qld' => 'orchid',
 }
 
 

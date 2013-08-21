@@ -1,0 +1,69 @@
+/*
+ * @file
+ * Compass styles for Queensland.
+ */
+
+// Page background.
+$background_colour: rgb(254, 254, 254);
+$body_background: none;
+$page_footer_image: none;
+$footer_margin_bottom: 50px;
+
+// Header
+$header_image: url('../images/header.png');
+$header_colour: rgb(98, 105, 111);
+$logo_extra_top_padding: 20px;
+
+// Typography
+$link_colour: rgb(0, 101, 203);
+$link_font_weight: bold;
+
+$link_text_decoration: underline;
+$link_hover_text_decoration: none;
+
+$link_colour_header: rgb(251, 251, 251);
+
+$title_base_colour: rgb(39, 39, 39);
+
+// Block styles
+$block_background: rgb(237, 245, 225);
+$block_title_colour: $title_base_colour;
+$block_title_background: transparent;
+
+// Menu
+$menu_bar_background: rgb(57, 65, 73);
+
+$main_menu_item_colour: rgb(255, 255, 255);
+$main_menu_item_background: transparent;
+
+$main_menu_active_colour: $menu_bar_background;
+$main_menu_active_background: rgb(255, 255, 255);
+
+$main_menu_hover_colour: $main_menu_item_colour;
+
+$menu_child_hover_background: $main_menu_item_colour;
+$menu_child_hover_colour: rgb(243, 243, 243);
+
+// Applies border styling to panel panes, and some regions.
+$box_border: 2px solid rgb(94, 95, 95);
+
+// Applied border styling to content items in views et al
+$content_item_border: 1px solid rgb(221, 221, 221);
+
+// Form colours
+$button_colour: rgb(0, 101, 203);
+$button_text_colour: rgb(255, 255, 255)!important
+;
+
+$toggle_colour: rgb(36, 45, 56);
+$toggle_hover: lighten($toggle_colour, 20%);
+
+// Footer colours
+$region_footer_feature_border_inner: none;
+$region_footer_feature_background: rgb(246, 246, 246);
+
+$footer_background: rgb(58, 66, 73);
+$footer_text_color: rgb(230, 230, 230);
+$footer_copyright_colour: $footer_background;
+
+@import "subtheme_base";
