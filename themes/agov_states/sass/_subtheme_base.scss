@@ -1,80 +1,21 @@
 /**
  * Styles
  */
+// Add Compass & breakpoint
+@import "breakpoint";
+@import "compass";
 
-// These styles are provided as defaults. They will work if not provided in
-// subtheme packages.
-
-$arial: Arial, sans-serif;
-$base-font-family: $arial;
-// The font family set on the html element.
-
-$open: 'OpenSansRegular', $base-font-family;
-$open-bold: 'OpenSansBold', $base-font-family;
-$open-semibold: 'OpenSansSemibold', $base-font-family;
-
-// Image url() links should be relative to the theme folder
-// (e.g. '../images/image-name.png'). They may show up as broken when viewed
-// from THIS file context, but will be correct once compiled.
-
-// Page background.
-$background_colour: rgb(249, 249, 249) !default;
-$body_background: rgb(238, 238, 238) !default;
-$page_footer_image: none !default;
-$footer_margin_bottom: 50px !default;
-
-// Typography
-$link_colour: rgb(110, 109, 109) !default;
-$link_font_weight: bold  !default;
-
-$link_text_decoration: underline !default;
-$link_hover_text_decoration: none !default;
-
-$title_base_colour: #404040 !default;
-
-// Block styles
-$block_background: rgb(241, 242, 243) !default;
-
-// Menu
-$menu_bar_background: rgb(143, 140, 141) !default;
-
-$main_menu_item_colour: rgb(255, 255, 255) !default;
-$main_menu_item_background: transparent !default;
-
-$main_menu_active_colour: rgb(0, 0, 0) !default;
-$main_menu_active_background: rgb(255, 255, 255) !default;
-
-$main_menu_hover_colour: rgb(0, 0, 0) !default;
-
-$menu_child_hover_background: rgb(255, 255, 255) !default;
-$menu_child_hover_colour: rgb(64, 64, 64) !default;
-
-// Applies border styling to panel panes, and some regions.
-$box_border: 2px solid rgb(189, 182, 181) !default;
-
-// Applied border styling to content items in views et al
-$content_item_border: 1px solid rgb(221, 221, 221) !default;
-
-// Form colours
-$button_colour: rgb(110, 109, 109) !default;
-$button_text_colour: rgb(255, 255, 255) !default;
-
-$form_submit_background: $button_colour !default;
-$form_submit_colour: $button_text_colour !default;
-
-// Footer colours
-$footer_text_color: rgb(104, 104, 104) !default;
-
-// Tabs
-$tool_border_colour: rgb(217, 217, 217) !default;
-$tool_background: rgb(241, 241, 243) !default;
-
+// Default settings
+@import "defaults";
 
 // Import our mixins.
 @import "m-subtheme";
 
 body {
-  background: $background_colour $body_background center no-repeat;
+  background-color: $background_colour;
+  background-image: $body_background;
+  background-position: top center !important;
+  background-repeat: no-repeat;
 }
 
 .page {
@@ -88,6 +29,10 @@ body {
 /* Override default styles providing missing images */
 #zone-header-wrapper {
   background-image: none;
+
+  a {
+    color: $link_colour_header;
+  }
 }
 
 #region-sidebar .block ul li,
@@ -95,19 +40,19 @@ body {
   background-image: none;
 }
 
-/* Block styles */
-#region-sidebar .block,
-.block-slideshow-block,
-#zone-footer-menu,
-#region-header-main-menu .menu li ul {
-  background-color: $block_background;
-}
-
 #zone-content {
   padding: 0.8em 0;
 
   .content a {
     font-weight: normal;
+  }
+}
+
+#zone-footer-menu {
+  background: $footer_background;
+
+  a {
+    color: $footer_text_color;
   }
 }
 
@@ -163,11 +108,13 @@ div #region-header-main-menu ul.menu {
 
     // Superfish flyout links
     ul {
-      li a{
+      li a {
         color: $link_colour;
         font-weight: $link_text_decoration;
         display: block;
         padding: 0.6em 1em;
+        font-size: 0.9em;
+        border-bottom: $menu_child_item_border-bottom;
 
         &:hover {
           background: $menu_child_hover_background;
@@ -205,8 +152,24 @@ h1, h2, h3, h4,
   margin-bottom: 0;
 }
 
+/* Block styles */
+#region-sidebar .block,
+.block-slideshow-block,
+#region-header-main-menu .menu li ul {
+  background-color: $block_background;
+}
+
 #region-sidebar .block,
 #region-sidebar .entity-bean {
+
+  h2.block-title {
+    @include title-defaults;
+
+    background: $block_title_background;
+    text-shadow: none;
+    color: $block_title_colour;
+  }
+
   .content {
     padding: 0 1em 1em 1em;
   }
@@ -287,7 +250,7 @@ h1, h2, h3, h4,
 
 /* Footer copyright */
 #zone-footer-copyright {
-  color: $footer_text_color;
+  color: $footer_copyright_colour;
   border-bottom: $content_item_border;
 
   a {

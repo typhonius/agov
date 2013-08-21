@@ -7,10 +7,17 @@
  */
 /*
  * @file
+ * Default style settings.
+ */
+/*
+ * @file
  * Compass mixins for agov state themes
  */
 body {
-  background: #f9f9f9 url("../images/background.png") center no-repeat;
+  background-color: #f9f9f9;
+  background-image: url("../images/background.png");
+  background-position: top center !important;
+  background-repeat: no-repeat;
 }
 
 .page {
@@ -25,18 +32,13 @@ body {
 #zone-header-wrapper {
   background-image: none;
 }
+#zone-header-wrapper a {
+  color: #d14560;
+}
 
 #region-sidebar .block ul li,
 #region-sidebar .entity-bean ul li {
   background-image: none;
-}
-
-/* Block styles */
-#region-sidebar .block,
-.block-slideshow-block,
-#zone-footer-menu,
-#region-header-main-menu .menu li ul {
-  background-color: #f1f2f3;
 }
 
 #zone-content {
@@ -44,6 +46,13 @@ body {
 }
 #zone-content .content a {
   font-weight: normal;
+}
+
+#zone-footer-menu {
+  background: #f1f2f3;
+}
+#zone-footer-menu a {
+  color: #686868;
 }
 
 /* link styles */
@@ -93,6 +102,8 @@ div #region-header-main-menu ul.menu li ul li a {
   font-weight: underline;
   display: block;
   padding: 0.6em 1em;
+  font-size: 0.9em;
+  border-bottom: 1px solid white;
 }
 div #region-header-main-menu ul.menu li ul li a:hover {
   background: white;
@@ -128,6 +139,23 @@ h1, h2, h3, h4,
   margin-bottom: 0;
 }
 
+/* Block styles */
+#region-sidebar .block,
+.block-slideshow-block,
+#region-header-main-menu .menu li ul {
+  background-color: #f1f2f3;
+}
+
+#region-sidebar .block h2.block-title,
+#region-sidebar .entity-bean h2.block-title {
+  color: #073a8d;
+  text-shadow: 1px 1px 2px white;
+  font-family: "OpenSansSemibold", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  background: transparent;
+  text-shadow: none;
+  color: inherit;
+}
 #region-sidebar .block .content,
 #region-sidebar .entity-bean .content {
   padding: 0 1em 1em 1em;

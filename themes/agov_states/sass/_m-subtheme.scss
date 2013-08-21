@@ -11,9 +11,9 @@
 }
 
 @mixin toggle-colours {
-  background-color: lighten(desaturate($button_colour, 40%), 20%);
+  background-color: $toggle_colour;
 
   &:hover {
-    background-color: $button_colour;
+    background-color: $toggle_hover;
   }
 }

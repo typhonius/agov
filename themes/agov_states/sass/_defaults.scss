@@ -1,0 +1,81 @@
+/*
+ * @file
+ * Default style settings.
+ */
+
+// These styles are provided as defaults. They will work if not provided in
+// subtheme packages.
+
+$arial: Arial, sans-serif;
+$base-font-family: $arial;
+// The font family set on the html element.
+
+$open: 'OpenSansRegular', $base-font-family;
+$open-bold: 'OpenSansBold', $base-font-family;
+$open-semibold: 'OpenSansSemibold', $base-font-family;
+
+// Image url() links should be relative to the theme folder
+// (e.g. '../images/image-name.png'). They may show up as broken when viewed
+// from THIS file context, but will be correct once compiled.
+
+// Page background.
+$background_colour: rgb(249, 249, 249) !default;
+$body_background: rgb(238, 238, 238) !default;
+$page_footer_image: none !default;
+$footer_margin_bottom: 50px !default;
+
+// Typography
+$link_colour: rgb(110, 109, 109) !default;
+$link_font_weight: bold !default;
+
+$link_text_decoration: underline !default;
+$link_hover_text_decoration: none !default;
+
+$link_colour_header: $link_colour !default;
+
+$title_base_colour: #404040 !default;
+
+// Block styles
+$block_background: rgb(241, 242, 243) !default;
+$block_title_colour: inherit !default;
+$block_title_background: transparent !default;
+
+// Menu
+$menu_bar_background: rgb(143, 140, 141) !default;
+
+$main_menu_item_colour: rgb(255, 255, 255) !default;
+$main_menu_item_background: transparent !default;
+
+$main_menu_active_colour: rgb(0, 0, 0) !default;
+$main_menu_active_background: rgb(255, 255, 255) !default;
+
+$main_menu_hover_colour: rgb(0, 0, 0) !default;
+
+$menu_child_hover_background: rgb(255, 255, 255) !default;
+$menu_child_hover_colour: rgb(64, 64, 64) !default;
+$menu_child_item_border-bottom: 1px solid #fff !default;
+
+// Applies border styling to panel panes, and some regions.
+$box_border: 2px solid rgb(189, 182, 181) !default;
+
+// Applied border styling to content items in views et al
+$content_item_border: 1px solid rgb(221, 221, 221) !default;
+
+// Form colours
+$button_colour: rgb(110, 109, 109) !default;
+$button_text_colour: rgb(255, 255, 255) !default;
+
+$toggle_colour: lighten(desaturate($button_colour, 40%), 20%) !default;
+$toggle_hover: $button_colour !default;
+
+$form_submit_background: $button_colour !default;
+$form_submit_colour: $button_text_colour !default;
+
+// Footer colours
+$footer_text_color: rgb(104, 104, 104) !default;
+$footer_copyright_colour: $footer_text_color !default;
+$footer_background: $block_background !default;
+
+// Tabs
+$tool_border_colour: rgb(217, 217, 217) !default;
+$tool_background: rgb(241, 241, 243) !default;
