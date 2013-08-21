@@ -1,0 +1,19 @@
+/*
+ * @file
+ * Compass mixins for agov state themes
+ */
+
+@mixin title-defaults {
+  color: $title_base_colour;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
+  font-family: $open-semibold;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin toggle-colours {
+  background-color: lighten(desaturate($button_colour, 40%), 20%);
+
+  &:hover {
+    background-color: $button_colour;
+  }
+}

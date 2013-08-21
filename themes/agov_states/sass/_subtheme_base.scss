@@ -1,0 +1,461 @@
+/**
+ * Styles
+ */
+
+// These styles are provided as defaults. They will work if not provided in
+// subtheme packages.
+
+$arial: Arial, sans-serif;
+$base-font-family: $arial;
+// The font family set on the html element.
+
+$open: 'OpenSansRegular', $base-font-family;
+$open-bold: 'OpenSansBold', $base-font-family;
+$open-semibold: 'OpenSansSemibold', $base-font-family;
+
+// Image url() links should be relative to the theme folder
+// (e.g. '../images/image-name.png'). They may show up as broken when viewed
+// from THIS file context, but will be correct once compiled.
+
+// Page background.
+$background_colour: rgb(249, 249, 249) !default;
+$body_background: rgb(238, 238, 238) !default;
+$page_footer_image: none !default;
+$footer_margin_bottom: 50px !default;
+
+// Typography
+$link_colour: rgb(110, 109, 109) !default;
+$link_font_weight: bold  !default;
+
+$link_text_decoration: underline !default;
+$link_hover_text_decoration: none !default;
+
+$title_base_colour: #404040 !default;
+
+// Block styles
+$block_background: rgb(241, 242, 243) !default;
+
+// Menu
+$menu_bar_background: rgb(143, 140, 141) !default;
+
+$main_menu_item_colour: rgb(255, 255, 255) !default;
+$main_menu_item_background: transparent !default;
+
+$main_menu_active_colour: rgb(0, 0, 0) !default;
+$main_menu_active_background: rgb(255, 255, 255) !default;
+
+$main_menu_hover_colour: rgb(0, 0, 0) !default;
+
+$menu_child_hover_background: rgb(255, 255, 255) !default;
+$menu_child_hover_colour: rgb(64, 64, 64) !default;
+
+// Applies border styling to panel panes, and some regions.
+$box_border: 2px solid rgb(189, 182, 181) !default;
+
+// Applied border styling to content items in views et al
+$content_item_border: 1px solid rgb(221, 221, 221) !default;
+
+// Form colours
+$button_colour: rgb(110, 109, 109) !default;
+$button_text_colour: rgb(255, 255, 255) !default;
+
+$form_submit_background: $button_colour !default;
+$form_submit_colour: $button_text_colour !default;
+
+// Footer colours
+$footer_text_color: rgb(104, 104, 104) !default;
+
+// Tabs
+$tool_border_colour: rgb(217, 217, 217) !default;
+$tool_background: rgb(241, 241, 243) !default;
+
+
+// Import our mixins.
+@import "m-subtheme";
+
+body {
+  background: $background_colour $body_background center no-repeat;
+}
+
+.page {
+  background: $page_footer_image bottom no-repeat;
+}
+
+#section-footer {
+  margin-bottom: $footer_margin_bottom;
+}
+
+/* Override default styles providing missing images */
+#zone-header-wrapper {
+  background-image: none;
+}
+
+#region-sidebar .block ul li,
+#region-sidebar .entity-bean ul li {
+  background-image: none;
+}
+
+/* Block styles */
+#region-sidebar .block,
+.block-slideshow-block,
+#zone-footer-menu,
+#region-header-main-menu .menu li ul {
+  background-color: $block_background;
+}
+
+#zone-content {
+  padding: 0.8em 0;
+
+  .content a {
+    font-weight: normal;
+  }
+}
+
+/* link styles */
+.page a {
+  color: $link_colour;
+  font-weight: $link_font_weight;
+  text-decoration: $link_text_decoration;
+
+  &:hover {
+    color: darken($link_colour, 20%);
+    text-decoration: $link_hover_text_decoration;
+  }
+  &:visited {
+    color: desaturate($link_colour, 40%);
+    text-decoration: $link_text_decoration;
+  }
+  &:active {
+    color: darken($link_colour, 20%);
+    text-decoration: $link_hover_text_decoration;
+  }
+}
+
+/* Menu styles */
+
+#zone-menu-wrapper {
+  background: $menu_bar_background;
+}
+
+div #region-header-main-menu ul.menu {
+  li {
+
+    // Top level links.
+    a {
+      color: $main_menu_item_colour;
+      text-shadow: 1px 1px 1px rgb(117, 115, 122);
+      text-transform: none;
+      font-weight: normal;
+      font-size: 1.1em;
+      padding: 1em 1em 12px 1em;
+      background: $main_menu_item_background;
+
+      &.active {
+        color: $main_menu_active_colour;
+        background-color: $main_menu_active_background;
+        text-shadow: none;
+      }
+      &:hover {
+        color: $main_menu_hover_colour;
+        background-color: $block_background;
+      }
+    }
+
+    // Superfish flyout links
+    ul {
+      li a{
+        color: $link_colour;
+        font-weight: $link_text_decoration;
+        display: block;
+        padding: 0.6em 1em;
+
+        &:hover {
+          background: $menu_child_hover_background;
+          color: $menu_child_hover_colour;
+        }
+      }
+    }
+
+    &.active-trail a {
+      color: $main_menu_active_colour;
+      background-color: $main_menu_active_background;
+      text-shadow: none;
+    }
+  }
+}
+
+/* Set all titles to blue */
+h1, h2, h3, h4,
+#block-views-slideshow-block .views-field-title .field-content a,
+#region-footer-feature .block .content h2 a {
+  @include title-defaults;
+}
+
+/* Some blocks need padding adjustments - backport candidate */
+.field.field-name-field-bean-body p:first-child {
+  margin-top: 0;
+}
+
+.field.field-name-field-bean-body p:last-child {
+  margin-bottom: 0;
+}
+
+.view .views-field-body p:last-child,
+.node-teaser .field-name-body p:last-child {
+  margin-bottom: 0;
+}
+
+#region-sidebar .block,
+#region-sidebar .entity-bean {
+  .content {
+    padding: 0 1em 1em 1em;
+  }
+
+  // Extra styling for menu-blocks
+  &.block-menu-block .content {
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid #ddd;
+      background-color: $block_background;
+      background-image: url("../images/block-li-bg.png");
+      background-position: 20px 12px;
+      background-repeat: no-repeat;
+      list-style: none;
+      list-style-image: none;
+      padding-left: 4px;
+      margin-left: 0;
+
+      &:first-child {
+        border-top: 1px solid #ddd;
+      }
+      &:hover {
+        color: $menu_child_hover_colour;
+        background: $menu_child_hover_background;
+      }
+
+      &.active-trail {
+        background-color: lighten($block_background, 4%);
+
+        a {
+          text-decoration: none;
+        }
+      }
+
+      a {
+        padding: 7px 0;
+      }
+    }
+  }
+
+  // Fix UL styles
+  ul li {
+    background-image: url("../images/block-li-bg.png");
+  }
+}
+
+/* Blocks in the content region get borders on top */
+.block-system-main .gov-front-layout > div {
+  border-top: $box_border;
+}
+
+.views-row {
+  border-bottom: $content_item_border;
+}
+
+/* Clean styles on promos */
+#region-footer-feature {
+  padding-bottom: 0;
+
+  .content {
+    border-top: $box_border;
+  }
+
+  .views-row {
+    border-top: 0 none;
+    border-bottom-style: none;
+  }
+
+}
+
+/* Footer menu region */
+#region-footer-menu {
+  a {
+    color: $footer_text_color;
+  }
+}
+
+/* Footer copyright */
+#zone-footer-copyright {
+  color: $footer_text_color;
+  border-bottom: $content_item_border;
+
+  a {
+    font-weight: normal;
+  }
+}
+
+/* Form styles */
+form {
+  input.form-submit {
+    background: $form_submit_background;
+    color: $form_submit_colour;
+    padding: 0 13px;
+
+    &:hover {
+      background: darken($form_submit_background, 10%);
+    }
+  }
+}
+
+/* Fix height on search form */
+div #region-header-search form input.form-text {
+  height: 27px;
+  border: none;
+}
+
+/* Nicer forms - backport candidate */
+input.form-text,
+.form-textarea-wrapper textarea {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(234, 234, 234);
+  border-top-color: rgb(170, 170, 170);
+  font-size: 1.6em;
+  padding: 3px 5px;
+  outline: none;
+}
+
+input.form-text:focus,
+.form-textarea-wrapper textarea:focus {
+  border-color: #aaa;
+  -webkit-box-shadow: 0px 0px 5px rgb(170, 170, 170);
+  -moz-box-shadow: 0px 0px 5px rgb(170, 170, 170);
+  -o-box-shadow: 0 0 5px rgb(170, 170, 170);
+  box-shadow: 0 0 5px rgb(170, 170, 170);
+}
+
+/* Breadcrumb */
+#breadcrumb {
+
+  border-bottom: $box_border;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.8em;
+
+  a {
+    font-weight: normal;
+  }
+}
+
+.tabbed-nav {
+  ul.primary li a {
+    background: transparent;
+    border: none;
+  }
+  ul.tabs {
+
+    li {
+      border-top: 1px solid $tool_border_colour;
+      border-right: 1px solid $tool_border_colour;
+      border-bottom: 1px solid $tool_border_colour;
+      background: $tool_background;
+
+      a {
+        background-image: none;
+        text-decoration: none;
+        font-size: 1.1em;
+
+        @include title-defaults;
+      }
+
+      &:first-child {
+        border-left: 1px solid $tool_border_colour;
+      }
+      &.active,
+      &:hover {
+        border-top: $box_border;
+        padding-top: 2px;
+        height: 37px;
+        background: rgb(255, 255, 255);
+      }
+      &.active {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+/* Tables - backport candidate */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-left: 1px solid $tool_border_colour;
+  border-right: 1px solid $tool_border_colour;
+  border-bottom: 1px solid $tool_border_colour;
+
+  color: #666;
+}
+
+th {
+  border-bottom: 1px solid $tool_border_colour;
+  background: $tool_background;
+  padding: 0.5em 0.7em;
+  text-align: left; /* LTR */
+  font-size: 1.1em;
+
+  @include title-defaults;
+}
+
+td {
+  border-right: 1px solid $tool_border_colour;
+  border-bottom: 1px solid $tool_border_colour;
+  padding: 0.5em 0.7em;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+tbody {
+  border-top: $box_border;
+}
+
+tr.even,
+tr.odd {
+  background-color: rgb(251, 251, 251);
+  border-bottom: 1px solid 1px solid $tool_border_colour;
+  padding: 0.1em 0.6em;
+}
+
+.block-agov-text-resize-text-resize #resize-buttons {
+  ul li {
+
+    a {
+      overflow: hidden;
+    }
+
+    &.font-small a {
+      background-image: url('../images/resize-sprite.png');
+      background-repeat: none;
+      background-position: 9px 7px;
+
+      @include toggle-colours;
+    }
+    &.font-large a {
+      background-image: url('../images/resize-sprite.png');
+      background-repeat: none;
+      background-position: -20px 7px;
+
+      @include toggle-colours;
+    }
+    &.reset a {
+      background-image: url('../images/resize-sprite.png');
+      background-repeat: none;
+      background-position: -48px 7px;
+
+      @include toggle-colours;
+    }
+  }
+
+
+}

@@ -1,0 +1,1 @@
+This empty directory is required for SASS CSS compliation for sub-themes.
