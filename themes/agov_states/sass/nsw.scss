@@ -1,0 +1,51 @@
+/*
+ * @file
+ * Compass styles for NSW theme.
+ */
+
+// Page background.
+$background_colour: rgb(249, 249, 249);
+$body_background: url('../images/background.png');
+$page_footer_image: url('../images/footer.png');
+$footer_margin_bottom: 50px;
+
+// Typography
+$link_colour: rgb(209, 69, 96);
+$link_font_weight: bold;
+
+$link_text_decoration: underline;
+$link_hover_text_decoration: none;
+
+$title_base_colour: #073a8d;
+
+// Block styles
+$block_background: rgb(241, 242, 243);
+
+// Menu
+$menu_bar_background: url('../images/menu-bg.png');
+
+$main_menu_item_colour: rgb(255, 255, 255);
+$main_menu_item_background: transparent;
+
+$main_menu_active_colour: rgb(0, 0, 0);
+$main_menu_active_background: rgb(255, 255, 255);
+
+$main_menu_hover_colour: rgb(0, 0, 0);
+
+$menu_child_hover_background: rgb(255, 255, 255);
+$menu_child_hover_colour: rgb(64, 64, 64);
+
+// Applies border styling to panel panes, and some regions.
+$box_border: 2px solid rgb(159, 201, 217);
+
+// Applied border styling to content items in views et al
+$content_item_border: 1px solid rgb(221, 221, 221);
+
+// Form colours
+$button_colour: rgb(181, 32, 36);
+$button_text_colour: rgb(255, 255, 255);
+
+// Footer colours
+$footer_text_color: rgb(104, 104, 104);
+
+@import "subtheme_base";
