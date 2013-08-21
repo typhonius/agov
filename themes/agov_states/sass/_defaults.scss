@@ -40,6 +40,11 @@ $block_background: rgb(241, 242, 243) !default;
 $block_title_colour: inherit !default;
 $block_title_background: transparent !default;
 
+// Header
+$header_image: none !default;
+$header_colour: transparent !default;
+$logo_extra_top_padding: 0px !default;
+
 // Menu
 $menu_bar_background: rgb(143, 140, 141) !default;
 
@@ -72,6 +77,10 @@ $form_submit_background: $button_colour !default;
 $form_submit_colour: $button_text_colour !default;
 
 // Footer colours
+// Footer colours
+$region_footer_feature_border_inner: none !default;
+$region_footer_feature_background: transparent !default;
+
 $footer_text_color: rgb(104, 104, 104) !default;
 $footer_copyright_colour: $footer_text_color !default;
 $footer_background: $block_background !default;

@@ -28,10 +28,17 @@ body {
 
 /* Override default styles providing missing images */
 #zone-header-wrapper {
-  background-image: none;
+  background-image: $header_image;
+  background-color: $header_colour;
+  background-position: top;
+  background-repeat: no-repeat;
 
   a {
     color: $link_colour_header;
+  }
+
+  #region-header-logo {
+    padding-top: $logo_extra_top_padding;
   }
 }
 
@@ -229,9 +236,10 @@ h1, h2, h3, h4,
 /* Clean styles on promos */
 #region-footer-feature {
   padding-bottom: 0;
+  background: $region_footer_feature_background;
 
-  .content {
-    border-top: $box_border;
+  .region-inner {
+    border-top: $region_footer_feature_border_inner;
   }
 
   .views-row {
@@ -394,27 +402,30 @@ tr.odd {
   ul li {
 
     a {
+      border: 1px solid rgb(237, 237, 237);
       overflow: hidden;
+      width: 23px;
+      padding-top: 24px;
     }
 
     &.font-small a {
       background-image: url('../images/resize-sprite.png');
       background-repeat: none;
-      background-position: 9px 7px;
+      background-position: 7px 6px;
 
       @include toggle-colours;
     }
     &.font-large a {
       background-image: url('../images/resize-sprite.png');
       background-repeat: none;
-      background-position: -20px 7px;
+      background-position: -21px 6px;
 
       @include toggle-colours;
     }
     &.reset a {
       background-image: url('../images/resize-sprite.png');
       background-repeat: none;
-      background-position: -48px 7px;
+      background-position: -50px 6px;
 
       @include toggle-colours;
     }

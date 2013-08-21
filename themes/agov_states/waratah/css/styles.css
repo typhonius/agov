@@ -31,9 +31,15 @@ body {
 /* Override default styles providing missing images */
 #zone-header-wrapper {
   background-image: none;
+  background-color: transparent;
+  background-position: top;
+  background-repeat: no-repeat;
 }
 #zone-header-wrapper a {
   color: #d14560;
+}
+#zone-header-wrapper #region-header-logo {
+  padding-top: 0px;
 }
 
 #region-sidebar .block ul li,
@@ -214,9 +220,10 @@ h1, h2, h3, h4,
 /* Clean styles on promos */
 #region-footer-feature {
   padding-bottom: 0;
+  background: transparent;
 }
-#region-footer-feature .content {
-  border-top: 2px solid #9fc9d9;
+#region-footer-feature .region-inner {
+  border-top: none;
 }
 #region-footer-feature .views-row {
   border-top: 0 none;
@@ -359,12 +366,15 @@ tr.odd {
 }
 
 .block-agov-text-resize-text-resize #resize-buttons ul li a {
+  border: 1px solid #ededed;
   overflow: hidden;
+  width: 23px;
+  padding-top: 24px;
 }
 .block-agov-text-resize-text-resize #resize-buttons ul li.font-small a {
   background-image: url("../images/resize-sprite.png");
   background-repeat: none;
-  background-position: 9px 7px;
+  background-position: 7px 6px;
   background-color: #bb8082;
 }
 .block-agov-text-resize-text-resize #resize-buttons ul li.font-small a:hover {
@@ -373,7 +383,7 @@ tr.odd {
 .block-agov-text-resize-text-resize #resize-buttons ul li.font-large a {
   background-image: url("../images/resize-sprite.png");
   background-repeat: none;
-  background-position: -20px 7px;
+  background-position: -21px 6px;
   background-color: #bb8082;
 }
 .block-agov-text-resize-text-resize #resize-buttons ul li.font-large a:hover {
@@ -382,7 +392,7 @@ tr.odd {
 .block-agov-text-resize-text-resize #resize-buttons ul li.reset a {
   background-image: url("../images/resize-sprite.png");
   background-repeat: none;
-  background-position: -48px 7px;
+  background-position: -50px 6px;
   background-color: #bb8082;
 }
 .block-agov-text-resize-text-resize #resize-buttons ul li.reset a:hover {
