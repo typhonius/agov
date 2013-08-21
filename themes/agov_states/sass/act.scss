@@ -1,0 +1,60 @@
+/*
+ * @file
+ * Compass styles for
+ */
+
+// Page background.
+$background_colour: rgb(20, 51, 81);
+$body_background: url('../images/background.png');
+$page_footer_image: none;
+$footer_margin_bottom: 50px;
+
+// Typography
+$link_colour: rgb(24, 105, 166);
+$link_font_weight: bold;
+
+$link_text_decoration: underline;
+$link_hover_text_decoration: none;
+
+$link_colour_header: rgb(251, 251, 251);
+
+$title_base_colour: rgb(66, 66, 66);
+
+// Block styles
+$block_background: rgb(237, 237, 237);
+$block_title_colour: rgb(251, 251, 251);
+$block_title_background: linear-gradient(rgb(1, 90, 152), rgb(10, 102, 165));
+
+// Menu
+$menu_bar_background: url('../images/menu-bg.png');
+
+$main_menu_item_colour: rgb(255, 255, 255);
+$main_menu_item_background: transparent;
+
+$main_menu_active_colour: rgb(0, 0, 0);
+$main_menu_active_background: rgb(255, 255, 255);
+
+$main_menu_hover_colour: rgb(0, 0, 0);
+
+$menu_child_hover_background: rgb(255, 255, 255);
+$menu_child_hover_colour: rgb(64, 64, 64);
+
+// Applies border styling to panel panes, and some regions.
+$box_border: 2px solid rgb(94, 95, 95);
+
+// Applied border styling to content items in views et al
+$content_item_border: 1px solid rgb(221, 221, 221);
+
+// Form colours
+$button_colour: rgb(251, 189, 47);
+$button_text_colour: rgb(39, 39, 39) !important;
+
+$toggle_colour: rgb(18, 59, 84);
+$toggle_hover: lighten($toggle_colour, 20%);
+
+// Footer colours
+$footer_background: rgb(41, 41, 41);
+$footer_text_color: rgb(230, 230, 230);
+$footer_copyright_colour: $footer_background;
+
+@import "subtheme_base";
