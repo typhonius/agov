@@ -8,7 +8,7 @@ api = 2
 projects[admin_views][version] = "1.2"
 projects[admin_views][subdir] = "contrib"
 
-projects[bean][version] = "1.2"
+projects[bean][version] = "1.5"
 projects[bean][subdir] = "contrib"
 
 projects[bean_panels][version] = "1.3"
@@ -21,7 +21,7 @@ projects[chosen][version] = 2.0-alpha2
 projects[chosen][subdir] = "contrib"
 projects[chosen][patch][] = http://drupal.org/files/2021639-pin-chosen-26.patch
 
-projects[context][version] = "3.0-beta6"
+projects[context][version] = "3.1"
 projects[context][subdir] = "contrib"
 
 projects[ctools][version] = "1.3"
@@ -65,6 +65,9 @@ projects[link][subdir] = "contrib"
 
 projects[media][version] = "2.0-alpha1"
 projects[media][subdir] = "contrib"
+projects[media][patch][] = "https://drupal.org/files/media.media-browser.1956620-10.patch"
+projects[media][patch][] = "https://drupal.org/files/media.code_.1701914-2.patch"
+projects[media][patch][] = "https://drupal.org/files/media-857362-selection-bookmarking.patch"
 
 projects[media_vimeo][version] = "1.0-beta5"
 projects[media_vimeo][subdir] = "contrib"
@@ -131,6 +134,7 @@ projects[view_unpublished][download][branch] = "7.x-1.x"
 projects[view_unpublished][type] = "module"
 projects[view_unpublished][subdir] = "contrib"
 projects[view_unpublished][patch][] = "https://drupal.org/files/view-unpublished-wb_0.patch"
+projects[view_unpublished][patch][] = "https://drupal.org/files/view_unpublished.code_.1857656-8.patch"
 
 projects[views][version] = "3.7"
 projects[views][subdir] = "contrib"
@@ -158,12 +162,6 @@ projects[defaultcontent][patch][] = "http://drupal.org/files/1611928-fix-alt.pat
 projects[defaultcontent][patch][] = "http://drupal.org/files/1757782-cannot-import-menu-hierarchy-8.patch"
 projects[defaultcontent][patch][] = "http://drupal.org/files/1896232-defaultcontent-nid.patch"
 
-projects[media][download][type] = "git"
-projects[media][download][revision] = ecb93923272336edcbe83db2cb6871ead8188912
-projects[media][download][branch] = 7.x-2.x
-projects[media][type] = "module"
-projects[media][subdir] = "contrib"
-
 projects[search_config][version] = "1.0"
 projects[search_config][subdir] = "contrib"
 
@@ -179,6 +177,7 @@ projects[workbench_moderation][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][patch][] = "http://drupal.org/files/1954910-wysiwyg-empty-after-installation_fixed.patch"
+projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg-857362-selection-bookmarking.patch"
 
 projects[wysiwyg_filter][version] = "1.6-rc2"
 projects[wysiwyg_filter][subdir] = "contrib"
@@ -188,7 +187,7 @@ projects[wysiwyg_filter][subdir] = "contrib"
 projects[flood_control][version] = "1.0"
 projects[flood_control][subdir] = "contrib"
 
-projects[password_policy][version] = "1.4"
+projects[password_policy][version] = "1.5"
 projects[password_policy][subdir] = "contrib"
 
 projects[login_security][version] = "1.4"
@@ -207,7 +206,7 @@ projects[agls][patch][] = "https://drupal.org/files/1998728-agls-node-summary-3.
 ; Libraries
 
 libraries[superfish][download][type] = "get"
-libraries[superfish][download][url] = "https://github.com/mehrpadin/Superfish-for-Drupal/archive/master.zip"
+libraries[superfish][download][url] = "https://github.com/mehrpadin/Superfish-for-Drupal/archive/1.x.zip"
 libraries[superfish][directory_name] = "superfish"
 libraries[superfish][type] = "library"
 
