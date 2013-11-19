@@ -25,7 +25,7 @@ define('AGOV_ADMIN_ROLE_ID', '3');
  */
 function agov_install() {
 
-  ini_set('max_execution_time', 300);
+  ini_set('max_execution_time', '300');
 
   // Ensure the beans feature is reverted.
   $revert = array('agov_beans');
@@ -340,7 +340,7 @@ function _agov_date_formats() {
     'agov_month_day_year' => array(
       'format' => array(
         'type' => 'agov_month_day_year',
-        'format' => 'F j, Y',
+        'format' => 'j F Y',
         'locked' => TRUE,
         'is_new' => TRUE,
       ),

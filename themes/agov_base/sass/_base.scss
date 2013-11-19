@@ -28,7 +28,7 @@ $font-body:           $arial;
 $font-monospace:      sans-serif;
 
 $base-font-size:    13px; // The font size set on the root html element.
-$base-line-height:  18px; // This line-height determines the basic unit of vertical rhythm.
+$base-line-height:  $base-font-size * 1.4; // This line-height determines the basic unit of vertical rhythm.
 
 $h1-font-size:      34px;
 $h2-font-size:      $h1-font-size * 0.8;
@@ -39,6 +39,9 @@ $h6-font-size:      $base-font-size;
 
 $font-size-small:   12px;
 $font-size-small-l: 16px;
+
+$heading_leading: 1;
+$heading_padding: 0.5;
 
 @import "breakpoint";  // Add Compass.
 @import "compass";  // Add Compass.
