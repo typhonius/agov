@@ -1,0 +1,9 @@
+.theme-switch {
+  position: fixed;
+  background: black;
+  top: 50%;
+  padding: 20px;
+  li {
+    &:hover a, &.active a { color: orange; }
+  }
+}

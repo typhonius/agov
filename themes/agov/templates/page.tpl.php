@@ -83,4 +83,16 @@
 
 </div>
 
+<?php // if ($theme_switch): ?>
+  <div class="theme-switch">
+    <ul class="theme-switch--list">
+      <li class="theme-switch--theme switch-default"><a href="#">default</a></li>
+      <li class="theme-switch--theme switch-nsw"><a href="#">nsw</a></li>
+      <li class="theme-switch--theme switch-vic"><a href="#">vic</a></li>
+      <li class="theme-switch--theme switch-nt"><a href="#">nt</a></li>
+    </ul>
+  </div>
+<?php // endif; ?>
+
+
 <?php print render($page['bottom']); ?>

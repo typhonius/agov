@@ -45,4 +45,48 @@ Drupal.behaviors.responsiveSlides = {
 };
 
 
+Drupal.behaviors.switchTheme = {
+    attach: function(context, settings) {
+
+
+        // Retrieve the object from storage
+        var retrievedObject = localStorage.getItem('testObject');
+        currentTheme = JSON.parse(retrievedObject);
+
+        currentThemeClass = currentTheme.current_theme;
+
+        if(currentThemeClass) {
+            $("body").addClass("theme-" + currentThemeClass);
+            $(".theme-switch li.switch-" + currentThemeClass).addClass('active');
+        }
+
+        $(".theme-switch a").click(function() {
+
+            theme_class = $(this).text();
+
+            $(".theme-switch li").removeClass('active');
+
+            $("body").removeClass (function (index, css) {
+                return (css.match (/\btheme-\S+/g) || []).join(' ');
+            });
+
+            $("body").addClass("theme-" + theme_class);
+
+            var $parent = $(this).parent();
+            if (!$parent.hasClass('active')) {
+                $parent.addClass('active');
+            }
+            var testObject = { 'current_theme': theme_class };
+
+            // Put the object into storage
+            localStorage.setItem('testObject', JSON.stringify(testObject));
+
+            e.preventDefault();
+
+        });
+
+    }
+};
+
+
 })(jQuery, Drupal, this, this.document);
