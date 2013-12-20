@@ -1,8 +1,3 @@
-$legacy-support-for-ie6: false;
-$legacy-support-for-ie7: false;
-$legacy-support-for-ie8: true;
-
-
 $arial:             Arial, sans-serif;
 $base-font-family:  $arial; // The font family set on the html element.
 
@@ -43,3 +38,10 @@ $tabs-border: #bbb;
 
 // Now we add our custom helper mixins.
 @import "mixins";
+
+
+// prevent errors in zen-grids
+$box-sizing-polyfill-path: "" !default;
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: false;

@@ -1,0 +1,48 @@
+$themes: (
+  default: (
+    font: arial,
+    headerFont: '"OpenSansSemibold",Arial,sans-serif',
+    linkColor: #C53100,
+    colorPrimary: #006893,
+    colorSecondary: #020202
+  ),
+  nsw: (
+    font: arial,
+    headerFont: '"OpenSansSemibold",Arial,sans-serif',
+    linkColor: #c60c30,
+    colorPrimary: #133880,
+    colorSecondary: #133880
+  ),
+  nt: (
+    font: arial,
+    headerFont: '"OpenSansSemibold",Arial,sans-serif',
+    linkColor: #084887,
+    colorPrimary: #500107,
+    colorSecondary: #b45c30
+  ),
+  vic: (
+    font: arial,
+    headerFont: '"OpenSansSemibold",Arial,sans-serif',
+    linkColor: #0073a4,
+    colorPrimary: #003467,
+    colorSecondary: #605e5b
+  ),
+);
+
+@each $theme, $palette in $themes {
+  @if $theme == 'default'  {
+    body {
+      @include theme($theme, $palette);
+    }
+  } @else {
+    body.theme-#{$theme} {
+      @include theme($theme, $palette);
+    }
+  }
+}
+
+body.theme-nsw {
+  #header {
+    background: white;
+  }
+}

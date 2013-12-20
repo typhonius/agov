@@ -1,9 +1,37 @@
 .theme-switch {
   position: fixed;
-  background: black;
-  top: 50%;
+  top: 25%;
   padding: 20px;
   li {
     &:hover a, &.active a { color: orange; }
   }
 }
+
+.theme-switch li {
+  a {
+    @include hide-text;
+
+    display: block;
+    height: 100px;
+    width:100px;
+    @include border-radius(50px);
+    border: solid 2px grey;
+  }
+  &:hover a, &.active a {
+    border: solid 2px orange;
+  }
+}
+
+$themes: default, nsw, nt, vic;
+
+@mixin theme-switch-cc($theme) {
+  .switch-#{$theme} a {
+    $background-image: "../images/theme-switcher/ss-" + $theme + ".png";
+    background: image-url($background-image);
+  }
+}
+
+@each $theme in $themes {
+  @include theme-switch-cc($theme);
+}
+

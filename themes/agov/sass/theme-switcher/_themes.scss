@@ -1,0 +1,68 @@
+
+@function match($haystack, $needle) {
+  @each $item in $haystack {
+    $index: index($item, $needle);
+    @if $index {
+      $return: if($index == 1, 2, $index);
+      @return nth($item, $return);
+    }
+  }
+  @return false;
+}
+
+
+@mixin theme($theme, $palette) {
+  $font: match($palette, 'font');
+  $headerFont: unquote(match($palette, 'headerFont')); // font-family list must be quoted so unquote
+  $linkColor: unquote(match($palette, 'linkColor')); // font-family list must be quoted so unquote
+
+  $colorPrimary: match($palette, 'colorPrimary');
+  $colorPrimary--light: lighten($colorPrimary, 10%);
+
+  $colorSecondary: match($palette, 'colorSecondary');
+  $colorSecondary--light: lighten($colorSecondary, 5%);
+
+  // Set global font-family
+  font-family: $font;
+  // Set fontHeaders
+  h1, h2, h3, h4, h5 { font-family: $headerFont; }
+  // Set global link colors
+  a {
+    @include link-colors($linkColor, black, $linkColor, $linkColor);
+  }
+
+  // Header
+  #header {
+    background: $colorPrimary;
+    @include background(
+        image-url("theme-nsw-bg-header.png"),
+        linear-gradient($colorPrimary--light, $colorPrimary)
+    );
+  }
+
+  .header__logo {
+    @include hide-text;
+    $backgound-image: "logo-" + $theme + ".png";
+    background: image-url($backgound-image);
+    background-repeat: no-repeat;
+    width: image-width($backgound-image);
+    height: image-height($backgound-image);
+    display: block;
+  }
+
+  // Navigation
+  .region-navigation {
+    @include background(
+        linear-gradient($colorSecondary--light, $colorSecondary)
+    );
+  }
+
+  // Blocks
+  .sidebar .block__title {
+    background: $colorPrimary;
+    @include background(
+        linear-gradient($colorPrimary--light, $colorPrimary)
+    );
+  }
+
+}

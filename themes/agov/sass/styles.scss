@@ -36,6 +36,11 @@
 // Todo: pull out tinynav state and place in states. Then place vendor stuff first.
 @import "vendor/*";
 
+// Themes
+@import "theme-switcher/themes";
+@import "theme-switcher/palettes";
+@import "theme-switcher/themes/*";
+
 // Optionally, add your own components here.
 @import "print";
 

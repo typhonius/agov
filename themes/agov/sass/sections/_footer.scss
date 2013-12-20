@@ -22,7 +22,7 @@ footer .block { margin: 0; }
 .view-footer-teaser {
   padding-bottom: rhythm(1);
   @include bp-nq($medium) {
-    $zen-column-count:  3;
+    $zen-column-count:  3 !global;
     @include zen-grid-container();
     .views-row-1 { @include zen-clear(); @include zen-grid-item(1, 1); padding-left: 0px; }
     .views-row-2 { @include zen-grid-item(1, 2);}
