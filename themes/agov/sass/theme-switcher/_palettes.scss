@@ -1,31 +1,37 @@
 $themes: (
   default: (
     font: arial,
+    font-color: #5F5F5F,
     headerFont: '"OpenSansSemibold",Arial,sans-serif',
-    linkColor: #C53100,
     colorPrimary: #006893,
-    colorSecondary: #020202
+    colorSecondary: #020202,
+    colorTertiary: #C53100,
   ),
   nsw: (
     font: arial,
+    font-color: #5F5F5F,
     headerFont: '"OpenSansSemibold",Arial,sans-serif',
-    linkColor: #c60c30,
     colorPrimary: #133880,
-    colorSecondary: #133880
+    colorSecondary: #133880,
+    colorTertiary: #c60c30,
+    headerBg: #ffffff,
+    bodyBg: #ffffff,
   ),
   nt: (
     font: arial,
+    font-color: #5F5F5F,
     headerFont: '"OpenSansSemibold",Arial,sans-serif',
-    linkColor: #084887,
     colorPrimary: #500107,
-    colorSecondary: #b45c30
+    colorSecondary: #b45c30,
+    colorTertiary: #084887,
   ),
   vic: (
     font: arial,
+    font-color: #5F5F5F,
     headerFont: '"OpenSansSemibold",Arial,sans-serif',
-    linkColor: #0073a4,
     colorPrimary: #003467,
-    colorSecondary: #605e5b
+    colorSecondary: #605e5b,
+    colorTertiary: #0073a4,
   ),
 );
 

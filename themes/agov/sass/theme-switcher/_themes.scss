@@ -13,8 +13,8 @@
 
 @mixin theme($theme, $palette) {
   $font: match($palette, 'font');
+  $font-color: match($palette, 'font-color');
   $headerFont: unquote(match($palette, 'headerFont')); // font-family list must be quoted so unquote
-  $linkColor: unquote(match($palette, 'linkColor')); // font-family list must be quoted so unquote
 
   $colorPrimary: match($palette, 'colorPrimary');
   $colorPrimary--light: lighten($colorPrimary, 10%);
@@ -22,18 +22,37 @@
   $colorSecondary: match($palette, 'colorSecondary');
   $colorSecondary--light: lighten($colorSecondary, 5%);
 
+  $colorTertiary: match($palette, 'colorTertiary'); // font-family list must be quoted so unquote
+
+  /* Overrides */
+  $headerBg: match($palette, 'headerBg');
+
+
   // Set global font-family
   font-family: $font;
+
+  $bodyBg: match($palette, 'headerBg');
+  background: $bodyBg;
+  @if $bodyBg {
+    $bodyBg--light: lighten($bodyBg, 5%);
+    @include background(
+        linear-gradient($bodyBg, $bodyBg--light)
+    );
+  }
+
+
+
   // Set fontHeaders
   h1, h2, h3, h4, h5 { font-family: $headerFont; }
+
   // Set global link colors
   a {
-    @include link-colors($linkColor, black, $linkColor, $linkColor);
+    @include link-colors($colorTertiary, $colorTertiary, $colorTertiary, $colorTertiary);
   }
 
   // Header
   #header {
-    background: $colorPrimary;
+    @if $headerBg { background: $colorPrimary; } @else { background: $colorPrimary; }
     @include background(
         image-url("theme-nsw-bg-header.png"),
         linear-gradient($colorPrimary--light, $colorPrimary)
@@ -50,6 +69,18 @@
     display: block;
   }
 
+  .header__secondary-menu a {
+    @if $headerBg != false {
+      @include link-colors(contrast-color($headerBg), contrast-color($headerBg), contrast-color($headerBg), contrast-color($headerBg));
+    } @else {
+      @include link-colors(contrast-color($colorPrimary), contrast-color($colorPrimary), contrast-color($colorPrimary), contrast-color($colorPrimary));
+    }
+  }
+
+  .block-search .form-submit {
+    background-color: $colorSecondary;
+  }
+
   // Navigation
   .region-navigation {
     @include background(
@@ -63,6 +94,14 @@
     @include background(
         linear-gradient($colorPrimary--light, $colorPrimary)
     );
+  }
+
+  // Slideshow
+  .rslides_tabs li {
+    a { color: $font-color }
+  }
+  .rslides_tabs li.rslides_here a {
+    color: contrast-color($font-color);
   }
 
 }

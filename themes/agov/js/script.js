@@ -51,16 +51,20 @@ Drupal.behaviors.switchTheme = {
 
         // Retrieve the object from storage
         var retrievedObject = localStorage.getItem('testObject');
-        currentTheme = JSON.parse(retrievedObject);
+        var currentTheme = JSON.parse(retrievedObject);
 
-        currentThemeClass = currentTheme.current_theme;
+        if (currentTheme == null) {
+            currentThemeClass = "default";
+        } else {
+            currentThemeClass = currentTheme.current_theme;
+        }
 
         if(currentThemeClass) {
             $("body").addClass("theme-" + currentThemeClass);
             $(".theme-switch li.switch-" + currentThemeClass).addClass('active');
         }
 
-        $(".theme-switch a").click(function() {
+        $(".theme-switch a").click(function(e) {
 
             theme_class = $(this).text();
 

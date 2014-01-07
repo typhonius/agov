@@ -3018,15 +3018,17 @@ select#tinynav1 {
   height: 27px;
 }
 
-/* line 34, ../sass/theme-switcher/_palettes.scss */
+/* line 40, ../sass/theme-switcher/_palettes.scss */
 body {
+  /* Overrides */
   font-family: arial;
+  background: false;
 }
-/* line 28, ../sass/theme-switcher/_themes.scss */
+/* line 46, ../sass/theme-switcher/_themes.scss */
 body h1, body h2, body h3, body h4, body h5 {
   font-family: "OpenSansSemibold",Arial,sans-serif;
 }
-/* line 30, ../sass/theme-switcher/_themes.scss */
+/* line 49, ../sass/theme-switcher/_themes.scss */
 body a {
   color: #c53100;
 }
@@ -3036,13 +3038,13 @@ body a:visited {
 }
 /* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
 body a:hover {
-  color: black;
+  color: #c53100;
 }
 /* line 27, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
 body a:active {
   color: #c53100;
 }
-/* line 35, ../sass/theme-switcher/_themes.scss */
+/* line 54, ../sass/theme-switcher/_themes.scss */
 body #header {
   background: #006893;
   background: url('../images/theme-nsw-bg-header.png?1387329971'), -moz-linear-gradient(#008cc6, #006893);
@@ -3050,7 +3052,7 @@ body #header {
   background: url('../images/theme-nsw-bg-header.png?1387329971'), -webkit-linear-gradient(#008cc6, #006893);
   background: url('../images/theme-nsw-bg-header.png?1387329971'), linear-gradient(#008cc6, #006893);
 }
-/* line 43, ../sass/theme-switcher/_themes.scss */
+/* line 62, ../sass/theme-switcher/_themes.scss */
 body .header__logo {
   text-indent: -119988px;
   overflow: hidden;
@@ -3062,14 +3064,34 @@ body .header__logo {
   height: 70px;
   display: block;
 }
-/* line 54, ../sass/theme-switcher/_themes.scss */
+/* line 72, ../sass/theme-switcher/_themes.scss */
+body .header__secondary-menu a {
+  color: white;
+}
+/* line 18, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body .header__secondary-menu a:visited {
+  color: white;
+}
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body .header__secondary-menu a:hover {
+  color: white;
+}
+/* line 27, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body .header__secondary-menu a:active {
+  color: white;
+}
+/* line 80, ../sass/theme-switcher/_themes.scss */
+body .block-search .form-submit {
+  background-color: #020202;
+}
+/* line 85, ../sass/theme-switcher/_themes.scss */
 body .region-navigation {
   background: -moz-linear-gradient(#0f0f0f, #020202);
   background: -o-linear-gradient(#0f0f0f, #020202);
   background: -webkit-linear-gradient(#0f0f0f, #020202);
   background: linear-gradient(#0f0f0f, #020202);
 }
-/* line 61, ../sass/theme-switcher/_themes.scss */
+/* line 92, ../sass/theme-switcher/_themes.scss */
 body .sidebar .block__title {
   background: #006893;
   background: -moz-linear-gradient(#008cc6, #006893);
@@ -3077,16 +3099,30 @@ body .sidebar .block__title {
   background: -webkit-linear-gradient(#008cc6, #006893);
   background: linear-gradient(#008cc6, #006893);
 }
-
-/* line 38, ../sass/theme-switcher/_palettes.scss */
-body.theme-nsw {
-  font-family: arial;
+/* line 101, ../sass/theme-switcher/_themes.scss */
+body .rslides_tabs li a {
+  color: #5f5f5f;
 }
-/* line 28, ../sass/theme-switcher/_themes.scss */
+/* line 103, ../sass/theme-switcher/_themes.scss */
+body .rslides_tabs li.rslides_here a {
+  color: white;
+}
+
+/* line 44, ../sass/theme-switcher/_palettes.scss */
+body.theme-nsw {
+  /* Overrides */
+  font-family: arial;
+  background: white;
+  background: -moz-linear-gradient(#ffffff, #ffffff);
+  background: -o-linear-gradient(#ffffff, #ffffff);
+  background: -webkit-linear-gradient(#ffffff, #ffffff);
+  background: linear-gradient(#ffffff, #ffffff);
+}
+/* line 46, ../sass/theme-switcher/_themes.scss */
 body.theme-nsw h1, body.theme-nsw h2, body.theme-nsw h3, body.theme-nsw h4, body.theme-nsw h5 {
   font-family: "OpenSansSemibold",Arial,sans-serif;
 }
-/* line 30, ../sass/theme-switcher/_themes.scss */
+/* line 49, ../sass/theme-switcher/_themes.scss */
 body.theme-nsw a {
   color: #c60c30;
 }
@@ -3096,13 +3132,13 @@ body.theme-nsw a:visited {
 }
 /* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
 body.theme-nsw a:hover {
-  color: black;
+  color: #c60c30;
 }
 /* line 27, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
 body.theme-nsw a:active {
   color: #c60c30;
 }
-/* line 35, ../sass/theme-switcher/_themes.scss */
+/* line 54, ../sass/theme-switcher/_themes.scss */
 body.theme-nsw #header {
   background: #133880;
   background: url('../images/theme-nsw-bg-header.png?1387329971'), -moz-linear-gradient(#1a4bac, #133880);
@@ -3110,7 +3146,7 @@ body.theme-nsw #header {
   background: url('../images/theme-nsw-bg-header.png?1387329971'), -webkit-linear-gradient(#1a4bac, #133880);
   background: url('../images/theme-nsw-bg-header.png?1387329971'), linear-gradient(#1a4bac, #133880);
 }
-/* line 43, ../sass/theme-switcher/_themes.scss */
+/* line 62, ../sass/theme-switcher/_themes.scss */
 body.theme-nsw .header__logo {
   text-indent: -119988px;
   overflow: hidden;
@@ -3122,14 +3158,34 @@ body.theme-nsw .header__logo {
   height: 78px;
   display: block;
 }
-/* line 54, ../sass/theme-switcher/_themes.scss */
+/* line 72, ../sass/theme-switcher/_themes.scss */
+body.theme-nsw .header__secondary-menu a {
+  color: black;
+}
+/* line 18, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body.theme-nsw .header__secondary-menu a:visited {
+  color: black;
+}
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body.theme-nsw .header__secondary-menu a:hover {
+  color: black;
+}
+/* line 27, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body.theme-nsw .header__secondary-menu a:active {
+  color: black;
+}
+/* line 80, ../sass/theme-switcher/_themes.scss */
+body.theme-nsw .block-search .form-submit {
+  background-color: #133880;
+}
+/* line 85, ../sass/theme-switcher/_themes.scss */
 body.theme-nsw .region-navigation {
   background: -moz-linear-gradient(#164296, #133880);
   background: -o-linear-gradient(#164296, #133880);
   background: -webkit-linear-gradient(#164296, #133880);
   background: linear-gradient(#164296, #133880);
 }
-/* line 61, ../sass/theme-switcher/_themes.scss */
+/* line 92, ../sass/theme-switcher/_themes.scss */
 body.theme-nsw .sidebar .block__title {
   background: #133880;
   background: -moz-linear-gradient(#1a4bac, #133880);
@@ -3137,16 +3193,26 @@ body.theme-nsw .sidebar .block__title {
   background: -webkit-linear-gradient(#1a4bac, #133880);
   background: linear-gradient(#1a4bac, #133880);
 }
-
-/* line 38, ../sass/theme-switcher/_palettes.scss */
-body.theme-nt {
-  font-family: arial;
+/* line 101, ../sass/theme-switcher/_themes.scss */
+body.theme-nsw .rslides_tabs li a {
+  color: #5f5f5f;
 }
-/* line 28, ../sass/theme-switcher/_themes.scss */
+/* line 103, ../sass/theme-switcher/_themes.scss */
+body.theme-nsw .rslides_tabs li.rslides_here a {
+  color: white;
+}
+
+/* line 44, ../sass/theme-switcher/_palettes.scss */
+body.theme-nt {
+  /* Overrides */
+  font-family: arial;
+  background: false;
+}
+/* line 46, ../sass/theme-switcher/_themes.scss */
 body.theme-nt h1, body.theme-nt h2, body.theme-nt h3, body.theme-nt h4, body.theme-nt h5 {
   font-family: "OpenSansSemibold",Arial,sans-serif;
 }
-/* line 30, ../sass/theme-switcher/_themes.scss */
+/* line 49, ../sass/theme-switcher/_themes.scss */
 body.theme-nt a {
   color: #084887;
 }
@@ -3156,13 +3222,13 @@ body.theme-nt a:visited {
 }
 /* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
 body.theme-nt a:hover {
-  color: black;
+  color: #084887;
 }
 /* line 27, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
 body.theme-nt a:active {
   color: #084887;
 }
-/* line 35, ../sass/theme-switcher/_themes.scss */
+/* line 54, ../sass/theme-switcher/_themes.scss */
 body.theme-nt #header {
   background: #500107;
   background: url('../images/theme-nsw-bg-header.png?1387329971'), -moz-linear-gradient(#82020b, #500107);
@@ -3170,7 +3236,7 @@ body.theme-nt #header {
   background: url('../images/theme-nsw-bg-header.png?1387329971'), -webkit-linear-gradient(#82020b, #500107);
   background: url('../images/theme-nsw-bg-header.png?1387329971'), linear-gradient(#82020b, #500107);
 }
-/* line 43, ../sass/theme-switcher/_themes.scss */
+/* line 62, ../sass/theme-switcher/_themes.scss */
 body.theme-nt .header__logo {
   text-indent: -119988px;
   overflow: hidden;
@@ -3182,14 +3248,34 @@ body.theme-nt .header__logo {
   height: 44px;
   display: block;
 }
-/* line 54, ../sass/theme-switcher/_themes.scss */
+/* line 72, ../sass/theme-switcher/_themes.scss */
+body.theme-nt .header__secondary-menu a {
+  color: white;
+}
+/* line 18, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body.theme-nt .header__secondary-menu a:visited {
+  color: white;
+}
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body.theme-nt .header__secondary-menu a:hover {
+  color: white;
+}
+/* line 27, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body.theme-nt .header__secondary-menu a:active {
+  color: white;
+}
+/* line 80, ../sass/theme-switcher/_themes.scss */
+body.theme-nt .block-search .form-submit {
+  background-color: #b45c30;
+}
+/* line 85, ../sass/theme-switcher/_themes.scss */
 body.theme-nt .region-navigation {
   background: -moz-linear-gradient(#c86635, #b45c30);
   background: -o-linear-gradient(#c86635, #b45c30);
   background: -webkit-linear-gradient(#c86635, #b45c30);
   background: linear-gradient(#c86635, #b45c30);
 }
-/* line 61, ../sass/theme-switcher/_themes.scss */
+/* line 92, ../sass/theme-switcher/_themes.scss */
 body.theme-nt .sidebar .block__title {
   background: #500107;
   background: -moz-linear-gradient(#82020b, #500107);
@@ -3197,16 +3283,26 @@ body.theme-nt .sidebar .block__title {
   background: -webkit-linear-gradient(#82020b, #500107);
   background: linear-gradient(#82020b, #500107);
 }
-
-/* line 38, ../sass/theme-switcher/_palettes.scss */
-body.theme-vic {
-  font-family: arial;
+/* line 101, ../sass/theme-switcher/_themes.scss */
+body.theme-nt .rslides_tabs li a {
+  color: #5f5f5f;
 }
-/* line 28, ../sass/theme-switcher/_themes.scss */
+/* line 103, ../sass/theme-switcher/_themes.scss */
+body.theme-nt .rslides_tabs li.rslides_here a {
+  color: white;
+}
+
+/* line 44, ../sass/theme-switcher/_palettes.scss */
+body.theme-vic {
+  /* Overrides */
+  font-family: arial;
+  background: false;
+}
+/* line 46, ../sass/theme-switcher/_themes.scss */
 body.theme-vic h1, body.theme-vic h2, body.theme-vic h3, body.theme-vic h4, body.theme-vic h5 {
   font-family: "OpenSansSemibold",Arial,sans-serif;
 }
-/* line 30, ../sass/theme-switcher/_themes.scss */
+/* line 49, ../sass/theme-switcher/_themes.scss */
 body.theme-vic a {
   color: #0073a4;
 }
@@ -3216,13 +3312,13 @@ body.theme-vic a:visited {
 }
 /* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
 body.theme-vic a:hover {
-  color: black;
+  color: #0073a4;
 }
 /* line 27, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
 body.theme-vic a:active {
   color: #0073a4;
 }
-/* line 35, ../sass/theme-switcher/_themes.scss */
+/* line 54, ../sass/theme-switcher/_themes.scss */
 body.theme-vic #header {
   background: #003467;
   background: url('../images/theme-nsw-bg-header.png?1387329971'), -moz-linear-gradient(#004e9a, #003467);
@@ -3230,7 +3326,7 @@ body.theme-vic #header {
   background: url('../images/theme-nsw-bg-header.png?1387329971'), -webkit-linear-gradient(#004e9a, #003467);
   background: url('../images/theme-nsw-bg-header.png?1387329971'), linear-gradient(#004e9a, #003467);
 }
-/* line 43, ../sass/theme-switcher/_themes.scss */
+/* line 62, ../sass/theme-switcher/_themes.scss */
 body.theme-vic .header__logo {
   text-indent: -119988px;
   overflow: hidden;
@@ -3242,14 +3338,34 @@ body.theme-vic .header__logo {
   height: 63px;
   display: block;
 }
-/* line 54, ../sass/theme-switcher/_themes.scss */
+/* line 72, ../sass/theme-switcher/_themes.scss */
+body.theme-vic .header__secondary-menu a {
+  color: white;
+}
+/* line 18, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body.theme-vic .header__secondary-menu a:visited {
+  color: white;
+}
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body.theme-vic .header__secondary-menu a:hover {
+  color: white;
+}
+/* line 27, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/typography/links/_link-colors.scss */
+body.theme-vic .header__secondary-menu a:active {
+  color: white;
+}
+/* line 80, ../sass/theme-switcher/_themes.scss */
+body.theme-vic .block-search .form-submit {
+  background-color: #605e5b;
+}
+/* line 85, ../sass/theme-switcher/_themes.scss */
 body.theme-vic .region-navigation {
   background: -moz-linear-gradient(#6d6b67, #605e5b);
   background: -o-linear-gradient(#6d6b67, #605e5b);
   background: -webkit-linear-gradient(#6d6b67, #605e5b);
   background: linear-gradient(#6d6b67, #605e5b);
 }
-/* line 61, ../sass/theme-switcher/_themes.scss */
+/* line 92, ../sass/theme-switcher/_themes.scss */
 body.theme-vic .sidebar .block__title {
   background: #003467;
   background: -moz-linear-gradient(#004e9a, #003467);
@@ -3257,8 +3373,16 @@ body.theme-vic .sidebar .block__title {
   background: -webkit-linear-gradient(#004e9a, #003467);
   background: linear-gradient(#004e9a, #003467);
 }
+/* line 101, ../sass/theme-switcher/_themes.scss */
+body.theme-vic .rslides_tabs li a {
+  color: #5f5f5f;
+}
+/* line 103, ../sass/theme-switcher/_themes.scss */
+body.theme-vic .rslides_tabs li.rslides_here a {
+  color: white;
+}
 
-/* line 45, ../sass/theme-switcher/_palettes.scss */
+/* line 51, ../sass/theme-switcher/_palettes.scss */
 body.theme-nsw #header {
   background: white;
 }
