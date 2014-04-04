@@ -309,3 +309,11 @@ function agov_core_entity_info_alter(&$entity_info) {
     'custom settings' => TRUE,
   );
 }
+
+/**
+ * Implements hook_menu_alter().
+ */
+function agov_core_menu_alter(&$items) {
+  // Remove display suite 'Manage Display' tabs on nodes.
+  unset($items['node/%node/display']);
+}
