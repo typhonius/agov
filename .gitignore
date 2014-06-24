@@ -5,6 +5,9 @@ vendor/*
 build/*
 build.properties
 
+# Exclude node modules
+node_modules/*
+
 # Exclude files added by drush make
 libraries/*
 modules/contrib
