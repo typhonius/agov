@@ -40,6 +40,30 @@ phing login
 
 You should point your apache vhost configuration to `drupal`.
 
+### Developing
+
+For front-end development tasks, you can run _gulp_ to compile sass etc.
+
+To install node.js using home brew, do the following:
+
+```
+brew install node
+```
+
+To install gulp and plugins, type:
+
+```
+npm install
+```
+
+It will read from the package.json file and install into _node_modules_.
+
+To run the default gulp task type:
+
+```
+gulp
+```
+
 ### Testing
 
 aGov uses behat for its functional tests. To run behat tests, use the following:
