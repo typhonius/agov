@@ -161,6 +161,9 @@ projects[webform][subdir] = "contrib"
 projects[workbench][version] = "1.2"
 projects[workbench][subdir] = "contrib"
 
+projects[xautoload][version] = "4.5"
+projects[xautoload][subdir] = "contrib"
+
 projects[xmlsitemap][version] = "2.0-rc2"
 projects[xmlsitemap][subdir] = "contrib"
 
