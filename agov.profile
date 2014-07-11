@@ -3,10 +3,35 @@
  * @file
  * The aGov install profile modules file.
  *
- * @copyright Copyright(c) 2012 PreviousNext
+ * @copyright Copyright(c) 2014 PreviousNext
  * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
  * @author Chris Skene chris at previousnext.com.au
  */
+
+/**
+ * Define the default twitter widget ID.
+ */
+define('AGOV_TWITTER_WIDGET_ID', '360632154172030979');
+
+/**
+ * Define the default install theme.
+ */
+define('AGOV_INSTALL_DEFAULT_THEME', 'agov_zen');
+
+/**
+ * Define a default theme constant
+ */
+define('AGOV_DEFAULT_THEME', 'agov_zen');
+
+/**
+ * Define the default admin theme.
+ */
+define('AGOV_DEFAULT_ADMIN_THEME', 'seven');
+
+/**
+ * Define a default admin role ID.
+ */
+define('AGOV_ADMIN_ROLE_ID', '3');
 
 /**
  * Implements hook_install_configure_form_alter().

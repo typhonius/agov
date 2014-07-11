@@ -4,19 +4,10 @@
  * @file
  * The install file for the aGov distribution.
  *
- * @copyright Copyright(c) 2012 PreviousNext
+ * @copyright Copyright(c) 2014 PreviousNext
  * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
  * @author Chris Skene chris at previousnext.com.au
  */
-
-/**
- * Define a default theme constant
- */
-define('AGOV_TWITTER_WIDGET_ID', '360632154172030979');
-define('AGOV_INSTALL_DEFAULT_THEME', 'agov_zen');
-define('AGOV_DEFAULT_THEME', 'agov_zen');
-define('AGOV_DEFAULT_ADMIN_THEME', 'seven');
-define('AGOV_ADMIN_ROLE_ID', '3');
 
 /**
  * Implements hook_install().
