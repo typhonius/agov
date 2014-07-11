@@ -14,6 +14,60 @@ namespace Drupal\agov\Profile;
 class StandardProfile extends MinimalProfile {
 
   /**
+   * Install the Profile.
+   *
+   * The Installer will call this to run the installation process.
+   */
+  public function installProfile() {
+
+    // Ensure the beans feature is reverted.
+    $revert = array('agov_beans');
+    $this->_agov_features_revert($revert);
+
+    // Configure default text formats and basic permissions.
+    $this->_agov_default_formats_and_permissions();
+
+    // Configure basic roles.
+    $this->_agov_create_basic_roles_perms();
+
+    // Set default front-end and admin themes.
+    $this->_agov_set_default_themes();
+
+    // Set up default terms.
+    $this->_agov_enable_vocabs();
+
+    // Create additional date formats.
+    $this->_agov_date_formats();
+
+    // Setup some default blocks.
+    $this->_agov_default_blocks();
+
+    // Set up twitter block.
+    $this->_agov_twitter_block();
+
+    // Set some PathAuto settings.
+    $this->_agov_default_variables();
+
+    // Enable full image display mode.
+    $this->_agov_install_full_image_display();
+
+    // Set default menu items.
+    $this->_agov_set_menu();
+
+    // Set default tags.
+    $this->_agov_default_tags();
+
+    // Set the password policy.
+    $this->_agov_password_policy();
+
+    // Set defaults for the contact form.
+    $this->_agov_contact_form_defaults();
+
+    // Clean up after install.
+    $this->agov_cleanup();
+  }
+
+  /**
    * Create basic roles.
    */
   public function _agov_create_basic_roles_perms() {

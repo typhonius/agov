@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Contains a ProfileInterface.
  *
  * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
  * @author Chris Skene chris at previousnext dot com dot au
@@ -10,22 +11,18 @@
 
 namespace Drupal\agov\Profile;
 
-use Drupal\agov\Profile\ProfileInterface;
-
 /**
- * Class BaseProfile
+ * Interface ProfileInterface
  *
  * @package Drupal\agov\Profile
  */
-class BaseProfile implements ProfileInterface {
+interface ProfileInterface {
 
   /**
    * Install the Profile.
    *
    * The Installer will call this to run the installation process.
    */
-  public function installProfile() {
-    // TODO: Implement installProfile() method.
-  }
+  public function installProfile();
 
 }

@@ -16,53 +16,5 @@
  */
 function agov_install() {
 
-  $installer = new \Drupal\agov\Profile\StandardProfile();
 
-  ini_set('max_execution_time', '300');
-
-  // Ensure the beans feature is reverted.
-  $revert = array('agov_beans');
-  $installer->_agov_features_revert($revert);
-
-  // Configure default text formats and basic permissions.
-  $installer->_agov_default_formats_and_permissions();
-
-  // Configure basic roles.
-  $installer->_agov_create_basic_roles_perms();
-
-  // Set default front-end and admin themes.
-  $installer->_agov_set_default_themes();
-
-  // Set up default terms.
-  $installer->_agov_enable_vocabs();
-
-  // Create additional date formats.
-  $installer->_agov_date_formats();
-
-  // Setup some default blocks.
-  $installer->_agov_default_blocks();
-
-  // Set up twitter block.
-  $installer->_agov_twitter_block();
-
-  // Set some PathAuto settings.
-  $installer->_agov_default_variables();
-
-  // Enable full image display mode.
-  $installer->_agov_install_full_image_display();
-
-  // Set default menu items.
-  $installer->_agov_set_menu();
-
-  // Set default tags.
-  $installer->_agov_default_tags();
-
-  // Set the password policy.
-  $installer->_agov_password_policy();
-
-  // Set defaults for the contact form.
-  $installer->_agov_contact_form_defaults();
-
-  // Clean up after install.
-  $installer->agov_cleanup();
 }
