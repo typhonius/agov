@@ -7,10 +7,30 @@ exclusive = true
 ; System Requirements.
 php_memory_limit = 128M
 
-files[] = agov.profile
-files[] = tests/agov_test_base.inc
-files[] = tests/agov.test
-files[] = tests/agov_metadata.test
+// Basic autoload
+;files[] = tests/agov_test_base.inc
+;files[] = tests/agov.test
+;files[] = tests/agov_metadata.test
+
+// Autoload installer
+files[] = lib/Drupal/agov/Config/Profile.php
+files[] = lib/Drupal/agov/Exception/aGovException.php
+files[] = lib/Drupal/agov/Exception/InvalidInstallProfileException.php
+files[] = lib/Drupal/agov/Installer/Installer.php
+
+// Autoload Profile system
+files[] = lib/Drupal/agov/Profile/BaseProfile.php
+files[] = lib/Drupal/agov/Profile/DemoProfile.php
+files[] = lib/Drupal/agov/Profile/MinimalProfile.php
+files[] = lib/Drupal/agov/Profile/StandardProfile.php
+files[] = lib/Drupal/agov/Profile/ProfileInterface.php
+files[] = lib/Drupal/agov/Profile/ProfileTaskInterface.php
+
+// Autoload workers
+files[] = lib/Drupal/agov/Worker/Filter.php
+files[] = lib/Drupal/agov/Worker/Permission.php
+files[] = lib/Drupal/agov/Worker/Variable.php
+
 
 ; Core
 
@@ -18,6 +38,7 @@ dependencies[] = block
 dependencies[] = contact
 dependencies[] = comment
 dependencies[] = contextual
+dependencies[] = dblog
 dependencies[] = filter
 dependencies[] = help
 dependencies[] = image
@@ -38,7 +59,6 @@ dependencies[] = image
 dependencies[] = list
 dependencies[] = rdf
 dependencies[] = update
-dependencies[] = xautoload
 
 ; Contrib
 
@@ -109,31 +129,32 @@ dependencies[] = ccl_blocks
 dependencies[] = ccl_local_actions
 dependencies[] = ccl_views
 dependencies[] = search_config
+dependencies[] = xautoload
 
 ; Custom
 
-dependencies[] = node_freshness
+;dependencies[] = node_freshness
 dependencies[] = text_summary_options
-dependencies[] = wcag_validate
-dependencies[] = wcag_scheduler
-dependencies[] = agov_disable_defaultcontent
+;dependencies[] = wcag_validate
+;dependencies[] = wcag_scheduler
+;dependencies[] = agov_disable_defaultcontent
 
 ; aGov
 
 dependencies[] = agov_core
 dependencies[] = agov_common_fields
-dependencies[] = agov_beans
-dependencies[] = agov_layouts
+;dependencies[] = agov_beans
+;dependencies[] = agov_layouts
 dependencies[] = agov_text_resize
 dependencies[] = agov_image_styles
 dependencies[] = agov_editing
 dependencies[] = agov_chosen
 dependencies[] = agov_contact
 ;dependencies[] = agov_content_requirements
-dependencies[] = agov_front
+;dependencies[] = agov_front
 dependencies[] = agov_menu_block
 dependencies[] = agov_register
-dependencies[] = agov_slideshow
+;dependencies[] = agov_slideshow
 dependencies[] = agov_superfish_configuration
 dependencies[] = agov_sitemap
 dependencies[] = agov_social_links
@@ -141,13 +162,6 @@ dependencies[] = agov_social_links
 ; Content types
 
 dependencies[] = agov_basic_page
-dependencies[] = agov_blog
-dependencies[] = agov_events
-dependencies[] = agov_media_releases
-dependencies[] = agov_news
-dependencies[] = agov_publications
-dependencies[] = agov_promotion
-dependencies[] = agov_permissions
 
 ; Content
 

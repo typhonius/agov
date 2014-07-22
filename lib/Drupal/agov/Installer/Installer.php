@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Contains an Installer.
  *
  * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
  * @author Chris Skene chris at previousnext dot com dot au
@@ -11,10 +12,26 @@
 namespace Drupal\agov\Installer;
 
 
+use Drupal\agov\Config\Profile;
 use Drupal\agov\Exception\InvalidInstallProfileException;
 use Drupal\agov\Profile\ProfileInterface;
 
+/**
+ * Class Installer
+ *
+ * @package Drupal\agov\Installer
+ */
 class Installer {
+
+  /**
+   * Run the install.
+   */
+  static public function doInstall($profile) {
+
+    $installer = new static();
+
+    $installer->install($profile);
+  }
 
   /**
    * Install a Profile.
@@ -22,13 +39,31 @@ class Installer {
    * @param string $profile
    *   Name of the Profile to install.
    */
-  public function install($profile = 'minimal') {
+  public function install($profile = NULL) {
+
+    if (empty($profile)) {
+      $profile = Profile::getSelectedProfile();
+    }
+    else {
+      Profile::setSelectedProfile($profile);
+    }
+
+    $profile_settings = Profile::getProfile($profile);
+
+    drupal_set_message('Installing ' . $profile_settings['name']);
 
     ini_set('max_execution_time', '300');
 
-    $installer = $this->getProfileHandler($profile);
+    try {
+      $installer = $this->getProfileHandler($profile);
 
-    $installer->installProfile();
+      $installer->installProfile();
+
+      $installer->cleanup();
+    }
+    catch (\Exception $e) {
+      drupal_set_message(sprintf('There was an error installing: %s', $e->getMessage()), 'error');
+    }
   }
 
   /**
@@ -42,7 +77,7 @@ class Installer {
    *
    * @throws \Drupal\agov\Exception\InvalidInstallProfileException
    */
-  protected function getProfileHandler($profile) {
+  public function getProfileHandler($profile) {
 
     $profiles = $this->profileMap();
 
@@ -64,29 +99,6 @@ class Installer {
    */
   public function profileMap() {
 
-    $profiles = array(
-      'base' => array(
-        'name' => t('Base'),
-        'description' => t('Basic install'),
-        'handler' => '\Drupal\agov\Profile\BaseProfile',
-      ),
-      'minimal' => array(
-        'name' => t('Minimal'),
-        'description' => t('Know how to build content types and configure Drupal? This install gives you maximum flexibility.'),
-        'handler' => '\Drupal\agov\Profile\MinimalProfile',
-      ),
-      'standard' => array(
-        'name' => t('Full install'),
-        'description' => t('Want an aGov site up and running quickly with zero configuration? Use the Full install.'),
-        'handler' => '\Drupal\agov\Profile\StandardProfile',
-      ),
-      'demo' => array(
-        'name' => t('Demo install'),
-        'description' => t('The Full install, plus demonstration content. Don\'t use this if you plan to build your site now.'),
-        'handler' => '\Drupal\agov\Profile\DemoProfile',
-      ),
-    );
-
-    return $profiles;
+    return Profile::getProfiles();
   }
 }

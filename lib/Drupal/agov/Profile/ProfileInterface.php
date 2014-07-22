@@ -16,7 +16,7 @@ namespace Drupal\agov\Profile;
  *
  * @package Drupal\agov\Profile
  */
-interface ProfileInterface {
+interface ProfileInterface extends ProfileTaskInterface {
 
   /**
    * Install the Profile.
@@ -24,5 +24,18 @@ interface ProfileInterface {
    * The Installer will call this to run the installation process.
    */
   public function installProfile();
+
+  /**
+   * Reverts a list of features.
+   *
+   * @param array $modules
+   *   An array of feature modules to revert.
+   */
+  public function revertFeatures($modules);
+
+  /**
+   * Run any cleanup or other functions required after install is finished.
+   */
+  public function cleanup();
 
 }
