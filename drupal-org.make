@@ -24,16 +24,13 @@ projects[chosen][version] = 2.0-alpha2
 projects[chosen][subdir] = "contrib"
 projects[chosen][patch][] = https://drupal.org/files/2021639-pin-chosen-26.patch
 
-projects[ckeditor][version] = "1.14"
-projects[ckeditor][subdir] = "contrib"
-
 projects[context][version] = "3.2"
 projects[context][subdir] = "contrib"
 
 projects[ctools][version] = "1.4"
 projects[ctools][subdir] = "contrib"
 
-projects[date][version] = "2.7"
+projects[date][version] = "2.8"
 projects[date][subdir] = "contrib"
 
 projects[draggableviews][version] = "2.0"
@@ -60,7 +57,7 @@ projects[file_entity][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = "contrib"
 
-projects[google_analytics][version] = "1.3"
+projects[google_analytics][version] = "2.0"
 projects[google_analytics][subdir] = "contrib"
 
 projects[honeypot][version] = "1.14"
@@ -72,11 +69,13 @@ projects[libraries][subdir] = "contrib"
 projects[link][version] = "1.1"
 projects[link][subdir] = "contrib"
 
+projects[linkit][version] = "3.1"
+projects[linkit][subdir] = "contrib"
+
 projects[media][version] = "2.0-alpha1"
 projects[media][subdir] = "contrib"
 projects[media][patch][] = "https://drupal.org/files/media.media-browser.1956620-10.patch"
 projects[media][patch][] = "https://drupal.org/files/media.code_.1701914-2.patch"
-projects[media][patch][] = "https://drupal.org/files/media-857362-selection-bookmarking.patch"
 
 projects[media_vimeo][version] = "2.0"
 projects[media_vimeo][subdir] = "contrib"
@@ -104,6 +103,9 @@ projects[panels][subdir] = "contrib"
 
 projects[paranoia][version] = "1.3"
 projects[paranoia][subdir] = "contrib"
+
+projects[password_policy][version] = "1.9"
+projects[password_policy][subdir] = "contrib"
 
 projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = "contrib"
@@ -190,6 +192,11 @@ projects[uuid][subdir] = "contrib"
 projects[workbench_moderation][version] = "1.3"
 projects[workbench_moderation][subdir] = "contrib"
 
+projects[wysiwyg][version] = "2.2"
+projects[wysiwyg][subdir] = "contrib"
+projects[wysiwyg][patch][] = "https://drupal.org/files/1954910-wysiwyg-empty-after-installation_fixed.patch"
+projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg-857362-selection-bookmarking.patch"
+
 projects[wysiwyg_filter][version] = "1.6-rc2"
 projects[wysiwyg_filter][subdir] = "contrib"
 
@@ -200,9 +207,6 @@ projects[image_link_formatter][subdir] = "contrib"
 
 projects[flood_control][version] = "1.0"
 projects[flood_control][subdir] = "contrib"
-
-projects[password_policy][version] = "1.8"
-projects[password_policy][subdir] = "contrib"
 
 projects[login_security][version] = "1.4"
 projects[login_security][subdir] = "contrib"
@@ -227,3 +231,8 @@ libraries[html5placeholder][download][type] = "get"
 libraries[html5placeholder][download][url] = "https://github.com/mathiasbynens/jquery-placeholder/archive/v2.0.8.zip"
 libraries[html5placeholder][directory_name] = "html5placeholder"
 libraries[html5placeholder][type] = "library"
+
+libraries[ckeditor][download][type] = "get"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.2/ckeditor_3.6.6.2.zip"
+libraries[ckeditor][directory_name] = "ckeditor"
+libraries[ckeditor][type] = "library"
