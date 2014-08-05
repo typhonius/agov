@@ -505,25 +505,25 @@ class StandardProfile extends MinimalProfile {
    * @todo: worker
    */
   public function taskEnableModules() {
-
-    // This enables all the content modules.
-    $modules = array(
-      'agov_beans',
-      'agov_layout',
-      'agov_front',
-      'agov_slideshow',
-      'agov_blog',
-      'agov_events',
-      'agov_media_releases',
-      'agov_news',
-      'agov_publications',
-      'agov_promotion',
-      // 'agov_permissions',
-    );
-
-    module_enable($modules);
-
-    drupal_set_message('Enabled modules for the full install.');
+//
+//    // This enables all the content modules.
+//    $modules = array(
+//      'agov_beans',
+//      'agov_layout',
+//      'agov_front',
+//      'agov_slideshow',
+//      'agov_blog',
+//      'agov_events',
+//      'agov_media_releases',
+//      'agov_news',
+//      'agov_publications',
+//      'agov_promotion',
+//      // 'agov_permissions',
+//    );
+//
+//    module_enable($modules);
+//
+//    drupal_set_message('Enabled modules for the full install.');
   }
 
   /**
