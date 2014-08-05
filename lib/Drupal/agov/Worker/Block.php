@@ -21,13 +21,11 @@ class Block {
   /**
    * Create initial block placement for a block which hasn't been used before.
    *
-   * @todo There is better logic in block_add_block_form_submit()
-   *
    * @param string $module
    *   The module providing the block
    * @param string $delta
    *   The block delta
-   * @param string $theme
+   * @param array $themes
    *   (optional) The theme to insert into. Defaults to the current theme
    * @param int|string $region
    *   (optional) The region to insert the block into. Defaults to
@@ -36,69 +34,84 @@ class Block {
    * @param int $weight
    *   (optional) The weight of the block. Defaults to 0.
    * @param int $visibility
-   *   (optional) The visibility of the block. Defaults to 0.
+   *   (optional) The visibility of the block.
+   *   Defaults to BLOCK_VISIBILITY_LISTED.
    * @param string $pages
    *   (optional) The pages to show the block on. Defaults to all.
    *
    * @return bool
    *   TRUE if the block is inserted, or FALSE on an error.
    */
-  static public function insertBlock($module, $delta, $theme, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = 0, $pages = '') {
-    if (!isset($theme)) {
-      $theme = variable_get('theme_default', NULL);
-      if (!isset($theme) || is_null($theme)) {
-        return FALSE;
-      }
-    }
-    $block = array(
-      'module' => $module,
-      'delta' => $delta,
-      'theme' => $theme,
-      'status' => (int) ($region != BLOCK_REGION_NONE),
-      'weight' => (int) $weight,
-      'region' => $region,
-      'visibility' => $visibility,
-      'pages' => $pages,
-      'cache' => DRUPAL_NO_CACHE,
-    );
+  static public function insertBlock($module, $delta, array $themes, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = BLOCK_VISIBILITY_LISTED, $pages = '') {
 
-    $query = db_insert('block')->fields(
-      array(
-        'module',
-        'delta',
-        'theme',
-        'status',
-        'weight',
-        'region',
-        'visibility',
-        'pages',
-        'cache',
-      )
-    );
+    $block_info = db_select('block', 'b')
+      ->fields('b')
+      ->execute()
+      ->fetchAllAssoc('bid');
 
-    // If a theme was specified execute the single value.
-    if (is_array($theme)) {
-      // Get a list of themes that this block is already assigned to.
-      $assigned_themes = db_query('SELECT theme FROM {block} b WHERE b.module = :module AND b.delta = :delta', array(':module' => $module, ':delta' => $delta))->fetchCol();
+    $inserts = array();
+    $updates = array();
 
-      // Get a list of the themes aGov supports.
-      foreach ($theme as $theme_id) {
-        $record = $block;
+    foreach ($themes as $theme) {
 
-        // We need to check if the block already exists for this theme.
-        if (in_array($theme_id, $assigned_themes)) {
-          continue;
+      // Replicate the compound key found on the block table.
+      $compound_key = $theme . '-' . $module . '-' . $delta;
+
+      $inserts[$compound_key] = array(
+        'visibility' => (int) $visibility,
+        'pages' => $pages,
+        'module' => $module,
+        'theme' => $theme,
+        'status' => (int) ($region != BLOCK_REGION_NONE),
+        'weight' => (int) $weight,
+        'delta' => $delta,
+        'cache' => DRUPAL_NO_CACHE,
+        'region' => $region,
+      );
+
+      foreach ($block_info as $block) {
+
+        $block_key = $block->theme . '-' . $block->module . '-' . $block->delta;
+
+        // If an existing block is found, add to our update list and remove
+        // from inserts.
+        if ($block_key == $compound_key) {
+          $updates[$compound_key] = $inserts[$compound_key] + array(
+            'bid' => $block->bid,
+          );
+
+          unset($inserts[$compound_key]);
         }
-
-        $record['theme'] = $theme_id;
-        $query->values($record);
       }
     }
-    else {
-      $query->values($block);
+
+    $fields = array(
+      'visibility',
+      'pages',
+      'module',
+      'theme',
+      'status',
+      'weight',
+      'delta',
+      'cache',
+      'region',
+    );
+
+    if (!empty($inserts)) {
+      $query = db_insert('block')->fields($fields);
+      foreach ($inserts as $insert) {
+        $query->values($insert);
+      }
+      $query->execute();
     }
 
-    $query->execute();
+    if (!empty($updates)) {
+      foreach ($updates as $update) {
+        $query = db_update('block')->fields($update)
+          ->condition('bid', $update['bid'])
+          ->execute();
+      }
+    }
 
     return TRUE;
   }

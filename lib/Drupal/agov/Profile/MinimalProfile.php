@@ -144,17 +144,11 @@ class MinimalProfile extends BaseProfile {
     Block::insertBlock('system', 'main', $themes, 'content', -12);
     Block::insertBlock('system', 'help', $themes, 'content', -14);
     Block::insertBlock('superfish', '1', $themes, 'navigation');
-    Block::insertBlock('menu', 'menu-footer-sub-menu', $themes, 'footer', 3);
 
     // Set aGov blocks.
     Block::insertBlock('agov_text_resize', 'text_resize', $themes, 'header');
     Block::insertBlock('search', 'form', $themes, 'header');
     Block::insertBlock('workbench', 'block', $themes, 'content', -14);
-    Block::insertBlock('menu_block', 'agov_menu_block-footer', $themes, 'footer', 2);
-
-    // Set aGov sidebar blocks.
-    Block::insertBlock('menu', 'menu-quick-links', $themes, 'sidebar_second', -48);
-    Block::insertBlock('agov_social_links', 'services', $themes, 'sidebar_second', -47);
 
     // Set some blocks in the admin theme.
     Block::insertBlock('system', 'main', AGOV_DEFAULT_ADMIN_THEME, 'content');

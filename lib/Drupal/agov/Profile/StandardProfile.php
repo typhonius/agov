@@ -73,19 +73,30 @@ class StandardProfile extends MinimalProfile {
    */
   public function taskSetBlocks() {
 
-    // Minimal sets up all the basic blocks.
-    parent::taskSetBlocks();
-
     // Get all the aGov supported themes.
     $themes = agov_core_theme_info();
 
+    // Set default system block in primary theme.
+    Block::insertBlock('system', 'main', $themes, 'content', -12);
+    Block::insertBlock('system', 'help', $themes, 'content', -14);
+    Block::insertBlock('superfish', '1', $themes, 'navigation');
+    Block::insertBlock('menu', 'menu-footer-sub-menu', $themes, 'footer', 3);
+
     // Set aGov blocks.
-    Block::insertBlock('views', 'slideshow-block', $themes, 'highlighted', 0, 1, '<front>');
-    Block::insertBlock('views', 'footer_teaser-block', $themes, 'footer', 1);
+    Block::insertBlock('agov_text_resize', 'text_resize', $themes, 'header');
+    Block::insertBlock('search', 'form', $themes, 'header');
+    Block::insertBlock('workbench', 'block', $themes, 'content', -14);
+    Block::insertBlock('menu_block', 'agov_menu_block-footer', $themes, 'footer', 2);
 
     // Set aGov sidebar blocks.
     Block::insertBlock('menu', 'menu-quick-links', $themes, 'sidebar_second', -48);
     Block::insertBlock('agov_social_links', 'services', $themes, 'sidebar_second', -47);
+
+    // Set some blocks in the admin theme.
+    $admin_theme = array(AGOV_DEFAULT_ADMIN_THEME);
+    Block::insertBlock('system', 'main', $admin_theme, 'content');
+    Block::insertBlock('system', 'help', $admin_theme, 'help');
+    Block::insertBlock('agov_core', 'update_notification', $admin_theme, 'help', 24, "admin/reports/updates*");
 
     // Ensure Wcag validate block only appears on correct pages.
     // @todo: this is currently disabled
