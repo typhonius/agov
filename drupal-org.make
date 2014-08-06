@@ -11,7 +11,7 @@ projects[admin_menu][subdir] = "contrib"
 projects[admin_views][version] = "1.2"
 projects[admin_views][subdir] = "contrib"
 
-projects[bean][version] = "1.5"
+projects[bean][version] = "1.7"
 projects[bean][subdir] = "contrib"
 
 projects[bean_panels][version] = "1.3"

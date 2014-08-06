@@ -4,17 +4,13 @@
  * Code for the Front feature.
  */
 
-use Drupal\fabricator\Worker\Bean;
-
+include_once 'agov_front.features.inc';
 /**
- * Implements hook_ctools_plugin_api().
+ * @file
+ * Code for the Front feature.
  */
-function agov_front_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "page_manager" && $api == "pages_default") {
-    return array("version" => "1");
-  }
-}
+
+use Drupal\fabricator\Worker\Bean;
 
 
 /**
