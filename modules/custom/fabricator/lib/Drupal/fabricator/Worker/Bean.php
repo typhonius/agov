@@ -81,7 +81,7 @@ class Bean {
     );
     foreach ($fields as $field_key => $field_value) {
       $config[$field_key] = array();
-      $config[$field_key]['und'] = $field_value;
+      $config[$field_key][LANGUAGE_NONE] = $field_value;
     }
 
     $bean = bean_create($config);

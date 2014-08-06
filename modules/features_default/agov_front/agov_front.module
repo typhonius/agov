@@ -5,13 +5,8 @@
  */
 
 include_once 'agov_front.features.inc';
-/**
- * @file
- * Code for the Front feature.
- */
 
 use Drupal\fabricator\Worker\Bean;
-
 
 /**
  * Setup homepage beans.
