@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Install for agov_text resize
+ *
+ * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
+ * @author Chris Skene chris at previousnext dot com dot au
+ * @copyright Copyright(c) 2014 Previous Next Pty Ltd
+ */
+
+use Drupal\fabricator\Worker\Block;
+
+/**
+ * Implements hook_install().
+ */
+function agov_text_resize_install() {
+
+  Block::insertBlock('agov_text_resize', 'text_resize', 'header');
+}

@@ -1,4 +1,6 @@
-name = Text Resizes
+name = Text Resize Widget
 description = "Provides a block with buttons to resize the page text"
 core = 7.x
 package = aGov core
+
+dependencies[] = fabricator
