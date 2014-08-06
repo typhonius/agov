@@ -27,8 +27,6 @@ class Block {
    *   The module providing the block
    * @param string $delta
    *   The block delta
-   * @param array $themes
-   *   (optional) The theme to insert into. Defaults to the current theme
    * @param int|string $region
    *   (optional) The region to insert the block into. Defaults to
    *   BLOCK_REGION_NONE, so a block can be created but not assigned by leaving
@@ -43,12 +41,18 @@ class Block {
    *   specify '<none>'.
    * @param string $pages
    *   (optional) The pages to show the block on. Defaults to all.
+   * @param array $themes
+   *   (optional) The theme to insert into. Defaults to the current theme
    *
    * @throws \Exception
    * @return bool
    *   TRUE if the block is inserted, or FALSE on an error.
    */
-  static public function insertBlock($module, $delta, array $themes, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = BLOCK_VISIBILITY_NOTLISTED, $title = '', $pages = '') {
+  static public function insertBlock($module, $delta, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = BLOCK_VISIBILITY_NOTLISTED, $title = '', $pages = '', array $themes = array()) {
+
+    if (empty($themes)) {
+      $themes = agov_core_theme_info();
+    }
 
     $block_info = db_select('block', 'b')
       ->fields('b')
@@ -102,6 +106,7 @@ class Block {
       'delta',
       'cache',
       'region',
+      'title',
     );
 
     if (!empty($inserts)) {

@@ -76,31 +76,25 @@ class StandardProfile extends MinimalProfile {
    */
   public function taskSetBlocks() {
 
-    // Get all the aGov supported themes.
-    $themes = agov_core_theme_info();
-
     parent::taskSetBlocks();
 
     // Set default system block in primary theme.
-    Block::insertBlock('menu', 'menu-footer-sub-menu', $themes, 'footer', 3);
+    Block::insertBlock('menu', 'menu-footer-sub-menu', 'footer', 3);
 
     // Set aGov blocks.
-    Block::insertBlock('agov_text_resize', 'text_resize', $themes, 'header');
-    Block::insertBlock('search', 'form', $themes, 'header');
-    Block::insertBlock('workbench', 'block', $themes, 'content', -14);
+    Block::insertBlock('agov_text_resize', 'text_resize', 'header');
+    Block::insertBlock('search', 'form', 'header');
+    Block::insertBlock('workbench', 'block', 'content', -14);
 
     // Set aGov sidebar blocks.
-    Block::insertBlock('menu', 'menu-quick-links', $themes, 'sidebar_second', -48);
-    Block::insertBlock('agov_social_links', 'services', $themes, 'sidebar_second', -47);
+    Block::insertBlock('menu', 'menu-quick-links', 'sidebar_second', -48);
+    Block::insertBlock('agov_social_links', 'services', 'sidebar_second', -47);
   }
 
   /**
    * Insert the twitter block.
    */
   public function customTwitterBlock() {
-
-    // Get all the aGov supported themes.
-    $themes = agov_core_theme_info();
 
     $data = array(
       "theme" => "",
@@ -129,7 +123,7 @@ class StandardProfile extends MinimalProfile {
       ))
       ->execute();
 
-    Block::insertBlock('twitter_block', $bid, $themes, 'sidebar_second', -49);
+    Block::insertBlock('twitter_block', $bid, 'sidebar_second', -49);
   }
 
 
@@ -184,259 +178,9 @@ class StandardProfile extends MinimalProfile {
         ),
       ),
     );
-    // Get all the aGov supported themes.
-    $themes = agov_core_theme_info();
+
     Bean::saveBean('basic_content', 'Footer copyright', 'The copyright message', '', $fields);
-    Block::insertBlock('bean', 'footer-copyright', $themes, 'footer', 4, BLOCK_VISIBILITY_NOTLISTED, Block::NO_TITLE);
-  }
-
-  /**
-   * Sets up news related beans.
-   *
-   * @todo: no current usage
-   */
-  public function taskDefaultNewsBeans() {
-
-    $t = get_t();
-
-    // Ensure the bean save function is available.
-    if (!function_exists('Bean::saveBean')) {
-      error_log('Function not available');
-      return;
-    }
-
-    // Add menu links to main menu.
-    $menus = array(
-      'current-news' => 'news-media/news',
-      'archived-news' => 'news-media/news-archive',
-      'media-releases' => 'news-media/media-releases',
-      'events' => 'news-media/events',
-      'blog' => 'news-media/blog',
-    );
-
-    // @todo - Save these menu items below the news-media item.
-    // Save the images required for these block.
-    $files = array();
-    $images = array(
-      'news-media-intro' => 'news-media.jpg',
-      'current-news' => 'news-archives.jpg',
-      'archived-news' => 'news-archives.jpg',
-      'media-releases' => 'media-releases.jpg',
-      'events' => 'events.jpg',
-      'blog' => 'news-media.jpg',
-    );
-    foreach ($images as $delta => $image) {
-      // Load the files contents.
-      $handle = fopen(dirname(__FILE__) . '/images/' . $image, 'r');
-      // Returns the new file object.
-      $files[$delta] = file_save_data($handle, 'public://' . $image, FILE_EXISTS_RENAME);
-      fclose($handle);
-    }
-
-    // Install the required blocks.
-    // Beans to be installed.
-    $beans = array(
-      // News and Media Intro block for the News & Media page.
-      'news-media-intro' => array(
-        'label' => $t('News and Media Intro'),
-        'title' => '',
-        'description' => $t('Provides a "News and Media Intro" bean that gives overview for the News & Media page.'),
-        'type' => 'image_and_text',
-        'view_mode' => 'hightlight',
-        'fields' => array(
-          // Image field.
-          'field_bean_image' => array(
-            '0' => array(
-              'fid' => $files['news-media-intro']->fid,
-              'alt' => t('News and Media Intro'),
-              'title' => t('News and Media Intro'),
-            ),
-          ),
-          // Text field.
-          'field_bean_text' => array(
-            '0' => array(
-              'value' => 'Optional intro block with image Est porttitor hac ultricies nec integer enim scelerisque proin sagittis porttitor, sit! Magnis sit egestas turpis parturient aliquam. Mauris duis nascetur vel porttitor scelerisque cursus nec, in dis sit sagittis, lacus lacus?',
-              'format' => 'rich_text',
-            ),
-          ),
-        ),
-      ),
-
-      // Current News block.
-      'current-news' => array(
-        'label' => $t('Current News'),
-        'title' => $t('Current News'),
-        'description' => $t('Provides a "Current News" bean for the News & Media page.'),
-        'type' => 'image_and_text',
-        'view_mode' => 'default',
-        'fields' => array(
-          // Image field.
-          'field_bean_image' => array(
-            '0' => array(
-              'fid' => $files['current-news']->fid,
-              'alt' => t('Current News'),
-              'title' => t('Current News'),
-            ),
-          ),
-          // Text field.
-          'field_bean_text' => array(
-            '0' => array(
-              'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
-              'format' => 'rich_text',
-            ),
-          ),
-          // Link to field.
-          'field_link_to' => array(
-            '0' => array(
-              'url' => $menus['current-news'],
-              'title' => '',
-              'attributes' => '',
-            ),
-          ),
-        ),
-      ),
-
-      // Archived News block.
-      'archived-news' => array(
-        'label' => $t('Archived News'),
-        'title' => $t('Archived News'),
-        'description' => $t('Provides a "Archived News" bean for the News & Media page.'),
-        'type' => 'image_and_text',
-        'view_mode' => 'default',
-        'fields' => array(
-          // Image field.
-          'field_bean_image' => array(
-            '0' => array(
-              'fid' => $files['archived-news']->fid,
-              'alt' => t('Archived News'),
-              'title' => t('Archived News'),
-            ),
-          ),
-          // Text field.
-          'field_bean_text' => array(
-            '0' => array(
-              'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
-              'format' => 'rich_text',
-            ),
-          ),
-          // Link to field.
-          'field_link_to' => array(
-            '0' => array(
-              'url' => $menus['archived-news'],
-              'title' => '',
-              'attributes' => '',
-            ),
-          ),
-        ),
-      ),
-
-      // Media releases.
-      'media-releases' => array(
-        'label' => $t('Media Releases'),
-        'title' => $t('Media Releases'),
-        'description' => $t('Provides a "Media Releases" bean for the News & Media page.'),
-        'type' => 'image_and_text',
-        'view_mode' => 'default',
-        'fields' => array(
-          // Image field.
-          'field_bean_image' => array(
-            '0' => array(
-              'fid' => $files['media-releases']->fid,
-              'alt' => t('Media Releases'),
-              'title' => t('Media Releases'),
-            ),
-          ),
-          // Text field.
-          'field_bean_text' => array(
-            '0' => array(
-              'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
-              'format' => 'rich_text',
-            ),
-          ),
-          // Link to field.
-          'field_link_to' => array(
-            '0' => array(
-              'url' => $menus['media-releases'],
-              'title' => '',
-              'attributes' => '',
-            ),
-          ),
-        ),
-      ),
-
-      // Events.
-      'events' => array(
-        'label' => $t('Events'),
-        'title' => $t('Events'),
-        'description' => $t('Provides a "Events" bean for the News & Media page.'),
-        'type' => 'image_and_text',
-        'view_mode' => 'default',
-        'fields' => array(
-          // Image field.
-          'field_bean_image' => array(
-            '0' => array(
-              'fid' => $files['events']->fid,
-              'alt' => t('Events'),
-              'title' => t('Events'),
-            ),
-          ),
-          // Text field.
-          'field_bean_text' => array(
-            '0' => array(
-              'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
-              'format' => 'rich_text',
-            ),
-          ),
-          // Link to field.
-          'field_link_to' => array(
-            '0' => array(
-              'url' => $menus['events'],
-              'title' => '',
-              'attributes' => '',
-            ),
-          ),
-        ),
-      ),
-
-      // Blog.
-      'blog' => array(
-        'label' => $t('Blog'),
-        'title' => $t('Blog'),
-        'description' => $t('Provides a "Blog" bean for the News & Media page.'),
-        'type' => 'image_and_text',
-        'view_mode' => 'default',
-        'fields' => array(
-          // Image field.
-          'field_bean_image' => array(
-            '0' => array(
-              'fid' => $files['blog']->fid,
-              'alt' => t('Blog'),
-              'title' => t('Blog'),
-            ),
-          ),
-          // Text field.
-          'field_bean_text' => array(
-            '0' => array(
-              'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
-              'format' => 'rich_text',
-            ),
-          ),
-          // Link to field.
-          'field_link_to' => array(
-            '0' => array(
-              'url' => $menus['blog'],
-              'title' => '',
-              'attributes' => '',
-            ),
-          ),
-        ),
-      ),
-    );
-
-    // Create the beans.
-    foreach ($beans as $bean) {
-      Bean::saveBean($bean['type'], $bean['label'], $bean['description'], $bean['title'], $bean['fields'], $bean['view_mode']);
-    }
+    Block::insertBlock('bean', 'footer-copyright', 'footer', 4, BLOCK_VISIBILITY_NOTLISTED, Block::NO_TITLE);
   }
 
   /**
@@ -445,37 +189,8 @@ class StandardProfile extends MinimalProfile {
    * @todo: worker
    */
   public function taskCreateVocabTags() {
-    // List of terms for insert.
-    $terms = array(
-      t('consequat'),
-      t('fuisset'),
-      t('maluisset'),
-      t('ponderum'),
-      t('prodesset'),
-      t('rationibus'),
-      t('voluptatibus'),
-    );
 
-    $vocabs = taxonomy_vocabulary_get_names();
-    if (empty($vocabs['tags'])) {
-      return;
-    }
-
-    // Save taxonomy terms.
-    $vid = $vocabs['tags']->vid;
-    $tids = array();
-
-    foreach ($terms as $name) {
-      $term = new \stdClass();
-      $term->name = $name;
-      $term->vid = $vid;
-      $term->vocabulary_machine_name = 'tags';
-      taxonomy_term_save($term);
-      $tids[] = $term->tid;
-    }
-
-    // Save the tids.
-    Variable::set('agov_tags_saved', $tids);
+    // Nothing to do in Standard.
   }
 
   /**

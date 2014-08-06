@@ -134,24 +134,20 @@ class MinimalProfile extends BaseProfile {
    */
   public function taskSetBlocks() {
 
-    // Get all the aGov supported themes.
-    $themes = agov_core_theme_info();
-
     // Set default system block in primary theme.
-    Block::insertBlock('system', 'main', $themes, 'content', -12);
-    Block::insertBlock('system', 'help', $themes, 'content', -14);
-    Block::insertBlock('superfish', '1', $themes, 'navigation');
+    Block::insertBlock('system', 'main', 'content', -12);
+    Block::insertBlock('system', 'help', 'content', -14);
+    Block::insertBlock('superfish', '1', 'navigation');
 
     // Set aGov blocks.
-    Block::insertBlock('agov_text_resize', 'text_resize', $themes, 'header');
-    Block::insertBlock('search', 'form', $themes, 'header');
-    Block::insertBlock('workbench', 'block', $themes, 'content', -14);
+    Block::insertBlock('search', 'form', 'header');
+    Block::insertBlock('workbench', 'block', 'content', -14);
 
     // Set some blocks in the admin theme.
     $admin_theme = array(AGOV_DEFAULT_ADMIN_THEME);
-    Block::insertBlock('system', 'main', $admin_theme, 'content');
-    Block::insertBlock('system', 'help', $admin_theme, 'help');
-    Block::insertBlock('agov_core', 'update_notification', $admin_theme, 'help', 24, BLOCK_VISIBILITY_LISTED, '', "admin/reports/updates*");
+    Block::insertBlock('system', 'main', 'content', 0, BLOCK_VISIBILITY_NOTLISTED, '', '', $admin_theme);
+    Block::insertBlock('system', 'help', 'help', 0, BLOCK_VISIBILITY_NOTLISTED, '', '', $admin_theme);
+    Block::insertBlock('agov_core', 'update_notification', 'help', 24, BLOCK_VISIBILITY_LISTED, '', "admin/reports/updates*", $admin_theme);
   }
 
   /**
