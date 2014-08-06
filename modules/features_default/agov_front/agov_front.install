@@ -11,4 +11,6 @@
 function agov_front_install() {
   // Set the sites front page.
   variable_set('site_frontpage', 'front');
+
+  agov_front_setup_beans();
 }

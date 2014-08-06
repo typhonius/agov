@@ -4,6 +4,8 @@
  * Code for the Front feature.
  */
 
+use Drupal\fabricator\Worker\Bean;
+
 /**
  * Implements hook_ctools_plugin_api().
  */
@@ -12,4 +14,31 @@ function agov_front_ctools_plugin_api() {
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
+}
+
+
+/**
+ * Setup homepage beans.
+ */
+function agov_front_setup_beans() {
+
+  // Create the front page block.
+  $fields = array(
+    'field_bean_body' => array(
+      '0' => array(
+        'value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Pellentesque non faucibus massa. Maecenas ac dui turpis. Vivamus eu arcu tellus.
+Nunc sit amet tellus nunc. Quisque ac lacus nisl. Vestibulum ante ipsum primis
+in faucibus orci luctus et ultrices posuere cubilia Curae; Integer consectetur,
+urna vitae posuere varius, sem enim blandit augue, non condimentum dolor tortor
+ id quam. Quisque venenatis dolor neque. Nunc suscipit sem id neque lobortis
+ ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia
+ nostra, per inceptos himenaeos.<br/>
+ <a href="about-us">Learn more about us &raquo;</a>',
+        'format' => 'rich_text',
+      ),
+    ),
+  );
+  Bean::saveBean('basic_content', 'About Us', 'Provides "About Us" block for the from page.', 'About Us', $fields);
+
 }

@@ -11,9 +11,9 @@
 
 namespace Drupal\agov\Profile;
 
-use Drupal\agov\Worker\Bean;
-use Drupal\agov\Worker\Block;
-use Drupal\agov\Worker\Variable;
+use Drupal\fabricator\Worker\Bean;
+use Drupal\fabricator\Worker\Block;
+use Drupal\fabricator\Worker\Variable;
 
 /**
  * Class StandardProfile
@@ -40,8 +40,9 @@ class StandardProfile extends MinimalProfile {
     $revert = array('agov_beans');
     $this->revertFeatures($revert);
 
-    // Set up twitter block.
+    // Set up custom blocks/beans.
     $this->customTwitterBlock();
+    $this->taskSetBeans();
 
     // Set default tags.
     $this->taskCreateVocabTags();
@@ -76,37 +77,19 @@ class StandardProfile extends MinimalProfile {
     // Get all the aGov supported themes.
     $themes = agov_core_theme_info();
 
+    parent::taskSetBlocks();
+
     // Set default system block in primary theme.
-    Block::insertBlock('system', 'main', $themes, 'content', -12);
-    Block::insertBlock('system', 'help', $themes, 'content', -14);
-    Block::insertBlock('superfish', '1', $themes, 'navigation');
     Block::insertBlock('menu', 'menu-footer-sub-menu', $themes, 'footer', 3);
 
     // Set aGov blocks.
     Block::insertBlock('agov_text_resize', 'text_resize', $themes, 'header');
     Block::insertBlock('search', 'form', $themes, 'header');
     Block::insertBlock('workbench', 'block', $themes, 'content', -14);
-    Block::insertBlock('menu_block', 'agov_menu_block-footer', $themes, 'footer', 2);
 
     // Set aGov sidebar blocks.
     Block::insertBlock('menu', 'menu-quick-links', $themes, 'sidebar_second', -48);
     Block::insertBlock('agov_social_links', 'services', $themes, 'sidebar_second', -47);
-
-    // Set some blocks in the admin theme.
-    $admin_theme = array(AGOV_DEFAULT_ADMIN_THEME);
-    Block::insertBlock('system', 'main', $admin_theme, 'content');
-    Block::insertBlock('system', 'help', $admin_theme, 'help');
-    Block::insertBlock('agov_core', 'update_notification', $admin_theme, 'help', 24, "admin/reports/updates*");
-
-    // Ensure Wcag validate block only appears on correct pages.
-    // @todo: this is currently disabled
-//    db_update('block')->fields(array(
-//      'visibility' => BLOCK_VISIBILITY_LISTED,
-//      'pages' => "node/*\n<front>\nnews-media\nnews-media/*\npublications\npublications/*\nblog\nblog/*\ncontact\nsitemap\ntags\ntags/*",
-//    ))
-//      ->condition('module', 'wcag_validate')
-//      ->condition('delta', 'wcag_validate')
-//      ->execute();
   }
 
   /**
@@ -185,41 +168,23 @@ class StandardProfile extends MinimalProfile {
 
   /**
    * Setup beans.
-   *
-   * @todo no current usage
    */
   public function taskSetBeans() {
-    // If functionality available. Create some blocks.
-    if (function_exists('Bean::saveBean')) {
-      // Create the front page block.
-      $fields = array(
-        'field_bean_body' => array(
-          '0' => array(
-            'value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non faucibus massa. Maecenas ac dui turpis. Vivamus eu arcu tellus. Nunc sit amet tellus nunc. Quisque ac lacus nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer consectetur, urna vitae posuere varius, sem enim blandit augue, non condimentum dolor tortor id quam. Quisque venenatis dolor neque. Nunc suscipit sem id neque lobortis ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.<br/><a href="about-us">Learn more about us &raquo;</a>',
-            'format' => 'rich_text',
-          ),
-        ),
-      );
-      Bean::saveBean('basic_content', 'About Us', 'Provides "About Us" block for the from page.', 'About Us', $fields);
 
-      // Create the footer block.
-      $this_year = date('Y');
-      $fields = array(
-        'field_bean_body' => array(
-          '0' => array(
-            'value' => '&#169; ' . $this_year . ' Government | Powered by <a href="http://agov.com.au">aGov</a>',
-            'format' => 'rich_text',
-          ),
+    // Create the footer block.
+    $this_year = date('Y');
+    $fields = array(
+      'field_bean_body' => array(
+        '0' => array(
+          'value' => '&#169; ' . $this_year . ' Government | Powered by <a href="http://agov.com.au">aGov</a>',
+          'format' => 'rich_text',
         ),
-      );
-      // Get all the aGov supported themes.
-      $themes = agov_core_theme_info();
-      Bean::saveBean('basic_content', 'Footer copyright', 'The copyright message', '', $fields);
-      Block::insertBlock('bean', 'footer-copyright', $themes, 'footer', 4);
-    }
-    else {
-      drupal_set_message('aGov Core was not available. Some of your blocks could not be created.', 'error');
-    }
+      ),
+    );
+    // Get all the aGov supported themes.
+    $themes = agov_core_theme_info();
+    Bean::saveBean('basic_content', 'Footer copyright', 'The copyright message', '', $fields);
+    Block::insertBlock('bean', 'footer-copyright', $themes, 'footer', 4, BLOCK_VISIBILITY_NOTLISTED, Block::NO_TITLE);
   }
 
   /**
