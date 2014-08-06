@@ -85,6 +85,9 @@ class StandardProfile extends MinimalProfile {
     Block::insertBlock('agov_text_resize', 'text_resize', 'header');
     Block::insertBlock('search', 'form', 'header');
     Block::insertBlock('workbench', 'block', 'content', -14);
+    Block::insertBlock('views', 'slideshow-block', 'highlighted', 0, BLOCK_VISIBILITY_LISTED, '', '<front>');
+    Block::insertBlock('views', 'footer_teaser-block', 'footer', 1);
+    Block::insertBlock('menu_block', 'agov_menu_block-footer', 'footer');
 
     // Set aGov sidebar blocks.
     Block::insertBlock('menu', 'menu-quick-links', 'sidebar_second', -48);
