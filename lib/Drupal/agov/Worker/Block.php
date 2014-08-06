@@ -42,7 +42,7 @@ class Block {
    * @return bool
    *   TRUE if the block is inserted, or FALSE on an error.
    */
-  static public function insertBlock($module, $delta, array $themes, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = BLOCK_VISIBILITY_LISTED, $pages = '') {
+  static public function insertBlock($module, $delta, array $themes, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = BLOCK_VISIBILITY_NOTLISTED, $pages = '') {
 
     $block_info = db_select('block', 'b')
       ->fields('b')
