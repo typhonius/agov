@@ -11,6 +11,8 @@
 
 namespace Drupal\agov\Profile;
 
+use Drupal\fabricator\Worker\Variable;
+
 /**
  * Class DemoProfile
  *
@@ -79,5 +81,45 @@ class DemoProfile extends StandardProfile {
         'key' => 'agov_content_slides',
       ),
     );
+  }
+
+  /**
+   * Created default tags.
+   *
+   * @todo: Fabricate?
+   */
+  public function taskCreateVocabTags() {
+
+    // List of terms for insert.
+    $terms = array(
+      t('consequat'),
+      t('fuisset'),
+      t('maluisset'),
+      t('ponderum'),
+      t('prodesset'),
+      t('rationibus'),
+      t('voluptatibus'),
+    );
+
+    $vocabs = taxonomy_vocabulary_get_names();
+    if (empty($vocabs['tags'])) {
+      return;
+    }
+
+    // Save taxonomy terms.
+    $vid = $vocabs['tags']->vid;
+    $tids = array();
+
+    foreach ($terms as $name) {
+      $term = new \stdClass();
+      $term->name = $name;
+      $term->vid = $vid;
+      $term->vocabulary_machine_name = 'tags';
+      taxonomy_term_save($term);
+      $tids[] = $term->tid;
+    }
+
+    // Save the tids.
+    Variable::set('agov_tags_saved', $tids);
   }
 }
