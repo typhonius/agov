@@ -53,20 +53,22 @@ class StandardProfile extends MinimalProfile {
 
   /**
    * Sets up default vocabularies.
+   *
+   * @todo: Fabricate.
    */
   public function taskEnableVocabularies() {
 
-//    // Create a default vocabulary named "Tags"
-//    $description = st('Use tags to group articles on similar topics into categories.');
-//    $help = st('Enter a comma-separated list of words to describe your content.');
-//    $vocabulary = (object) array(
-//      'name' => st('Tags'),
-//      'description' => $description,
-//      'machine_name' => 'tags',
-//      'help' => $help,
-//    );
-//
-//    taxonomy_vocabulary_save($vocabulary);
+    // Create a default vocabulary named "Tags"
+    $description = st('Use tags to group articles on similar topics into categories.');
+    $help = st('Enter a comma-separated list of words to describe your content.');
+    $vocabulary = (object) array(
+      'name' => st('Tags'),
+      'description' => $description,
+      'machine_name' => 'tags',
+      'help' => $help,
+    );
+
+    taxonomy_vocabulary_save($vocabulary);
   }
 
   /**
