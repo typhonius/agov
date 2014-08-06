@@ -9,7 +9,7 @@
  * @copyright Copyright(c) 2014 Previous Next Pty Ltd
  */
 
-namespace Drupal\agov\Worker;
+namespace Drupal\fabricator\Worker;
 
 /**
  * Class Variable

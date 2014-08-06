@@ -9,7 +9,7 @@
  * @copyright Copyright(c) 2014 Previous Next Pty Ltd
  */
 
-namespace Drupal\agov\Worker;
+namespace Drupal\fabricator\Worker;
 
 /**
  * Class Bean
@@ -83,6 +83,7 @@ class Bean {
       $config[$field_key] = array();
       $config[$field_key]['und'] = $field_value;
     }
+
     $bean = bean_create($config);
 
     return $bean;

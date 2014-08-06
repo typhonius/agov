@@ -11,10 +11,10 @@
 
 namespace Drupal\agov\Profile;
 
-use Drupal\agov\Worker\Block;
-use Drupal\agov\Worker\Filter;
-use Drupal\agov\Worker\Permission;
-use Drupal\agov\Worker\Variable;
+use Drupal\fabricator\Worker\Block;
+use Drupal\fabricator\Worker\Filter;
+use Drupal\fabricator\Worker\Permission;
+use Drupal\fabricator\Worker\Variable;
 
 /**
  * Class MinimalProfile
@@ -147,9 +147,10 @@ class MinimalProfile extends BaseProfile {
     Block::insertBlock('workbench', 'block', $themes, 'content', -14);
 
     // Set some blocks in the admin theme.
-    Block::insertBlock('system', 'main', AGOV_DEFAULT_ADMIN_THEME, 'content');
-    Block::insertBlock('system', 'help', AGOV_DEFAULT_ADMIN_THEME, 'help');
-    Block::insertBlock('agov_core', 'update_notification', AGOV_DEFAULT_ADMIN_THEME, 'help', 24, BLOCK_VISIBILITY_LISTED, "admin/reports/updates*");
+    $admin_theme = array(AGOV_DEFAULT_ADMIN_THEME);
+    Block::insertBlock('system', 'main', $admin_theme, 'content');
+    Block::insertBlock('system', 'help', $admin_theme, 'help');
+    Block::insertBlock('agov_core', 'update_notification', $admin_theme, 'help', 24, BLOCK_VISIBILITY_LISTED, '', "admin/reports/updates*");
   }
 
   /**

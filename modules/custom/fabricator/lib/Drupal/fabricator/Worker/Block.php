@@ -9,7 +9,7 @@
  * @copyright Copyright(c) 2014 Previous Next Pty Ltd
  */
 
-namespace Drupal\agov\Worker;
+namespace Drupal\fabricator\Worker;
 
 /**
  * Class Block
@@ -17,6 +17,8 @@ namespace Drupal\agov\Worker;
  * @package Drupal\agov\Worker
  */
 class Block {
+
+  const NO_TITLE = '<none>';
 
   /**
    * Create initial block placement for a block which hasn't been used before.
@@ -36,13 +38,17 @@ class Block {
    * @param int $visibility
    *   (optional) The visibility of the block.
    *   Defaults to BLOCK_VISIBILITY_LISTED.
+   * @param string $title
+   *   (Optional) Defaults to an empty title string. Use Block::NO_TITLE to
+   *   specify '<none>'.
    * @param string $pages
    *   (optional) The pages to show the block on. Defaults to all.
    *
+   * @throws \Exception
    * @return bool
    *   TRUE if the block is inserted, or FALSE on an error.
    */
-  static public function insertBlock($module, $delta, array $themes, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = BLOCK_VISIBILITY_NOTLISTED, $pages = '') {
+  static public function insertBlock($module, $delta, array $themes, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = BLOCK_VISIBILITY_NOTLISTED, $title = '', $pages = '') {
 
     $block_info = db_select('block', 'b')
       ->fields('b')
@@ -67,6 +73,7 @@ class Block {
         'delta' => $delta,
         'cache' => DRUPAL_NO_CACHE,
         'region' => $region,
+        'title' => $title,
       );
 
       foreach ($block_info as $block) {

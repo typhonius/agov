@@ -12,7 +12,7 @@
 namespace Drupal\agov\Config;
 
 use Drupal\agov\Exception\InvalidInstallProfileException;
-use Drupal\agov\Worker\Variable;
+use Drupal\fabricator\Worker\Variable;
 
 /**
  * Class Profile

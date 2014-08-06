@@ -12,6 +12,9 @@ php_memory_limit = 128M
 ;files[] = tests/agov.test
 ;files[] = tests/agov_metadata.test
 
+// The following files need to be loaded with Drupals autoloader, since
+// on some occassions, X Autoload is not ready in the installer.
+
 // Autoload installer
 files[] = lib/Drupal/agov/Config/Profile.php
 files[] = lib/Drupal/agov/Exception/aGovException.php
@@ -25,11 +28,6 @@ files[] = lib/Drupal/agov/Profile/MinimalProfile.php
 files[] = lib/Drupal/agov/Profile/StandardProfile.php
 files[] = lib/Drupal/agov/Profile/ProfileInterface.php
 files[] = lib/Drupal/agov/Profile/ProfileTaskInterface.php
-
-// Autoload workers
-files[] = lib/Drupal/agov/Worker/Filter.php
-files[] = lib/Drupal/agov/Worker/Permission.php
-files[] = lib/Drupal/agov/Worker/Variable.php
 
 
 ; Core
@@ -134,6 +132,7 @@ dependencies[] = xautoload
 
 ; Custom
 
+dependencies[] = fabricator
 ;dependencies[] = node_freshness
 dependencies[] = text_summary_options
 ;dependencies[] = wcag_validate

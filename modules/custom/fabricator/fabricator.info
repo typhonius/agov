@@ -1,0 +1,5 @@
+name = Fabricator
+description = Provides a framework for programmatically building Drupal components.
+core = 7.x
+
+dependencies[] = xautoload

@@ -25,6 +25,9 @@ class Installer {
 
   /**
    * Run the install.
+   *
+   * @param string $profile
+   *   Name of the profile to use.
    */
   static public function doInstall($profile) {
 
