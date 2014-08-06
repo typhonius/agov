@@ -154,17 +154,7 @@ class MinimalProfile extends BaseProfile {
    * Set default menu items.
    */
   public function taskSetMenuItems() {
-
-    // Create a Home link in the main menu.
-    $item = array(
-      'link_title' => st('Home'),
-      'link_path' => '<front>',
-      'menu_name' => 'main-menu',
-      'weight' => -50,
-    );
-    menu_link_save($item);
-
-    menu_rebuild();
+    // Nothing to do.
   }
 
   /**
