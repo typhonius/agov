@@ -34,6 +34,8 @@
     </if>
   </target>
 
+  <target name="prepare:all" depends="prepare:dirs, composer:release" description="Prepares the project for building"/>
+
   <target name="prepare:dirs" description="Prepare for build">
     <mkdir dir="${build.drupal.dir}/profiles" />
     <mkdir dir="${build.drupal.dir}/sites/default/files" />
