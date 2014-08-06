@@ -46,6 +46,7 @@ class Installer {
 
     if (empty($profile)) {
       $profile = Profile::getSelectedProfile();
+      Profile::setSelectedProfile($profile);
     }
     else {
       Profile::setSelectedProfile($profile);

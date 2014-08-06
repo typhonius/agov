@@ -24,7 +24,7 @@ class Profile {
   /**
    * Define the default profile.
    */
-  const DEFAULT_PROFILE = 'standard';
+  const DEFAULT_PROFILE = 'demo';
 
   /**
    * Get the list of available profiles.
@@ -40,7 +40,7 @@ class Profile {
         'description' => t('Know how to build content types and configure Drupal? This install gives you maximum flexibility.'),
         'handler' => '\Drupal\agov\Profile\MinimalProfile',
       ),
-      self::DEFAULT_PROFILE => array(
+      'standard' => array(
         'name' => t('Full install'),
         'description' => t('Want an aGov site up and running quickly with zero configuration? Use the Full install.'),
         'handler' => '\Drupal\agov\Profile\StandardProfile',
