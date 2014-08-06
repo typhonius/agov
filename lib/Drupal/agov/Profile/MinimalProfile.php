@@ -60,10 +60,6 @@ class MinimalProfile extends BaseProfile {
     // Set default menu items.
     $this->taskSetMenuItems();
 
-    // Set the password policy.
-    // @todo: this will be replaced with the policy module.
-    $this->taskCreatePasswordPolicy();
-
     // Set defaults for the contact form.
     $this->taskContactForm();
 
@@ -428,50 +424,6 @@ class MinimalProfile extends BaseProfile {
     $admin_role = user_role_load($admin_role->rid);
     $admin_role->weight = $weight++;
     user_role_save($admin_role);
-  }
-
-
-  /**
-   * Sets up default password policy.
-   *
-   * We don't have an API so insert into the db directly.
-   */
-  public function taskCreatePasswordPolicy() {
-
-    // Define the password policy.
-    $policy = array(
-      "alphanumeric" => "1",
-      "complexity" => "3",
-      "delay" => "24",
-      "history" => "8",
-      "length" => "9",
-      "letter" => "1",
-    );
-
-    // Insert the policy definition.
-    $pid = db_insert('password_policy')
-      ->fields(array(
-        'name' => 'Australian Government DSD Policy',
-        'description' => 'Password policy that conforms to Australian Government Information Security Manual guidelines 2012 September release.',
-        'enabled' => 1,
-        'policy' => serialize($policy),
-        'expiration' => 90,
-        'warning' => 7,
-      ))
-      ->execute();
-
-    // Get all role ids.
-    $rids = db_query("SELECT rid FROM {role}")->fetchAll(\PDO::FETCH_COLUMN);
-
-    // Insert the roles that use this policy.
-    $query = db_insert('password_policy_role')->fields(array('pid', 'rid'));
-    foreach ($rids as $rid) {
-      // No need to add anonymous.
-      if ($rid != DRUPAL_ANONYMOUS_RID) {
-        $query->values(array($pid, $rid));
-      }
-    }
-    $query->execute();
   }
 
   /**
