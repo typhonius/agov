@@ -144,6 +144,7 @@ class StandardProfile extends MinimalProfile {
     $variables = array();
 
     // Enable xmlsitemap includes for content types.
+    // @todo: should be added when each module is enabled
     $xmlsitemap_settings = array(
       'status' => '1',
       'priority' => '0.5',

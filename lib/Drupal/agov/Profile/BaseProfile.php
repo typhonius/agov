@@ -24,7 +24,7 @@ abstract class BaseProfile implements ProfileInterface {
    * The Installer will call this to run the installation process.
    */
   public function installProfile() {
-    // TODO: Implement installProfile() method.
+    // Nothing to do here.
   }
 
   /**

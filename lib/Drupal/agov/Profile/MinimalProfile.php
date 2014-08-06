@@ -100,6 +100,7 @@ class MinimalProfile extends BaseProfile {
    */
   public function taskFullImageDisplayMode() {
 
+    // @todo: Fabricate.
     Variable::set('field_bundle_settings_file__image', array(
       'view_modes' => array(
         'teaser' => array('custom_settings' => TRUE),
@@ -155,8 +156,6 @@ class MinimalProfile extends BaseProfile {
 
   /**
    * Set default menu items.
-   *
-   * @todo: Worker
    */
   public function taskSetMenuItems() {
 
@@ -214,6 +213,8 @@ class MinimalProfile extends BaseProfile {
 
   /**
    * Add default text formats.
+   *
+   * @todo: Fabricate.
    */
   public function taskSetTextFormats() {
 
@@ -322,6 +323,8 @@ class MinimalProfile extends BaseProfile {
    * 1) Install the date type - Month Year format ("F Y").
    * 2) Setup a date type of Publications.
    * 3) Using variable set we then associate the format and type.
+   *
+   * @todo: Fabricate.
    */
   public function taskSetDateFormats() {
 
@@ -372,7 +375,7 @@ class MinimalProfile extends BaseProfile {
   /**
    * Create basic roles.
    *
-   * @todo: worker
+   * @todo: Fabricate
    */
   public function taskCreateRoles() {
 
@@ -431,6 +434,7 @@ class MinimalProfile extends BaseProfile {
    * Create basic permissions.
    *
    * @todo: This includes permissions for other modules.
+   * @todo: Fabricate.
    */
   public function taskCreatePermissions() {
 
