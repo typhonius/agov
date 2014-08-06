@@ -13,11 +13,10 @@
   <property name="db.host" value="localhost" />
   <property file="build.properties" override="true"/>
 
-  <target name="build" depends="clean:all, prepare:all, validate:all, make, site-install, test:all, login" description="Build the project" />
-
-  <target name="build-fast" depends="validate:phpcs, validate:phpmd, site-install, test:all, login" description="Build the project without make or tests" />
-
-  <target name="build-fast-no-tests" depends="validate:phpcs, validate:phpmd, site-install, login" description="Build the project without make or tests" />
+  <target name="build" depends="clean:all, prepare:dirs, composer:release, validate:all, make, site-install, test:all, login" description="Build the project for release" />
+  <target name="build-dev" depends="clean:all, prepare:dirs, composer:update, validate:all, make, site-install, test:all, login" description="Build the project for development" />
+  <target name="build-fast" depends="validate:phpcs, validate:phpmd, site-install, test:all, login" description="Reinstall the project without make" />
+  <target name="build-fast-no-tests" depends="validate:phpcs, validate:phpmd, site-install, login" description="Reinstall the project without make or tests" />
 
   <target name="clean:all" description="Clean the build environment">
     <phingcall target="fix-perms" />
@@ -35,8 +34,6 @@
     </if>
   </target>
 
-  <target name="prepare:all" depends="prepare:dirs, prepare:composer" description="Prepares the project for building"/>
-
   <target name="prepare:dirs" description="Prepare for build">
     <mkdir dir="${build.drupal.dir}/profiles" />
     <mkdir dir="${build.drupal.dir}/sites/default/files" />
@@ -47,9 +44,19 @@
     <symlink link="${build.drupal.dir}/profiles/agov" target="${project.basedir}" />
   </target>
 
-  <target name="prepare:composer" description="Prepares the composer dependencies" >
+  <target name="composer:install" description="Prepares the composer dependencies" >
     <!-- Install common packages -->
     <exec command="composer install --prefer-dist" logoutput="true" passthru="true"/>
+  </target>
+
+  <target name="composer:release" description="Prepares the composer dependencies" >
+    <!-- Install common packages -->
+    <exec command="composer install --prefer-dist --no-dev --optimise-autoloader" logoutput="true" passthru="true"/>
+  </target>
+
+  <target name="composer:update" description="Updates composer" >
+    <!-- Install common packages -->
+    <exec command="composer update --prefer-dist" logoutput="true" passthru="true"/>
   </target>
 
   <target name="validate:all" depends="validate:phpcs, validate:make" description="Validate the source code" />
