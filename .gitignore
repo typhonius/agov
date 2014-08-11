@@ -9,3 +9,4 @@ build.properties
 libraries/*
 modules/contrib
 themes/contrib
+.vagrant
