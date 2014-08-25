@@ -1,8 +1,10 @@
 name = aGov
+project = agov
+distribution_name = aGov
 description = A distribution for government and the public sector in Australia
-version = 7.x-1.0-dev
 core = 7.x
-exclusive = true
+exclusive = TRUE
+hidden = FALSE
 
 ; System Requirements.
 php_memory_limit = 128M
@@ -99,6 +101,7 @@ dependencies[] = paranoia
 dependencies[] = pathauto
 dependencies[] = pathauto_persist
 dependencies[] = references
+dependencies[] = redirect
 dependencies[] = strongarm
 dependencies[] = token
 dependencies[] = views_content
@@ -144,7 +147,6 @@ dependencies[] = agov_disable_defaultcontent
 dependencies[] = agov_core
 dependencies[] = agov_common_fields
 dependencies[] = agov_beans
-dependencies[] = agov_layouts
 dependencies[] = agov_text_resize
 dependencies[] = agov_image_styles
 dependencies[] = agov_editing
