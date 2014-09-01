@@ -1,36 +1,20 @@
 name = aGov
 project = agov
+package = aGov Profile
 distribution_name = aGov
 description = A distribution for government and the public sector in Australia
 core = 7.x
 exclusive = TRUE
 hidden = FALSE
+php = 5.3
 
 ; System Requirements.
 php_memory_limit = 128M
 
-// Basic autoload
-;files[] = tests/agov_test_base.inc
-;files[] = tests/agov.test
-;files[] = tests/agov_metadata.test
-
-// The following files need to be loaded with Drupals autoloader, since
-// on some occassions, X Autoload is not ready in the installer.
-
-// Autoload installer
-files[] = lib/Drupal/agov/Config/Profile.php
-files[] = lib/Drupal/agov/Exception/aGovException.php
-files[] = lib/Drupal/agov/Exception/InvalidInstallProfileException.php
-files[] = lib/Drupal/agov/Installer/Installer.php
-
-// Autoload Profile system
-files[] = lib/Drupal/agov/Profile/BaseProfile.php
-files[] = lib/Drupal/agov/Profile/DemoProfile.php
-files[] = lib/Drupal/agov/Profile/MinimalProfile.php
-files[] = lib/Drupal/agov/Profile/StandardProfile.php
-files[] = lib/Drupal/agov/Profile/ProfileInterface.php
-files[] = lib/Drupal/agov/Profile/ProfileTaskInterface.php
-
+files[] = agov.profile
+files[] = tests/agov_test_base.inc
+files[] = tests/agov.test
+files[] = tests/agov_metadata.test
 
 ; Core
 
@@ -38,7 +22,6 @@ dependencies[] = block
 dependencies[] = contact
 dependencies[] = comment
 dependencies[] = contextual
-dependencies[] = dblog
 dependencies[] = filter
 dependencies[] = help
 dependencies[] = image
@@ -60,6 +43,7 @@ dependencies[] = list
 dependencies[] = rdf
 dependencies[] = update
 
+
 ; Contrib
 
 dependencies[] = agls
@@ -70,6 +54,7 @@ dependencies[] = bean
 dependencies[] = bean_admin_ui
 dependencies[] = chosen
 dependencies[] = ctools
+dependencies[] = crumbs
 dependencies[] = date
 dependencies[] = defaultconfig
 dependencies[] = defaultcontent
@@ -91,7 +76,6 @@ dependencies[] = media_vimeo
 dependencies[] = media_youtube
 dependencies[] = menu_block
 dependencies[] = menu_block_export
-dependencies[] = menu_trail_by_path
 dependencies[] = metatag
 dependencies[] = node_reference
 dependencies[] = panels
@@ -131,15 +115,13 @@ dependencies[] = ccl_blocks
 dependencies[] = ccl_local_actions
 dependencies[] = ccl_views
 dependencies[] = search_config
-dependencies[] = xautoload
 
 ; Custom
 
-dependencies[] = fabricator
-;dependencies[] = node_freshness
+dependencies[] = node_freshness
 dependencies[] = text_summary_options
-;dependencies[] = wcag_validate
-;dependencies[] = wcag_scheduler
+dependencies[] = wcag_validate
+dependencies[] = wcag_scheduler
 dependencies[] = agov_disable_defaultcontent
 
 ; aGov
@@ -152,7 +134,6 @@ dependencies[] = agov_image_styles
 dependencies[] = agov_editing
 dependencies[] = agov_chosen
 dependencies[] = agov_contact
-dependencies[] = agov_content_requirements
 dependencies[] = agov_front
 dependencies[] = agov_menu_block
 dependencies[] = agov_register
@@ -171,7 +152,6 @@ dependencies[] = agov_news
 dependencies[] = agov_publications
 dependencies[] = agov_promotion
 dependencies[] = agov_permissions
-
 
 ; Content
 
