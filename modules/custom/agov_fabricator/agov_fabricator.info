@@ -1,0 +1,6 @@
+name = Fabricator Content Types for aGov
+package = aGov core
+description = Provides content types.
+core = 7.x
+
+dependencies[] = fabricator

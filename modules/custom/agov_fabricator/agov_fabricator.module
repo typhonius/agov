@@ -1,0 +1,72 @@
+<?php
+
+/**
+ * @file
+ * aGov Content Types.
+ *
+ * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
+ * @author Chris Skene chris at previousnext dot com dot au
+ * @copyright Copyright(c) 2014 Previous Next Pty Ltd
+ */
+
+/**
+ * Implements hook_fabricator_components().
+ */
+function agov_fabricator_fabricator_blueprints() {
+
+  $components['agov_page'] = array(
+    'name' => t('Standard Page'),
+    'file' => 'blueprints/agov_page.inc',
+    'parser' => FABRICATOR_PARSER_PHP,
+    'description' => t('A standard page.'),
+    'group' => t('aGov Content Types'),
+    'type' => 'content_type',
+  );
+
+  return $components;
+}
+
+/**
+ * Implements hook_fabricator_components().
+ */
+function agov_fabricator_fabricator_components() {
+
+  // Content type bases.
+  $components['page_component'] = array(
+    'name' => t('Standard Page'),
+    'file' => 'components/node_type/agov_page.inc',
+    'parser' => FABRICATOR_PARSER_PHP,
+    'description' => t('A set of content type defaults which can be used as the
+      basis for other blueprints.'),
+    'group' => t('aGov Content Types'),
+    'type' => 'content_type',
+  );
+
+  // Field components.
+  $components['field_file'] = array(
+    'name' => t('aGov File Field'),
+    'file' => 'components/fields/field_file.inc',
+    'parser' => FABRICATOR_PARSER_PHP,
+    'description' => t('A default aGov image field.'),
+    'group' => t('aGov Fields'),
+    'type' => 'field',
+  );
+  $components['field_image'] = array(
+    'name' => t('aGov Image Field'),
+    'file' => 'components/fields/field_image.inc',
+    'parser' => FABRICATOR_PARSER_PHP,
+    'description' => t('A default aGov image field.'),
+    'group' => t('aGov Fields'),
+    'type' => 'field',
+  );
+  $components['field_sameas'] = array(
+    'name' => t('aGov SameAs Field'),
+    'file' => 'components/fields/field_sameas.inc',
+    'parser' => FABRICATOR_PARSER_PHP,
+    'description' => t('A default aGov sameAs field.'),
+    'group' => t('aGov Fields'),
+    'type' => 'field',
+  );
+
+  return $components;
+}
