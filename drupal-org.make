@@ -39,7 +39,7 @@ projects[entitycache][download][revision] = 7e390b5d4112b581ac2885d8bd0f2cb5ce87
 projects[entitycache][download][branch] = 7.x-1.x
 projects[entitycache][type] = "module"
 
-projects[fabricator][version] = 1.0-alpha1
+projects[fabricator][version] = 1.0-alpha2
 
 projects[features][version] = 2.2
 
@@ -126,6 +126,8 @@ projects[webform][version] = "3.20"
 projects[workbench][version] = "1.2"
 
 projects[xmlsitemap][version] = "2.0-rc2"
+
+projects[xautoload][version] = "4.5"
 
 ; Patched modules
 projects[defaultconfig][version] = "1.0-alpha9"
