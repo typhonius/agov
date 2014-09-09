@@ -13,7 +13,7 @@
 $export = array(
   'fields' => array(
     'field_sameas' => array(
-      'field_name' => 'field_sames',
+      'field_name' => 'field_sameas',
       'type' => 'link_field',
       'cardinality' => -1,
       'locked' => FALSE,
