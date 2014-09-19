@@ -51,7 +51,12 @@ projects[honeypot][version] = "1.14"
 
 projects[libraries][version] = "2.1"
 
-projects[link][version] = "1.1"
+projects[link][download][type] = "git"
+projects[link][download][url] = "http://git.drupal.org/project/link.git"
+projects[link][download][revision] = 7dc306cf8109c4bf7089eaeaafa12b1c6ee16492
+projects[link][download][branch] = "7.x-1.x"
+projects[link][type] = "module"
+projects[link][patch][] = "https://www.drupal.org/files/issues/1267662-microdata-11.patch"
 
 projects[linkit][version] = "3.1"
 
@@ -70,6 +75,13 @@ projects[menu_block][version] = "2.3"
 projects[menu_trail_by_path][version] = "2.0"
 
 projects[metatag][version] = "1.0-beta7"
+
+projects[microdata][download][type] = "git"
+projects[microdata][download][url] = "http://git.drupal.org/project/microdata.git"
+projects[microdata][download][revision] = 6739979bf96bdbe982dc565b1703c3bfebaff1a6
+projects[microdata][download][branch] = "7.x-1.x"
+projects[microdata][type] = "module"
+projects[microdata][patch][] = "https://www.drupal.org/files/issues/2157139-theme-notices-1.patch"
 
 projects[references][version] = "2.1"
 
