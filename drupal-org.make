@@ -60,6 +60,13 @@ projects[google_analytics][subdir] = "contrib"
 projects[honeypot][version] = "1.14"
 projects[honeypot][subdir] = "contrib"
 
+projects[html_codesniffer][download][type] = "git"
+projects[html_codesniffer][download][url] = "git://git.drupal.org/sandbox/nick_schuch/2341801.git"
+projects[html_codesniffer][download][revision] = 22b8d339a32b3afb29e2b574ff2e62c03948fe84
+projects[html_codesniffer][download][branch] = "7.x-1.x"
+projects[html_codesniffer][type] = "module"
+projects[html_codesniffer][subdir] = "contrib"
+
 projects[libraries][version] = "2.1"
 projects[libraries][subdir] = "contrib"
 

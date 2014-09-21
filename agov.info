@@ -61,6 +61,7 @@ dependencies[] = file_entity
 dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = honeypot
+dependencies[] = html_codesniffer
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = media
@@ -115,8 +116,6 @@ dependencies[] = agov_components
 
 dependencies[] = node_freshness
 dependencies[] = text_summary_options
-dependencies[] = wcag_validate
-dependencies[] = wcag_scheduler
 dependencies[] = agov_disable_defaultcontent
 
 ; aGov
