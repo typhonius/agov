@@ -125,22 +125,18 @@ dependencies[] = node_freshness
 dependencies[] = text_summary_options
 dependencies[] = wcag_validate
 dependencies[] = wcag_scheduler
-dependencies[] = agov_disable_defaultcontent
 
 ; aGov
 
 dependencies[] = agov_core
 dependencies[] = agov_common_fields
-dependencies[] = agov_beans
 dependencies[] = agov_text_resize
 dependencies[] = agov_image_styles
 dependencies[] = agov_editing
 dependencies[] = agov_chosen
 dependencies[] = agov_contact
-dependencies[] = agov_front
 dependencies[] = agov_menu_block
 dependencies[] = agov_register
-dependencies[] = agov_slideshow
 dependencies[] = agov_superfish_configuration
 dependencies[] = agov_sitemap
 dependencies[] = agov_social_links
@@ -148,13 +144,6 @@ dependencies[] = agov_social_links
 ; Content types
 
 dependencies[] = agov_basic_page
-dependencies[] = agov_blog
-dependencies[] = agov_events
-dependencies[] = agov_media_releases
-dependencies[] = agov_news
-dependencies[] = agov_publications
-dependencies[] = agov_promotion
-dependencies[] = agov_permissions
 
 ; Content
 

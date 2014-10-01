@@ -122,4 +122,45 @@ class DemoProfile extends StandardProfile {
     // Save the tids.
     Variable::set('agov_tags_saved', $tids);
   }
+
+  /**
+   * Enable any modules.
+   *
+   * @todo: worker
+   */
+  public function taskEnableModules() {
+
+    // This enables all the content modules.
+    $modules = array(
+      // Standard content modules.
+      'agov_beans',
+      'agov_front',
+      'agov_slideshow',
+      'agov_blog',
+      'agov_events',
+      'agov_media_releases',
+      'agov_news',
+      'agov_publications',
+      'agov_promotion',
+      'agov_permissions',
+
+       // Default/demo content.
+      'agov_content_standard_page',
+      'agov_content_blog',
+      'agov_content_event',
+      'agov_content_media_release',
+      'agov_content_news_article',
+      'agov_content_promotion',
+
+      // Default content thing.
+      'agov_disable_defaultcontent',
+
+      // This one doesnt install properly.
+      // 'agov_content_publications',
+    );
+
+    module_enable($modules);
+
+    drupal_set_message('Enabled modules for the full install.');
+  }
 }
