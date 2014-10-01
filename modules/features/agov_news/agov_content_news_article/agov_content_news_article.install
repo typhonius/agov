@@ -2,7 +2,7 @@
 
 /**
  * @file
- * agov_news install
+ * Install file
  *
  * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
  * @author Chris Skene chris at previousnext dot com dot au
@@ -10,9 +10,9 @@
  */
 
 /**
- * Implements hook_install.
+ * Implements hook_install().
  */
-function agov_news_install() {
+function agov_content_news_article_install() {
 
-  agov_news_setup_beans();
+  agov_content_news_article_setup_beans();
 }
