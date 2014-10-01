@@ -192,6 +192,11 @@ class MinimalProfile extends BaseProfile {
         'priority' => '0.5',
       ),
 
+      'crumbs_weights' => array(
+        'crumbs.home_title' => 1,
+        'path'  => 2,
+        '*' => 3,
+      ),
     );
 
     Variable::setMany($variables);
