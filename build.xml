@@ -104,7 +104,21 @@
   </target>
 
   <target name="site-install" depends="fix-perms" description="Install Drupal on a clean database">
-    <exec dir="${build.drupal.dir}" command="drush site-install agov -y --site-name=aGov --db-url=mysql://${db.username}:${db.password}@${db.host}/${db.name} agov_install_additional_options.install=1 agov" logoutput="true" passthru="true" />
+    <phingcall target="site-install-demo" />
+    <phingcall target="set-directories" />
+  </target>
+
+  <target name="site-install-demo" description="Installs the demo aGov profile with drush">
+    <exec dir="${build.drupal.dir}" command="drush site-install agov -y --site-name=aGov --db-url=mysql://${db.username}:${db.password}@${db.host}/${db.name} agov_installer_options.installer=demo agov_install_additional_options.install=1 agov" logoutput="true" passthru="true" />
+    <phingcall target="set-directories" />
+  </target>
+
+  <target name="site-install-full" description="Installs the standard aGov profile with drush">
+    <exec dir="${build.drupal.dir}" command="drush site-install agov -y --site-name=aGov --db-url=mysql://${db.username}:${db.password}@${db.host}/${db.name} agov_installer_options.installer=standard agov_install_additional_options.install=1 agov" logoutput="true" passthru="true" />
+    <phingcall target="set-directories" />
+  </target>
+
+  <target name="set-directories" description="Set file directory paths">
     <exec dir="${build.drupal.dir}" command="drush vset -y file_private_path 'sites/default/private'" logoutput="true" passthru="true" />
     <exec dir="${build.drupal.dir}" command="drush vset -y file_temporary_path 'sites/default/files/tmp'" logoutput="true" passthru="true" />
   </target>
