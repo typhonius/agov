@@ -23,7 +23,7 @@ class DemoProfile extends StandardProfile {
   /**
    * Returns modules and functions to install default/example content.
    *
-   * @deprecated Will be removed when YAML lands.
+   * @deprecated Will be removed if YAML lands.
    */
   public function defaultContentSettings() {
 

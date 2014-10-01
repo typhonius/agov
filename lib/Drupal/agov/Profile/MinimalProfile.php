@@ -424,12 +424,12 @@ class MinimalProfile extends BaseProfile {
    */
   public function taskCreatePermissions() {
 
-  // Enable default permissions for system roles.
+    // Enable default permissions for system roles.
     user_role_grant_permissions(
       DRUPAL_ANONYMOUS_RID,
       array(
         'access content',
-        // These need to be moved...
+// These need to be moved...
 //        'search page content',
 //        'search blog_article content',
 //        'search event content',
@@ -451,7 +451,7 @@ class MinimalProfile extends BaseProfile {
         'access comments',
         'post comments',
         'skip comment approval',
-        // These need to be moved...
+// These need to be moved...
 //        'search page content',
 //        'search blog_article content',
 //        'search event content',
