@@ -161,15 +161,19 @@ function agov_installer_options() {
   $form = array();
 
   $form['profile'] = array(
-    '#type' => 'radios',
+    '#type' => 'fieldset',
     '#title' => st('Installation method'),
+  );
+  $form['profile']['installer'] = array(
+    '#type' => 'radios',
+    '#title' => st('Type of installer to use'),
     '#required' => TRUE,
     '#options' => $options,
     '#default_value' => \Drupal\agov\Config\Profile::DEFAULT_PROFILE,
   );
 
-  foreach (array_keys($form['profile']['#options']) as $key) {
-    $form['profile'][$key]['#description'] = $profiles[$key]['description'];
+  foreach (array_keys($form['profile']['installer']['#options']) as $key) {
+    $form['profile']['installer'][$key]['#description'] = $profiles[$key]['description'];
   }
 
   /*
@@ -260,6 +264,7 @@ function agov_example_content_install() {
   $installer = new \Drupal\agov\Installer\Installer();
   $profile = $installer->getProfileHandler($profile);
 
+  /* @var \Drupal\agov\Profile\DemoProfile $profile */
   $steps = $profile->defaultContentSettings();
   foreach ($steps as $content) {
     $operations[] = array(
