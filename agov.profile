@@ -229,7 +229,7 @@ function agov_installer_options_submit($form, &$form_state) {
   $values = $form_state['values'];
 
   // Run the installer.
-  \Drupal\agov\Installer\Installer::doInstall($values['profile']);
+  \Drupal\agov\Installer\Installer::doInstall($values['installer']);
 
   // If the user selects to register the site, post the data.
   if ($form_state['values']['agov_register_confirm']) {
