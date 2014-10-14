@@ -23,6 +23,8 @@ class Bean {
    *
    * @param string $bean_type
    *   The type of bean to create
+   * @param string $machine_name
+   *   Machine name (delta) to use for the bean
    * @param string $label
    *   Admin label for the bean
    * @param string $description
@@ -36,42 +38,10 @@ class Bean {
    * @param string $view_mode
    *   (optional) The view mode. Defaults to 'default'.
    */
-  static public function saveBean($bean_type, $label, $description = '', $title = '', $fields = array(), $view_mode = 'default') {
-
-    $bean = static::createBean($bean_type, $label, $description, $title, $fields, $view_mode);
-    $bean->save();
-
-    drupal_set_message('Created a new bean "' . $label . '" of type <em>' . $bean_type . '</em>');
-  }
-
-
-  /**
-   * Create a bean from configuration.
-   *
-   * Normally, you can use agov_core_save_bean(), however this is useful if
-   * you need to manipulate the bean before saving.
-   *
-   * @param string $bean_type
-   *   The type of bean to create
-   * @param string $label
-   *   Admin label for the bean
-   * @param string $description
-   *   (optional) Admin description for the bean
-   * @param string $title
-   *   (optional) Block title for the bean
-   * @param array $fields
-   *   (optional) An array of fields to assign. This should resemble the ACTUAL
-   *   field array, as it is literally transposed onto the bean, with the
-   *   exception that the language key should be omitted.
-   * @param string $view_mode
-   *   (optional) The view mode. Defaults to 'default'.
-   *
-   * @return \Bean
-   *   a Bean entity
-   */
-  static public function createBean($bean_type, $label, $description = '', $title = '', $fields = array(), $view_mode = 'default') {
+  static public function saveBean($bean_type, $machine_name, $label, $description = '', $title = '', $fields = array(), $view_mode = 'default') {
 
     $config = array(
+      'delta' => $machine_name,
       'label' => $label,
       'description' => $description,
       'title' => $title,
@@ -79,13 +49,22 @@ class Bean {
       'view_mode' => $view_mode,
       'is_new' => TRUE,
     );
-    foreach ($fields as $field_key => $field_value) {
-      $config[$field_key] = array();
-      $config[$field_key][LANGUAGE_NONE] = $field_value;
-    }
 
     $bean = bean_create($config);
 
-    return $bean;
+    foreach ($fields as $field_key => $field_value) {
+      $bean->$field_key[LANGUAGE_NONE] = $field_value;
+    }
+
+    $bean->default_revision = TRUE;
+
+//    field_attach_insert('bean', $bean);
+
+    $bean->save();
+
+    drupal_set_message('Created a new bean "' . $label . '" of type <em>' . $bean_type . '</em>');
+
+    drupal_flush_all_caches();
   }
+
 }

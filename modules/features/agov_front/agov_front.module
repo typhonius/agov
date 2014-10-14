@@ -30,5 +30,5 @@ urna vitae posuere varius, sem enim blandit augue, non condimentum dolor tortor
       ),
     ),
   );
-  Bean::saveBean('basic_content', 'About Us', 'Provides "About Us" block for the from page.', 'About Us', $fields);
+  Bean::saveBean('basic_content', 'about-us', 'About Us', 'Provides "About Us" block for the from page.', 'About Us', $fields);
 }

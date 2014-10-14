@@ -182,7 +182,7 @@ class StandardProfile extends MinimalProfile {
       ),
     );
 
-    Bean::saveBean('basic_content', 'Footer copyright', 'The copyright message', '', $fields);
+    Bean::saveBean('basic_content', 'footer-copyright', 'Footer copyright', 'The copyright message', '', $fields);
     Block::insertBlock('bean', 'footer-copyright', 'footer', 4, BLOCK_VISIBILITY_NOTLISTED, Block::NO_TITLE);
   }
 
