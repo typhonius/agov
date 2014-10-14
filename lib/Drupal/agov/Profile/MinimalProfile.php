@@ -197,6 +197,12 @@ class MinimalProfile extends BaseProfile {
         'path'  => 2,
         '*' => 3,
       ),
+
+      // Set webform_clear default time.
+      'webform_clear_default_time' => 0,
+
+      // Turn off theme rebuilds.
+      'theme_agov_zen_settings' => array('zen_rebuild_registry' => 0),
     );
 
     Variable::setMany($variables);
