@@ -165,6 +165,8 @@ projects[flood_control][version] = "1.0"
 
 projects[login_security][version] = "1.4"
 
+projects[views_watchdog][version] = "3.3"
+
 ; Themes
 projects[zen][version] = "5.5"
 
