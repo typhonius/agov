@@ -5,7 +5,7 @@
  */
 
 /**
- *  Implements hook_permission().
+ * Implements hook_permission().
  */
 function agov_user_actions_permission() {
   return array(
@@ -14,4 +14,29 @@ function agov_user_actions_permission() {
       'description' => t('View user actions such as logging in and adding/updating content.'),
     ),
   );
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function agov_user_actions_module_implements_alter(&$implementations, $hook) {
+  if (variable_get('agov_user_actions_override_dblog', TRUE)) {
+    if ($hook === 'watchdog') {
+      unset($implementations['dblog']);
+    }
+    elseif ($hook === 'cron') {
+      unset($implementations['dblog']);
+    }
+  }
+}
+
+/**
+ * Implements hook_watchdog().
+ */
+function agov_user_actions_watchdog(array $log_entry) {
+  if (variable_get('agov_user_actions_override_dblog', TRUE)) {
+    if (in_array($log_entry['type'], array('action', 'content', 'user'))) {
+      dblog_watchdog($log_entry);
+    }
+  }
 }
