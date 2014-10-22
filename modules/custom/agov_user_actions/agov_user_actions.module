@@ -44,8 +44,14 @@ function agov_user_actions_module_implements_alter(&$implementations, $hook) {
  * Implements hook_watchdog().
  */
 function agov_user_actions_watchdog(array $log_entry) {
+  static $filter_types = array(
+    'action',
+    'content',
+    'user',
+    'Workbench moderation',
+  );
   if (variable_get('agov_user_actions_override_dblog', TRUE)) {
-    if (in_array($log_entry['type'], array('action', 'content', 'user', 'Workbench moderation'))) {
+    if (in_array($log_entry['type'], $filter_types)) {
       dblog_watchdog($log_entry);
     }
   }
