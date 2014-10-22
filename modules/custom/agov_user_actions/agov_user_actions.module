@@ -17,6 +17,13 @@ function agov_user_actions_permission() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function agov_user_actions_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_module_implements_alter().
  */
 function agov_user_actions_module_implements_alter(&$implementations, $hook) {
@@ -25,6 +32,9 @@ function agov_user_actions_module_implements_alter(&$implementations, $hook) {
       unset($implementations['dblog']);
     }
     elseif ($hook === 'cron') {
+      unset($implementations['dblog']);
+    }
+    elseif ($hook === 'menu') {
       unset($implementations['dblog']);
     }
   }

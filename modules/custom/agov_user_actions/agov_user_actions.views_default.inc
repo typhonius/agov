@@ -7,7 +7,7 @@
 /**
  * Implements hook_views_default_views().
  */
-function agov_news_views_default_views() {
+function agov_user_actions_views_default_views() {
   $export = array();
 
   $view = new view();
