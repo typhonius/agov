@@ -1,0 +1,8 @@
+name = User Action Report
+description = Provides a report of user actions.
+core = 7.x
+package = aGov
+version = 7.x-1.1
+project = agov_user_actions
+dependencies[] = dblog
+dependencies[] = views_watchdog
