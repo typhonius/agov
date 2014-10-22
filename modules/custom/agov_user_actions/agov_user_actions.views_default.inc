@@ -85,6 +85,7 @@ function agov_user_actions_views_default_views() {
     'action' => 'action',
     'content' => 'content',
     'user' => 'user',
+    'Workbench moderation' => 'Workbench moderation',
   );
 
   /* Display: Page */
