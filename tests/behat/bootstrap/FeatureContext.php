@@ -61,7 +61,7 @@ class FeatureContext extends DrupalContext {
   /**
    * Creates and authenticates a user with the given role via Drush.
    *
-   * @Given /^I am logged in as a user with the "(?P[^"]*)" role that does not force password change$/
+   * @Given /^I am logged in as a user with the "([^"]*)" role that does not force password change$/
    */
   public function iAmLoggedInAsAUserWithTheRoleThatDoesNotForcePasswordChange($role) {
     parent::assertAuthenticatedByRole($role);
