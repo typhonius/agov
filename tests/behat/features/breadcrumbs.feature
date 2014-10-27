@@ -6,7 +6,7 @@ Feature: Breadcrumbs
 
   @api
   Scenario: Breadcrumbs are set for news items
-    Given I am logged in as a user with the "Content editor" role
+    Given I am logged in as a user with the "Content editor" role that does not force password change
     When I go to "/node/add/news-article"
     Then the response status code should be 200
     And I enter "test" for "Title"

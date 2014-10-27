@@ -8,7 +8,7 @@ Feature: Role delegation
   Scenario: Meta-tags are auto set
     Given an "administrator" user named "joe"
     Given an "Content editor" user named "bob"
-    And I am logged in as a user with the "Site editor" role
+    And I am logged in as a user with the "Site editor" role that does not force password change
     And I visit the user edit page for "bob"
     Then I "should" be able to change the "Site editor" role
     And I visit the user edit page for "joe"

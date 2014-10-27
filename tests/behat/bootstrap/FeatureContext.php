@@ -57,4 +57,22 @@ class FeatureContext extends DrupalContext {
     }
   }
 
+
+  /**
+   * Creates and authenticates a user with the given role via Drush.
+   *
+   * @Given /^I am logged in as a user with the "(?P[^"]*)" role that does not force password change$/
+   */
+  public function iAmLoggedInAsAUserWithTheRoleThatDoesNotForcePasswordChange($role) {
+    parent::assertAuthenticatedByRole($role);
+
+    // Remove the "Force password change on next login" record.
+    db_delete('password_policy_force_change')
+      ->condition('uid', $this->user->uid)
+      ->execute();
+    db_delete('password_policy_expiration')
+      ->condition('uid', $this->user->uid)
+      ->execute();
+  }
+
 }
