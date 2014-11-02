@@ -45,6 +45,10 @@ projects[features][version] = 2.2
 
 projects[file_entity][version] = "2.0-alpha3"
 
+projects[funnelback][version] = 1.0-beta3
+projects[funnelback][subdir] = "contrib"
+projects[funnelback][patch][] = "https://www.drupal.org/files/issues/2366681-api-v13-1.patch"
+
 projects[globalredirect][version] = "1.5"
 
 projects[google_analytics][version] = "2.0"
