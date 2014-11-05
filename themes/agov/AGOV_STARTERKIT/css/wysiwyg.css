@@ -4,28 +4,25 @@
  */
 @font-face {
   font-family: 'OpenSansRegular';
-  src: url('../fonts/opensans-regular-webfont.eot');
-  src: url('../fonts/opensans-regular-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/opensans-regular-webfont.woff') format("woff"), url('../fonts/opensans-regular-webfont.ttf') format("truetype"), url('../fonts/opensans-regular-webfont.svg#OpenSansRegular') format("svg");
+  src: url('../fonts/opensans-regular-webfont.eot?1415163543');
+  src: url('../fonts/opensans-regular-webfont.eot?&1415163543#iefix') format("embedded-opentype"), url('../fonts/opensans-regular-webfont.woff?1415163543') format("woff"), url('../fonts/opensans-regular-webfont.ttf?1415163543') format("truetype"), url('../fonts/opensans-regular-webfont.svg?1415163543#OpenSansRegular') format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'OpenSansBold';
-  src: url('../fonts/opensans-bold-webfont.eot');
-  src: url('../fonts/opensans-bold-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/opensans-bold-webfont.woff') format("woff"), url('../fonts/opensans-bold-webfont.ttf') format("truetype"), url('../fonts/opensans-bold-webfont.svg#OpenSansBold') format("svg");
+  src: url('../fonts/opensans-bold-webfont.eot?1415163543');
+  src: url('../fonts/opensans-bold-webfont.eot?&1415163543#iefix') format("embedded-opentype"), url('../fonts/opensans-bold-webfont.woff?1415163543') format("woff"), url('../fonts/opensans-bold-webfont.ttf?1415163543') format("truetype"), url('../fonts/opensans-bold-webfont.svg?1415163543#OpenSansBold') format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'OpenSansSemibold';
-  src: url('../fonts/opensans-semibold-webfont.eot');
-  src: url('../fonts/opensans-semibold-webfont.eot?#iefix') format("embedded-opentype"), url('../fonts/opensans-semibold-webfont.woff') format("woff"), url('../fonts/opensans-semibold-webfont.ttf') format("truetype"), url('../fonts/opensans-semibold-webfont.svg#OpenSansSemibold') format("svg");
+  src: url('../fonts/opensans-semibold-webfont.eot?1415163543');
+  src: url('../fonts/opensans-semibold-webfont.eot?&1415163543#iefix') format("embedded-opentype"), url('../fonts/opensans-semibold-webfont.woff?1415163543') format("woff"), url('../fonts/opensans-semibold-webfont.ttf?1415163543') format("truetype"), url('../fonts/opensans-semibold-webfont.svg?1415163543#OpenSansSemibold') format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
 /* Headings */
 h1, h2, h3, h4, h5 {
   font-family: "OpenSansSemibold", Arial, sans-serif;
@@ -41,7 +38,7 @@ a:visited {
   color: #464445;
 }
 a:hover {
-  color: #7a797a;
+  color: #7A797A;
 }
 a:active {
   color: #464445;
@@ -147,3 +144,5 @@ html {
 ul, ol {
   margin: 1.4em 0;
 }
+
+/*# sourceMappingURL=wysiwyg.css.map */
