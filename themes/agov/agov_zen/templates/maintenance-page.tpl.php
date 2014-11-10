@@ -36,7 +36,7 @@ endif;
 </head>
 
 <body>
-  <div class="palette-1 centered-box">
+  <div class="centered-box">
     <?php if (!empty($logo)): ?>
       <img class="centered-box__image" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
     <?php endif; ?>

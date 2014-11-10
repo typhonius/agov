@@ -36,7 +36,7 @@ endif;
 </head>
 
 <body>
-  <div class="palette-1 centered-box">
+  <div class="centered-box">
     This web site is currently undergoing some maintenance and is unavailable.
   </div>
 </body>
