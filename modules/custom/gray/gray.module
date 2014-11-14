@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Adds integration with the gray library.
+ */
+
+/**
+ * Implements hook_init().
+ */
+function gray_init() {
+  libraries_load('gray');
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function gray_libraries_info() {
+  $libraries['gray'] = array(
+    'name' => 'Gray',
+    'vendor url' => 'https://github.com/karlhorky/gray',
+    'download url' => 'https://github.com/karlhorky/gray.git',
+    'version callback' => 'gray_get_version',
+    'files' => array(
+      'js' => array(
+        'js/gray.jquery.min.js',
+      ),
+      'css' => array(
+        'css/gray.min.css',
+      ),
+    ),
+    'variants' => array(
+      'minified' => array(
+        'files' => array(
+          'js' => array(
+            'js/gray.jquery.min.js',
+          ),
+          'css' => array(
+            'css/gray.min.css',
+          ),
+        ),
+      ),
+      'source' => array(
+        'files' => array(
+          'js' => array(
+            'js/gray.jquery.js',
+          ),
+          'css' => array(
+            'css/gray.css',
+          ),
+        ),
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Get the version of gray library.
+ */
+function gray_get_version($library, $options) {
+  $bower_filename = $library['library path'] . '/bower.json';
+  if (file_exists($bower_filename)) {
+    $bower = json_decode(file_get_contents($bower_filename));
+    return $bower->version;
+  }
+}

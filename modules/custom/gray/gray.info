@@ -1,0 +1,5 @@
+name = "Gray"
+description = "Make an image gray in all browsers."
+package = User interface
+dependencies[] = libraries
+core = 7.x

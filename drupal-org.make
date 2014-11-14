@@ -235,3 +235,7 @@ libraries[backbone][type] = "library"
 libraries[modernizr][download][type] = "get"
 libraries[modernizr][download][url] = "https://github.com/Modernizr/Modernizr/archive/v2.7.0.tar.gz"
 libraries[modernizr][type] = "library"
+
+libraries[gray][download][type] = get
+libraries[gray][download][url] = "https://github.com/karlhorky/gray/archive/gh-pages.zip"
+libraries[gray][type] = "library"
