@@ -753,8 +753,10 @@ function _agov_default_variables() {
     'linkchecker_impersonate_user' => 'admin',
     'linkchecker_scan_blocks' => 1,
 
-    // Oauth
+    // Oauth.
     'oauth_common_enable_provider' => FALSE,
+
+    'apps_install_path' => 'sites/all/modules/contrib',
   );
 
   // Enable xmlsitemap includes for content types.
@@ -1142,8 +1144,41 @@ function agov_install_tasks($install_state) {
     'type' => 'normal',
     'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
   );
+
+  require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
+  $server = array(
+    'machine name' => 'agov',
+    'default apps' => array(
+      'agov_blog',
+    ),
+    'required apps' => array(),
+    'default content callback' => 'agov_default_content_install',
+  );
+  $task = apps_profile_install_tasks($install_state, $server);
+
+  require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
+  $task = array_merge($task, apps_profile_install_tasks($install_state, $server));
   return $task;
+
 }
+
+/**
+ * Callback to enable agov default content.
+ */
+function openpublic_default_content_install($modules) {
+  apps_include('manifest');
+  $apps = apps_apps('agov');
+  // Ignoring $modules because we want any demo module from any enabled app.
+  foreach ($apps as $app_name => $app) {
+    if (!empty($app['demo content module']) && !module_exists($app['demo content module']) && module_exists($app_name)) {
+      $enable[] = $app['demo content module'];
+    }
+  }
+  if ($enable) {
+    module_enable($enable);
+  }
+}
+
 
 /**
  * Implements hook_install_tasks_alter().

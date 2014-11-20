@@ -47,6 +47,7 @@ dependencies[] = update
 
 dependencies[] = agls
 dependencies[] = admin_views
+dependencies[] = apps
 dependencies[] = bean
 dependencies[] = bean_admin_ui
 dependencies[] = chosen
@@ -164,7 +165,7 @@ dependencies[] = agov_social_links
 ; Content types
 
 dependencies[] = agov_basic_page
-dependencies[] = agov_blog
+;dependencies[] = agov_blog
 dependencies[] = agov_events
 dependencies[] = agov_media_releases
 dependencies[] = agov_news

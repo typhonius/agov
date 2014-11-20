@@ -8,6 +8,7 @@ defaults[projects][subdir] = "contrib"
 
 projects[admin_views][version] = "1.2"
 projects[agls][version] = "1.0-beta3"
+projects[apps][version] = "1.0-beta20"
 projects[bean][version] = "1.5"
 projects[bean_panels][version] = "1.3"
 projects[ccl][version] = "1.5"
