@@ -98,6 +98,10 @@
   <target name="drush:rr" description="Drush registry rebuild.">
     <exec dir="${build.drupal.dir}" command="drush rr -y" logoutput="true" passthru="true" />
   </target>
+  
+  <target name="drush:cc" description="Drush cache clear.">
+    <exec dir="${build.drupal.dir}" command="drush cc all" logoutput="true" passthru="true" />
+  </target>
 
   <target name="validate:phpmd" description="Find code complexity issues">
     <exec command="bin/phpmd ${src.custom.modules} text phpmd.xml --exclude '*views*'" logoutput="true" passthru="true" checkreturn="true" />

@@ -55,6 +55,9 @@ before_script:
   # Upgrade the site
   - phing upgrade
 
+  # Cache clear
+  - phing drush:cc
+  
   # Registry rebuild
   - phing drush:rr
 
