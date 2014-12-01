@@ -120,6 +120,7 @@ dependencies[] = view_unpublished
 dependencies[] = webform
 dependencies[] = webform_clear
 dependencies[] = webform_phone
+dependencies[] = webform_ssl
 dependencies[] = workbench
 dependencies[] = workbench_moderation
 dependencies[] = wysiwyg
