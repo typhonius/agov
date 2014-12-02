@@ -16,41 +16,14 @@
     "issues": "https://www.drupal.org/project/issues/agov",
     "source": "https://github.com/previousnext/agov"
   },
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-        "name": "drupal/coder",
-        "version": "master",
-        "source": {
-          "url": "git://drupalcode.org/project/coder.git",
-          "type": "git",
-          "reference": "7.x-2.2"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "nickschuch/phpcs-security-audit",
-        "version": "master",
-        "source": {
-          "url": "https://github.com/nickschuch/phpcs-security-audit.git",
-          "type": "git",
-          "reference": "master"
-        }
-      }
-    }
-  ],
   "require": {
     "composer/installers": "~1.0"
   },
   "require-dev": {
-    "drupal/drupal-extension": "~1.0",
-    "squizlabs/php_codesniffer": "~1.5",
-    "nickschuch/phpcs-security-audit": "dev-master",
-    "drupal/coder": "master",
-    "phpmd/phpmd": "~2.0"
+    "previousnext/phing-phpqatools": "dev-master",
+    "previousnext/phing-compass": "dev-master",
+    "previousnext/phing-behat": "dev-master",
+    "previousnext/phing-drush": "dev-master"
   },
   "minimum-stability": "dev",
   "config": {
