@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the aGov Landing Pages feature.
+ */
+
+include_once 'agov_landing_pages.features.inc';
