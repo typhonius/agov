@@ -167,6 +167,7 @@ dependencies[] = agov_share_links
 ; Content types
 
 dependencies[] = agov_basic_page
+dependencies[] = agov_landing_pages
 dependencies[] = agov_blog
 dependencies[] = agov_events
 dependencies[] = agov_media_releases
