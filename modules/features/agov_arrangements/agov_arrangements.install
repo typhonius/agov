@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Install file.
+ *
+ * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
+ * @author Chris Skene chris at previousnext dot com dot au
+ * @copyright Copyright(c) 2014 Previous Next Pty Ltd
+ */
+
+/**
+ * Implements hook_install().
+ */
+function agov_arrangements_install() {
+  $arrangements = array(
+    'full' => array(
+      'title' => 'Full width',
+    ),
+    'tiles_2' => array(
+      'title' => 'Tiled (2 across)',
+    ),
+    'tiles_3' => array(
+      'title' => 'Tiled (3 across)',
+    ),
+    'tiles_4' => array(
+      'title' => 'Tiled (4 across)',
+    ),
+  );
+
+  foreach ($arrangements as $arr_key => $settings) {
+    $settings['field_machine_name'][LANGUAGE_NONE][0]['value'] = $arr_key;
+    $settings['type'] = 'arrangement';
+    $entity = entity_create('arrangement', $settings);
+    entity_save('arrangement', $entity);
+  }
+}

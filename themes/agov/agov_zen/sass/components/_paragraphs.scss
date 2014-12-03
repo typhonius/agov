@@ -1,0 +1,94 @@
+@mixin paragraph-tile {
+  float: left;
+  border: 1px solid #ddd;
+  margin-top: rhythm(0.5);
+  margin-bottom: rhythm(0.5);
+  padding: rhythm(0.5);
+  box-sizing: border-box;
+  width: 100%;
+
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@mixin paragraph-tile-default {
+  margin-left: rhythm(0.5);
+  margin-right: rhythm(0.5);
+}
+
+@mixin paragraph-tile-medium {
+
+  @include bp-nq($medium) {
+    @include paragraph-tile-default();
+    width: 47.8%;
+
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+    &:nth-child(3) {
+      margin-left: 0;
+    }
+  }
+}
+
+.paragraphs--layout-tiles-2 > .field > .field-items > .field-item {
+
+  @include paragraph-tile();
+  @include paragraph-tile-medium();
+}
+
+.paragraphs--layout-tiles-3 > .field > .field-items > .field-item {
+
+  @include paragraph-tile();
+  @include paragraph-tile-medium();
+
+  @include bp-nq($large) {
+
+    @include paragraph-tile-default();
+    width: 31.3%;
+
+    &:nth-child(2) {
+      margin-right: rhythm(0.5);
+    }
+    &:nth-child(3) {
+      margin-left: rhythm(0.5);
+    }
+
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+    &:nth-child(4) {
+      margin-left: 0;
+    }
+  }
+}
+
+.paragraphs--layout-tiles-4 > .field > .field-items > .field-item {
+
+  @include paragraph-tile();
+  @include paragraph-tile-medium();
+
+  @include bp-nq($large) {
+
+    @include paragraph-tile-default();
+    width: 24%;
+
+    &:nth-child(2) {
+      margin-right: rhythm(0.5);
+    }
+    &:nth-child(3) {
+      margin-left: rhythm(0.5);
+    }
+
+    &:nth-child(4) {
+      margin-right: 0;
+    }
+    &:nth-child(5) {
+      margin-left: 0;
+    }
+  }
+}
