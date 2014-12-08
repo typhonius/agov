@@ -57,6 +57,7 @@ dependencies[] = defaultconfig
 dependencies[] = defaultcontent
 dependencies[] = draggableviews
 dependencies[] = ds
+dependencies[] = eck
 dependencies[] = elements
 dependencies[] = entity
 dependencies[] = entitycache
