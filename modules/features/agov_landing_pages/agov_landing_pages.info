@@ -1,7 +1,7 @@
-name = aGov Landing Pages
+name = Landing Pages
 core = 7.x
 package = aGov
-dependencies[] = agov_arrangements
+;dependencies[] = agov_arrangements
 dependencies[] = agov_paragraphs
 dependencies[] = ctools
 dependencies[] = features

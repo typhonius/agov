@@ -167,46 +167,6 @@ function agov_paragraphs_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-section-field_pbundle_section_layout'
-  $field_instances['paragraphs_item-section-field_pbundle_section_layout'] = array(
-    'bundle' => 'section',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-      'paragraphs_editor_preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_pbundle_section_layout',
-    'label' => 'Section layout',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-        'flatten_options' => 0,
-        'flatten_sort' => 1,
-      ),
-      'type' => 'options_select',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'paragraphs_item-section-field_pbundle_title'
   $field_instances['paragraphs_item-section-field_pbundle_title'] = array(
     'bundle' => 'section',
@@ -216,9 +176,12 @@ function agov_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h2',
+          'link' => 0,
+        ),
+        'type' => 'ghost_tag',
         'weight' => 0,
       ),
       'paragraphs_editor_preview' => array(
@@ -430,9 +393,12 @@ function agov_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h3',
+          'link' => 0,
+        ),
+        'type' => 'ghost_tag',
         'weight' => 0,
       ),
       'paragraphs_editor_preview' => array(
@@ -517,7 +483,6 @@ function agov_paragraphs_field_default_field_instances() {
   t('Image');
   t('Node');
   t('Section content');
-  t('Section layout');
   t('Text');
   t('Title');
 

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the aGov Arrangements feature.
- */
-
-include_once 'agov_arrangements.features.inc';
