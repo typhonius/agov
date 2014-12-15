@@ -45,6 +45,7 @@ dependencies[] = update
 
 ; Contrib
 
+dependencies[] = accessible_forms
 dependencies[] = agls
 dependencies[] = admin_views
 dependencies[] = bean
@@ -145,8 +146,6 @@ dependencies[] = ccl_views
 dependencies[] = options_flatten
 dependencies[] = iconomist
 dependencies[] = text_summary_options
-dependencies[] = wcag_validate
-dependencies[] = wcag_scheduler
 dependencies[] = agov_disable_defaultcontent
 dependencies[] = user_action_report
 
