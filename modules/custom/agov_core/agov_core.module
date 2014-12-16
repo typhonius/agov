@@ -9,35 +9,18 @@
  */
 
 /**
- * Implements hook_menu().
+ * Implements hook_help().
  */
-function agov_core_menu() {
-  $items['about-agov'] = array(
-    'title' => 'About aGov',
-    'page callback' => 'agov_core_about_agov_page',
-    'access arguments' => array('access content'),
-  );
-  return $items;
-}
-
-/**
- * Page callback for about aGov page.
- *
- * @return array
- *   A render array for the page callback.
- */
-function agov_core_about_agov_page() {
-  $output = array(
-    'about' => array(
-      '#type' => 'markup',
-      '#markup' => "<p>" . l(t('aGov'), 'http://agov.com.au') . " is a free open source Drupal 7 distribution developed specifically for Australian government organisations.</p>",
-    ),
-    'previousnext' => array(
-      '#type' => 'markup',
-      '#markup' => "<p>aGov is designed and developed by " . l(t('PreviousNext'), 'http://previousnext.com.au') . " and is free to " . l(t("download"), "https://drupal.org/project/agov") . ".</p>",
-    ),
-  );
-  return $output;
+function agov_core_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#agov_core':
+      $output = "<p>" . t("!agov is a free open source Drupal 7 distribution developed specifically for Australian government organisations.", array('!agov' => l(t('aGov'), 'http://agov.com.au'))) . "</p>";
+      $output .= "<p>" . t("aGov is designed and developed by !pnx and is free to !download.", array(
+          '!pnx' => l(t('PreviousNext'), 'http://previousnext.com.au'),
+          '!download' => l(t("download"), "https://drupal.org/project/agov"),
+        )) . "</p>";
+      return $output;
+  }
 }
 
 /**
@@ -173,7 +156,10 @@ function agov_core_insert_block($module, $delta, $theme, $region = BLOCK_REGION_
   // If a theme was specified execute the single value.
   if (is_array($theme)) {
     // Get a list of themes that this block is already assigned to.
-    $assigned_themes = db_query('SELECT theme FROM {block} b WHERE b.module = :module AND b.delta = :delta', array(':module' => $module, ':delta' => $delta))->fetchCol();
+    $assigned_themes = db_query('SELECT theme FROM {block} b WHERE b.module = :module AND b.delta = :delta', array(
+      ':module' => $module,
+      ':delta' => $delta,
+    ))->fetchCol();
 
     // Get a list of the themes aGov supports.
     foreach ($theme as $theme_id) {
@@ -224,10 +210,10 @@ function agov_core_update_block($module, $delta, $theme = '', $region = BLOCK_RE
     $region = $status ? $region : '';
     db_update('block')
       ->fields(array(
-      'status' => $status,
-      'weight' => $weight,
-      'region' => $region,
-    ))
+        'status' => $status,
+        'weight' => $weight,
+        'region' => $region,
+      ))
       ->condition('module', $module)
       ->condition('delta', $delta)
       ->condition('theme', $theme)
