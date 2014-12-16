@@ -81,6 +81,8 @@ function agov_install() {
   // Set defaults for the contact form.
   _agov_contact_form_defaults();
 
+  _agov_install_arrangements();
+
   // Final modules.
   module_enable(array('agov_password_policy'));
 
@@ -1607,4 +1609,34 @@ function _agov_install_full_image_display() {
       ),
     ),
   ));
+}
+
+/**
+ * Callback to install some default arrangement types.
+ *
+ * These should be in agov_arrangements, but the install hook is called
+ * too early.
+ */
+function _agov_install_arrangements() {
+  $arrangements = array(
+    'full' => array(
+      'title' => 'Full width',
+    ),
+    'tiles_2' => array(
+      'title' => 'Tiled (2 across)',
+    ),
+    'tiles_3' => array(
+      'title' => 'Tiled (3 across)',
+    ),
+    'tiles_4' => array(
+      'title' => 'Tiled (4 across)',
+    ),
+  );
+
+  foreach ($arrangements as $arr_key => $settings) {
+    $settings['field_machine_name'][LANGUAGE_NONE][0]['value'] = $arr_key;
+    $settings['type'] = 'arrangement';
+    $entity = entity_create('arrangement', $settings);
+    entity_save('arrangement', $entity);
+  }
 }
