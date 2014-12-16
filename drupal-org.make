@@ -154,6 +154,7 @@ projects[agls][patch][] = "https://drupal.org/files/1998728-agls-node-summary-3.
 ; aGov
 projects[agov_components][version] = "1"
 projects[agov_components][subdir] = "agov"
+projects[agov_components][patch][] = "https://www.drupal.org/files/issues/2393957-remove-agov-register.patch"
 
 projects[agov_register][version] = "1.0-alpha1"
 projects[agov_register][subdir] = "agov"
