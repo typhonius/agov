@@ -9,6 +9,11 @@
  */
 function agov_paragraphs_paragraphs_info() {
   $items = array(
+    'block' => array(
+      'name' => 'Block',
+      'bundle' => 'block',
+      'locked' => '1',
+    ),
     'image' => array(
       'name' => 'Image',
       'bundle' => 'image',
@@ -32,6 +37,11 @@ function agov_paragraphs_paragraphs_info() {
     'text' => array(
       'name' => 'Text',
       'bundle' => 'text',
+      'locked' => '1',
+    ),
+    'view' => array(
+      'name' => 'View',
+      'bundle' => 'view',
       'locked' => '1',
     ),
   );

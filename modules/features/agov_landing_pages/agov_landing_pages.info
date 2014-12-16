@@ -1,4 +1,4 @@
-name = aGov Landing Pages
+name = Landing Pages
 core = 7.x
 package = aGov
 dependencies[] = agov_arrangements
@@ -25,4 +25,5 @@ features[variable][] = menu_parent_landing_page
 features[variable][] = node_options_landing_page
 features[variable][] = node_preview_landing_page
 features[variable][] = node_submitted_landing_page
+mtime = 1418695746
 project path = profiles/agov/modules/features

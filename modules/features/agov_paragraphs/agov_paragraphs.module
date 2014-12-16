@@ -19,19 +19,23 @@ function agov_paragraphs_entity_view($entity, $type, $view_mode, $langcode) {
       // Section arrangements are defined by the Arrangement entity.
       $arrangements = entity_load('arrangement', array($entity->field_pbundle_section_layout[LANGUAGE_NONE][0]['target_id']));
       $arrangement = reset($arrangements);
+      $entity->content['#attributes']['class'][] = 'paragraphs--layout-' . check_plain($arrangement->field_machine_name[LANGUAGE_NONE][0]['value']);
 
       if ($entity->bundle == 'section') {
         // Add a class for styling the content.
         $entity->content['field_pbundle_section_content']['#attributes']['class'][] = 'paragraphs--layout-' . check_plain($arrangement->field_machine_name[LANGUAGE_NONE][0]['value']);
+      }
+      if ($entity->bundle == 'view') {
+        $entity->content['field_pbundle_view']['#attributes']['class'][] = 'paragraphs--layout-' . check_plain($arrangement->field_machine_name[LANGUAGE_NONE][0]['value']);
       }
     }
   }
 }
 
 /**
- * Implements theme_preprocess_paragraphs_items().
+ * Implements theme_preprocess_paragraphs_item().
  */
-function agov_paragraphs_preprocess_paragraphs_items(&$variables, $hook) {
+function agov_paragraphs_preprocess_paragraphs_item(&$variables, $hook) {
 
   $variables['classes_array'] = array();
 

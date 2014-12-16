@@ -10,6 +10,73 @@
 function agov_paragraphs_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'paragraphs_item-block-field_pbundle_block'
+  $field_instances['paragraphs_item-block-field_pbundle_block'] = array(
+    'bundle' => 'block',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'blockreference',
+        'settings' => array(),
+        'type' => 'blockreference_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_pbundle_block',
+    'label' => 'Block',
+    'required' => 0,
+    'settings' => array(
+      'blockreference_modules' => array(
+        'agov_core' => 0,
+        'agov_social_links' => 0,
+        'agov_text_resize' => 0,
+        'bean' => 0,
+        'block' => 0,
+        'comment' => 0,
+        'crumbs' => 0,
+        'google_analytics_reports' => 0,
+        'menu' => 0,
+        'menu_block' => 0,
+        'node' => 0,
+        'quicktabs' => 0,
+        'search' => 0,
+        'search_api_page' => 0,
+        'service_links' => 0,
+        'shortcut' => 0,
+        'site_map' => 0,
+        'superfish' => 0,
+        'system' => 0,
+        'twitter_block' => 0,
+        'user' => 0,
+        'views' => 0,
+        'webform' => 0,
+        'workbench' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+        'flatten_options' => 0,
+        'flatten_sort' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'paragraphs_item-image-field_pbundle_image'
   $field_instances['paragraphs_item-image-field_pbundle_image'] = array(
     'bundle' => 'image',
@@ -216,9 +283,12 @@ function agov_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h2',
+          'link' => 0,
+        ),
+        'type' => 'ghost_tag',
         'weight' => 0,
       ),
       'paragraphs_editor_preview' => array(
@@ -430,9 +500,12 @@ function agov_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h2',
+          'link' => 0,
+        ),
+        'type' => 'ghost_tag',
         'weight' => 0,
       ),
       'paragraphs_editor_preview' => array(
@@ -511,8 +584,160 @@ function agov_paragraphs_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-view-field_pbundle_section_layout'
+  $field_instances['paragraphs_item-view-field_pbundle_section_layout'] = array(
+    'bundle' => 'view',
+    'default_value' => array(
+      0 => array(
+        'target_id' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_pbundle_section_layout',
+    'label' => 'Section layout',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+        'flatten_options' => 0,
+        'flatten_sort' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-view-field_pbundle_title'
+  $field_instances['paragraphs_item-view-field_pbundle_title'] = array(
+    'bundle' => 'view',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h2',
+          'link' => 0,
+        ),
+        'type' => 'ghost_tag',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_pbundle_title',
+    'label' => 'Title',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-view-field_pbundle_view'
+  $field_instances['paragraphs_item-view-field_pbundle_view'] = array(
+    'bundle' => 'view',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'viewfield',
+        'settings' => array(),
+        'type' => 'viewfield_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_pbundle_view',
+    'label' => 'View',
+    'required' => 0,
+    'settings' => array(
+      'allowed_views' => array(
+        'admin_user_actions' => 0,
+        'admin_views_comment' => 0,
+        'admin_views_file' => 0,
+        'admin_views_node' => 0,
+        'admin_views_user' => 0,
+        'agov_taxonomy_term_page' => 0,
+        'events' => 0,
+        'footer_teaser' => 0,
+        'home_page_blog_articles' => 0,
+        'latest_news' => 0,
+        'media_default' => 0,
+        'media_releases' => 0,
+        'publications' => 0,
+        'rules_scheduler' => 0,
+        'slideshow' => 0,
+        'workbench_current_user' => 0,
+        'workbench_edited' => 0,
+        'workbench_moderation' => 0,
+        'workbench_recent_content' => 0,
+      ),
+      'force_default' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'viewfield',
+      'settings' => array(),
+      'type' => 'viewfield_select',
+      'weight' => 2,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
+  t('Block');
   t('Destination');
   t('Image');
   t('Node');
@@ -520,6 +745,7 @@ function agov_paragraphs_field_default_field_instances() {
   t('Section layout');
   t('Text');
   t('Title');
+  t('View');
 
   return $field_instances;
 }

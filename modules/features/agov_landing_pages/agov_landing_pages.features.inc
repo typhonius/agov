@@ -21,7 +21,7 @@ function agov_landing_pages_node_info() {
     'landing_page' => array(
       'name' => t('Landing page'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Revisionable, workflowed landing pages for sections and channels.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

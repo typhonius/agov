@@ -10,6 +10,28 @@
 function agov_paragraphs_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_pbundle_block'
+  $field_bases['field_pbundle_block'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pbundle_block',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'moddelta' => array(
+        0 => 'moddelta',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'blockreference',
+    'settings' => array(
+      'referenceable_modules' => array(),
+    ),
+    'translatable' => 0,
+    'type' => 'blockreference',
+  );
+
   // Exported field_base: 'field_pbundle_destination'
   $field_bases['field_pbundle_destination'] = array(
     'active' => 1,
@@ -77,14 +99,7 @@ function agov_paragraphs_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_pbundle_node',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -146,7 +161,14 @@ function agov_paragraphs_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_pbundle_section_layout',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'eck_arrangement' => array(
+        'columns' => array(
+          'target_id' => 'id',
+        ),
+        'table' => 'eck_arrangement',
+      ),
+    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -233,6 +255,22 @@ function agov_paragraphs_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_pbundle_view'
+  $field_bases['field_pbundle_view'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pbundle_view',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'viewfield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'viewfield',
   );
 
   return $field_bases;

@@ -46,11 +46,13 @@ function agov_landing_pages_field_default_field_instances() {
     'settings' => array(
       'add_mode' => 'select',
       'allowed_bundles' => array(
-        'image' => 'image',
-        'node' => 'node',
-        'section' => 'section',
+        'block' => 0,
+        'image' => 0,
+        'node' => 0,
+        'section' => 0,
         'section_item' => 0,
-        'text' => 'text',
+        'text' => 0,
+        'view' => 0,
       ),
       'default_edit_mode' => 'open',
       'title' => 'Widget',
