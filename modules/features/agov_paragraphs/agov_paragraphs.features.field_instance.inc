@@ -24,7 +24,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'blockreference_default',
         'weight' => 0,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -93,7 +123,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'image',
         'weight' => 0,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -159,7 +219,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 0,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -202,7 +292,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'paragraphs_view',
         'weight' => 1,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -247,7 +367,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -291,7 +441,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'ghost_tag',
         'weight' => 0,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -331,16 +511,69 @@ function agov_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 3,
+      ),
+      'image_first' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
+      ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
+      ),
+      'teaser_title' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'tile_text' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 2,
+      ),
+      'title_first' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -389,6 +622,12 @@ function agov_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -397,11 +636,73 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'image',
         'weight' => 1,
       ),
+      'image_first' => array(
+        'label' => 'hidden',
+        'module' => 'image_link_formatter',
+        'settings' => array(
+          'image_link' => 'field_pbundle_destination',
+          'image_style' => 'article_page_620x349',
+        ),
+        'type' => 'image_link_formatter',
+        'weight' => 0,
+      ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'hidden',
+        'module' => 'image_link_formatter',
+        'settings' => array(
+          'image_link' => 'field_pbundle_destination',
+          'image_style' => 'article_page_620x349',
+        ),
+        'type' => 'image_link_formatter',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'hidden',
+        'module' => 'image_link_formatter',
+        'settings' => array(
+          'image_link' => 'field_pbundle_destination',
+          'image_style' => 'article_page_620x349',
+        ),
+        'type' => 'image_link_formatter',
+        'weight' => 1,
+      ),
+      'tile_image' => array(
+        'label' => 'hidden',
+        'module' => 'image_link_formatter',
+        'settings' => array(
+          'image_link' => 'field_pbundle_destination',
+          'image_style' => 'article_page_620x349',
+        ),
+        'type' => 'image_link_formatter',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'title_first' => array(
+        'label' => 'hidden',
+        'module' => 'image_link_formatter',
+        'settings' => array(
+          'image_link' => 'field_pbundle_destination',
+          'image_style' => 'article_page_620x349',
+        ),
+        'type' => 'image_link_formatter',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -455,9 +756,28 @@ function agov_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'image_first' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'paragraphs_editor_preview' => array(
@@ -465,6 +785,40 @@ function agov_paragraphs_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser_title' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'tile_text' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'title_first' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -500,6 +854,12 @@ function agov_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'module' => 'ghost',
         'settings' => array(
           'element' => 'h2',
@@ -508,10 +868,80 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'ghost_tag',
         'weight' => 0,
       ),
+      'image_first' => array(
+        'label' => 'hidden',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h3',
+          'link' => 0,
+        ),
+        'type' => 'ghost_tag',
+        'weight' => 1,
+      ),
+      'line' => array(
+        'label' => 'hidden',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h3',
+          'link' => 'field_pbundle_destination',
+        ),
+        'type' => 'ghost_tag',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'hidden',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h3',
+          'link' => 'field_pbundle_destination',
+        ),
+        'type' => 'ghost_tag',
+        'weight' => 1,
+      ),
+      'teaser_title' => array(
+        'label' => 'hidden',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h3',
+          'link' => 'field_pbundle_destination',
+        ),
+        'type' => 'ghost_tag',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'hidden',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h3',
+          'link' => 'field_pbundle_destination',
+        ),
+        'type' => 'ghost_tag',
+        'weight' => 1,
+      ),
+      'tile_text' => array(
+        'label' => 'hidden',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h3',
+          'link' => 'field_pbundle_destination',
+        ),
+        'type' => 'ghost_tag',
+        'weight' => 0,
+      ),
+      'title_first' => array(
+        'label' => 'hidden',
+        'module' => 'ghost',
+        'settings' => array(
+          'element' => 'h3',
+          'link' => 0,
+        ),
+        'type' => 'ghost_tag',
         'weight' => 0,
       ),
     ),
@@ -539,6 +969,91 @@ function agov_paragraphs_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-section_item-field_pbundle_view_mode'
+  $field_instances['paragraphs_item-section_item-field_pbundle_view_mode'] = array(
+    'bundle' => 'section_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entity_display_field',
+        'settings' => array(),
+        'type' => 'entity_display_field_default',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'image_first' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'tile_text' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'title_first' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_pbundle_view_mode',
+    'label' => 'View Mode',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'entity_display_field',
+      'settings' => array(),
+      'type' => 'entity_display_field_default',
+      'weight' => 37,
+    ),
+  );
+
   // Exported field_instance: 'paragraphs_item-text-field_pbundle_text'
   $field_instances['paragraphs_item-text-field_pbundle_text'] = array(
     'bundle' => 'text',
@@ -553,7 +1068,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -601,7 +1146,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -645,7 +1220,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'ghost_tag',
         'weight' => 0,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -690,7 +1295,37 @@ function agov_paragraphs_field_default_field_instances() {
         'type' => 'viewfield_default',
         'weight' => 1,
       ),
+      'line' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_image' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tile_text' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -746,6 +1381,7 @@ function agov_paragraphs_field_default_field_instances() {
   t('Text');
   t('Title');
   t('View');
+  t('View Mode');
 
   return $field_instances;
 }

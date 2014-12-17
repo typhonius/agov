@@ -161,14 +161,7 @@ function agov_paragraphs_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_pbundle_section_layout',
-    'foreign keys' => array(
-      'eck_arrangement' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_arrangement',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -271,6 +264,26 @@ function agov_paragraphs_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'viewfield',
+  );
+
+  // Exported field_base: 'field_pbundle_view_mode'
+  $field_bases['field_pbundle_view_mode'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pbundle_view_mode',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'entity_display' => array(
+        0 => 'entity_display',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entity_display_field',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'entity_display_field',
   );
 
   return $field_bases;
