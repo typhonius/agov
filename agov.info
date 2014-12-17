@@ -64,6 +64,7 @@ dependencies[] = elements
 dependencies[] = entity
 dependencies[] = entitycache
 dependencies[] = entityreference
+dependencies[] = entity_display_field
 dependencies[] = escape_admin
 dependencies[] = favicon
 dependencies[] = features
