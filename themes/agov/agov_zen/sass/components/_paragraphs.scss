@@ -1,11 +1,17 @@
-@mixin paragraph-tile {
-  float: left;
-  border: 1px solid #ddd;
-  margin-top: rhythm(0.5);
-  margin-bottom: rhythm(0.5);
+@mixin paragraph-base {
   padding: rhythm(0.5);
   box-sizing: border-box;
   width: 100%;
+}
+
+@mixin paragraph-tile {
+  @include paragraph-base;
+
+  float: left;
+  border: 1px solid #ddd;
+  margin-left: rhythm(0.5);
+  margin-right: rhythm(0.5);
+  margin-bottom: rhythm(0.5);
 
   &:first-child {
     margin-left: 0;
@@ -15,15 +21,11 @@
   }
 }
 
-@mixin paragraph-tile-default {
-  margin-left: rhythm(0.5);
-  margin-right: rhythm(0.5);
-}
-
 @mixin paragraph-tile-medium {
 
   @include bp-nq($medium) {
-    @include paragraph-tile-default();
+    margin-top: rhythm(0.5);
+    margin-bottom: rhythm(0.5);
     width: 47.8%;
 
     &:nth-child(2) {
@@ -31,6 +33,60 @@
     }
     &:nth-child(3) {
       margin-left: 0;
+    }
+  }
+}
+
+@mixin paragraph-title-reset {
+  margin-top: rhythm(0.1);
+  margin-bottom: rhythm(0.1);
+}
+
+// Base paragraph item styles.
+.entity-paragraphs-item {
+  @include paragraph-base;
+
+  h1, h2, h3, h4, h5, h6 {
+    @include paragraph-title-reset();
+  }
+
+  .field {
+    // Paragraphs add extra whitespace by virtue of nesting fields, so we reduce
+    // the total margin burden.
+    margin-top: rhythm(0.1);
+    margin-bottom: rhythm(0.1);
+  }
+}
+
+// Paragraph tile styles.
+.paragraphs-item_view-mode_tile-text,
+.paragraphs-item_view-mode_tile-image {
+  @include paragraph-base;
+  @include paragraph-tile;
+
+}
+
+// Paragraph teaser styles.
+.paragraphs-item_view-mode_teaser-title,
+.paragraphs-item_view-mode_teaser-image {
+
+  clear: both;
+  @include clearfix();
+
+  @include bp-nq($medium) {
+    .field {
+      float:left;
+      box-sizing: border-box;
+    }
+    .field-name-field-pbundle-title {
+      float: none;
+    }
+    .field-name-field-pbundle-image {
+      width: 35%;
+      margin-right: rhythm(1);
+    }
+    .field-name-field-pbundle-text {
+      width: 60%;
     }
   }
 }
@@ -48,7 +104,6 @@
 
   @include bp-nq($large) {
 
-    @include paragraph-tile-default();
     width: 31.3%;
 
     &:nth-child(2) {
@@ -74,7 +129,6 @@
 
   @include bp-nq($large) {
 
-    @include paragraph-tile-default();
     width: 24%;
 
     &:nth-child(2) {
