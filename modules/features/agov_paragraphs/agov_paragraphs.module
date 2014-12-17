@@ -59,13 +59,14 @@ function agov_paragraphs_entity_view($entity, $type, $view_mode, $langcode) {
 }
 
 /**
- * Implements theme_preprocess_paragraphs_item().
+ * Implements theme_preprocess_paragraphs_items().
  */
-function agov_paragraphs_preprocess_paragraphs_item(&$variables, $hook) {
+function agov_paragraphs_preprocess_paragraphs_items(&$variables, $hook) {
 
   $variables['classes_array'] = array();
 
-  $variables['classes_array'][] = drupal_html_class('paragraphs-items-' . $variables['view_mode']);
+  // Add the view mode class.
+  $variables['classes_array'][] = 'paragraphs-items_view-mode_' . drupal_html_class($variables['view_mode']);
 
   // Paragraphs doesn't properly add the element classes.
   if (isset($variables['element']['#attributes']['class'])
@@ -78,4 +79,31 @@ function agov_paragraphs_preprocess_paragraphs_item(&$variables, $hook) {
       }
     }
   }
+}
+
+/**
+ * Implements theme_preprocess_entity().
+ */
+function agov_paragraphs_preprocess_entity(&$variables) {
+
+  // Paragraphs never calls theme_paragraphs_item, so we do it in
+  // entity instead.
+  if ($variables['entity_type'] == 'paragraphs_item') {
+
+    // Add the view mode class.
+    $variables['classes_array'][] = 'paragraphs-item_view-mode_' . drupal_html_class($variables['view_mode']);
+
+    // Paragraphs doesn't properly add the element classes.
+    if (isset($variables['element']['#attributes']['class'])
+      && !empty($variables['element']['#attributes']['class'])
+      && is_array($variables['element']['#attributes']['class'])
+    ) {
+      foreach ($variables['element']['#attributes']['class'] as $class_name) {
+        if (!isset($variables['classes_array'][$class_name])) {
+          $variables['classes_array'][] = drupal_html_class($class_name);
+        }
+      }
+    }
+  }
+
 }
