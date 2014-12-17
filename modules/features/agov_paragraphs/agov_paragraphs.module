@@ -7,6 +7,32 @@
 include_once 'agov_paragraphs.features.inc';
 
 /**
+ * Implements hook_entity_info_alter().
+ */
+function agov_paragraphs_entity_info_alter(&$entity_info) {
+  $entity_info['paragraphs_item']['view modes']['teaser_title'] = array(
+    'label' => t('Teaser (title first)'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['paragraphs_item']['view modes']['teaser_image'] = array(
+    'label' => t('Teaser (image first)'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['paragraphs_item']['view modes']['tile_text'] = array(
+    'label' => t('Tile (text)'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['paragraphs_item']['view modes']['tile_image'] = array(
+    'label' => t('Tile (image)'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['paragraphs_item']['view modes']['line'] = array(
+    'label' => t('Single line'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
  * Implements hook_entity_view().
  */
 function agov_paragraphs_entity_view($entity, $type, $view_mode, $langcode) {
