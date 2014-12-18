@@ -682,6 +682,9 @@ function _agov_default_variables() {
 
   $variables = array(
 
+    // Set ClamAV to use the binary.
+    'clamav_mode' => 1,
+
     // Pathauto default.
     'pathauto_node_pattern' => '[node:title]',
     'pathauto_punctuation_hyphen' => 1,
